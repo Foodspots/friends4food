@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end 
 
   def self.follow_fb_friends(auth, current_user)
-    FacebookServices.new(auth).follow_user_friends(current_user)
+    FacebookServices.new(auth).follow_fb_friends(current_user)
   end
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
