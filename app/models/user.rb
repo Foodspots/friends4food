@@ -15,14 +15,18 @@ class User < ActiveRecord::Base
   after_create :send_welcome_email
 
 	def self.from_omniauth(auth)
-      where(provider2: auth.provider, uid2: auth.uid).first_or_create do |user|
+      sign_up = false
+      user = where(provider2: auth.provider, uid2: auth.uid).first_or_create! do |user|
         user.provider2 = auth.provider
         user.uid2 = auth.uid
         user.email = auth.info.email
         user.name = auth.info.name
         user.image_file_name = auth.info.image
         user.password = Devise.friendly_token[0,20]
+        sign_up = true
       end
+      follow_fb_friends(auth, user) if sign_up
+      user
   end
 
   def follow!(user, source=nil)
@@ -35,6 +39,10 @@ class User < ActiveRecord::Base
     follow = self.follows.get_follow(follow)
     follow.size > 0 ? true : false
   end 
+
+  def self.follow_fb_friends(auth, current_user)
+    FacebookServices.new(auth).follow_fb_friends(current_user)
+  end
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
 
