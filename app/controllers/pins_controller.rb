@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @pins = Pin.search(params[:search])
+    @pins = Pin.search(params[:search]).page(params[:page]).per(ENV['PER_PAGE'] || 10)
   end
 
   def import

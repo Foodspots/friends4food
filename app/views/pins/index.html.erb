@@ -1,4 +1,4 @@
-<h1>Search for restaurants (<%= @pins.count %>)</h1>
+<h1>Search for restaurants (<%= @pins.total_count %>)</h1>
 <%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
           <div class="form-group">
             <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search for restaurants", autofocus: true %>
