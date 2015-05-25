@@ -48,11 +48,14 @@ gem 'geocoder'
 gem 'elasticsearch-transport', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
 gem "searchkick"
 gem 'rails_bootstrap_navbar'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
      gem 'sqlite3'
      gem 'byebug'
+     gem 'pry-rails'
 end
 
 group :production do

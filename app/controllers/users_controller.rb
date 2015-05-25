@@ -36,7 +36,8 @@ class UsersController < ApplicationController
       @nearby_restaurants = Pin.near(@latitude_longitude, 10)
     end
 
-    @pins = Pin.find(current_users_follower_pin_ids.flatten.uniq)
+    pins = Pin.find(current_users_follower_pin_ids.flatten.uniq)
+    @pins = Kaminari.paginate_array(pins).page(params[:page]).per(RECORDS_PER_PAGE)
 	end
 
 end
