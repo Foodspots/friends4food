@@ -17,7 +17,7 @@ class PinsController < ApplicationController
   end
 
   def my_favorites
-    @pins = current_user.find_liked_items
+    @pins = Kaminari.paginate_array(current_user.find_liked_items).page(params[:page]).per(RECORDS_PER_PAGE)
   end
 
   def like
