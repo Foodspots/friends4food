@@ -1,17 +1,4 @@
-<h1>Search for restaurants (<%= @pins.total_count %>)</h1>
-<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
-          <div class="form-group">
-            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search for restaurants", autofocus: true %>
-          </div>
-          <%= submit_tag "Search", class: "btn btn-success" %>
-        <% end %>
-<br></br>
-<br></br>
-
-<%= link_to new_pin_path, class: "btn btn-default btn-block" do %>
-<span class="glyphicon glyphicon-chevron-right"></span>
-Add restaurant by yourself
-<% end %></p>
+<h2>View all restaurants (<%= @pins.total_count %>)</h2>
 
 <ul class="list-group">
     <li class="list-group-item">
@@ -19,16 +6,3 @@ Add restaurant by yourself
         <b>Number of restaurants:</b> 
          <%= render 'pins/show_pin_details' %>      
     </li>
-
-  <h2>Import restaurants</h2>
-  <%= form_tag import_pins_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import" %>
-  <% end %>
-
-  <%= bootstrap_form_tag(url: pins_path, method: "get") do |f| %>
-      <%= f.search_field :search_for_your_favorite_restaurant, value: params[:search], placeholder: "Fill in the name of your favorite restaurant" %>
-      <%= f.submit "Search", :name => nil, class: "btn btn-success" %>
-  <% end %>
-</ul>
-
