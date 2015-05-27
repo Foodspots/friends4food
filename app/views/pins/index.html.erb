@@ -1,8 +1,3 @@
 <h2>View all restaurants (<%= @pins.total_count %>)</h2>
 
-<ul class="list-group">
-    <li class="list-group-item">
-      <span class="badge"><%= @pins.count %></span>
-        <b>Number of restaurants:</b> 
-         <%= render 'pins/show_pin_details' %>      
-    </li>
+<%= render 'pins/show_pin_details' %>      

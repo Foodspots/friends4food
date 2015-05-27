@@ -1,7 +1,7 @@
-<div class="panel-body">
-  <div class="actions">
-    <div class="btn-group.pull-right">
+<div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
+         <div class="box panel panel-default">
+                  <div class="panel-body">
         <p><b>Restaurant:</b> <%= link_to pin.name, pin_path(pin) %></p>
         <p><b>Liked by: </b><br></br>
         <% pin.votes_for.voters.each do |p| %>
@@ -29,5 +29,3 @@
   </div>
 </div>
 <%= paginate @pins, theme: 'twitter-bootstrap-3' %>
-
-
