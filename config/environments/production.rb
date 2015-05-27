@@ -89,7 +89,7 @@ Altijdheerlijk::Application.configure do
   :port => 587,
   :domain => "email.altijdheerlijk.nl",
   :user_name => "postmaster@email.altijdheerlijk.nl",
-  :password => "a6c1ed9ffa1492b88ea05486221fa220"
+  :password => "ikwilbubbels"
   }
 
   # stores images on Amazon S3 for Heroku
