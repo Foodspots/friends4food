@@ -5,26 +5,26 @@ Back
 <% if current_user.liked? @pin %>
   <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
     <span class="glyphicon glyphicon-remove"></span>
-    Unsave restaurant
+    Unlike 
   <% end %>
 <% else %>
   <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
     <span class="glyphicon glyphicon-heart"></span>
-    Save restaurant
+    Like 
     <% end %>
 <% end %>
 <br></br>
 
 <div class="col-xs-12">
-<div class="panel panel-default">
+  <div class="panel panel-default">
   <div class="panel-body">
-    <h3>Location:</h3>
+    <h2><%= @pin.name %></h2>
+    <p><strong>Distance:</strong>
+    <p><strong>Type:</strong>
     <p><strong>Address:</strong>
-      <%= @pin.address %>
-    </p>
+      <%= @pin.address %></p>
     <p><strong>Place:</strong>
-        <%= @pin.place %>
-    </p>
+        <%= @pin.place %></p>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
   </div>
 </div>
