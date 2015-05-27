@@ -26,7 +26,7 @@
                         <p><b>Liked by: </b><br></br>
                           <% pin.votes_for.voters.each do |p| %>
                             <% if p.present? %>
-                            <%= link_to image_tag(p.image_file_name), @user %>
+                            <%= link_to p.user.name, user_path(user) %>
                             <% end %>
                           <% end %>
       <% end %>
