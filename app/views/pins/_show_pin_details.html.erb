@@ -22,14 +22,14 @@
                           Like 
                           <% end %> 
                         <% end %>
-                      <p><b>Liked by: </b><br></br>
-                        <% pin.votes_for.voters.each do |p| %>
-                          <% if p.present? %>
-                          <%= link_to image_tag(p.image_file_name), @user %>
+                      </div> 
+                        <p><b>Liked by: </b><br></br>
+                          <% pin.votes_for.voters.each do |p| %>
+                            <% if p.present? %>
+                            <%= link_to image_tag(p.image_file_name), @user %>
+                            <% end %>
                           <% end %>
-                        <% end %>
       <% end %>
-    </div> 
   </div>
 </div>
 <%= paginate @pins, theme: 'twitter-bootstrap-3' %>
