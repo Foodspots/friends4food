@@ -2,28 +2,32 @@
       <% @pins.each do |pin| %>
          <div class="box panel panel-default">
                   <div class="panel-body">
-        <p><b>Restaurant:</b> <%= link_to pin.name, pin_path(pin) %></p>
-        <p><b>Liked by: </b><br></br>
-        <% pin.votes_for.voters.each do |p| %>
-          <% if p.present? %>
-            <%= link_to image_tag(p.image_file_name), @user %>
-          <% end %>
-        <% end %>
-        <p><%= link_to pin_path(pin) , class: "btn btn-info btn-sm" do %>
-        <span class="glyphicon glyphicon-fullscreen"></span>
-        View location
-        <% end %>
-        <% if current_user.liked? pin %>
-          <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger btn-sm" do %>
-          <span class="glyphicon glyphicon-remove"></span>
-          Unsave
-        <% end %>
-        <% else %>
-          <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success btn-sm" do %>
-          <span class="glyphicon glyphicon-heart"></span>
-          Save 
-        <% end %>   
-        <% end %>
+                      <p><b>Restaurant:</b> <%= link_to pin.name, pin_path(pin) %></p>
+                      <p><b>Type:</b> </p>
+                      <p><b>Distance:</b></p>
+                      <div class="actions">
+                        <p><%= link_to pin_path(pin) , class: "btn btn-info btn-sm" do %>
+                        <span class="glyphicon glyphicon-fullscreen"></span>
+                        View location
+                        <% end %>
+
+                        <% if current_user.liked? pin %>
+                          <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger btn-sm" do %>
+                          <span class="glyphicon glyphicon-remove"></span>
+                          Unlike
+                          <% end %>
+                        <% else %>
+                          <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success btn-sm" do %>
+                          <span class="glyphicon glyphicon-heart"></span>
+                          Like 
+                          <% end %> 
+                        <% end %>
+                      <p><b>Liked by: </b><br></br>
+                        <% pin.votes_for.voters.each do |p| %>
+                          <% if p.present? %>
+                          <%= link_to image_tag(p.image_file_name), @user %>
+                          <% end %>
+                        <% end %>
       <% end %>
     </div> 
   </div>

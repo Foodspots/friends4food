@@ -2,12 +2,7 @@
 
 <% if current_user.find_liked_items.size > 0 %>
 
-<ul class="list-group">
-	    	<li class="list-group-item">
-	       		<%= render 'pins/show_pin_details' %>  
-	    	</li>
-	</li>
-</ul>
+<%= render 'pins/show_pin_details' %>  
 
 <% else %>
 	<p> You haven't added any restaurants yet, start now with addinng some restaurants to your favorite list here. </p>
