@@ -9,12 +9,12 @@ Find below the favorite restaurants of your <b><%= current_user.follows.count%><
 	<p> You haven't added any friends yet or your friends haven't added any restaurants. Add some (more) friends to see their favorite restaurants. </p>
 <% end %>
 
-<%= link_to users_path, class: "btn btn-default btn-block" do %>
+<%= link_to users_path, class: "btn btn-success btn-block" do %>
 <span class="glyphicon glyphicon-chevron-right"></span>
 Add friends to your list
 <% end %></p>
 
-<%= link_to pins_path, class: "btn btn-default btn-block" do %>
+<%= link_to pins_path, class: "btn btn-success btn-block" do %>
 	<span class="glyphicon glyphicon-chevron-right"></span>
 	Add restaurants to your list
 <% end %></p>

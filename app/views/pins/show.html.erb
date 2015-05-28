@@ -18,14 +18,12 @@ Back
 <div class="col-xs-12">
   <div class="panel panel-default">
   <div class="panel-body">
-    <h2><%= @pin.name %></h2>
-    <p><strong>Distance:</strong>
-    <p><strong>Type:</strong>
-    <p><strong>Address:</strong>
-      <%= @pin.address %></p>
-    <p><strong>Place:</strong>
-        <%= @pin.place %></p>
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
+    <%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
+              <div class="form-group">
+                <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search for restaurants", autofocus: true %>
+              </div>
+              <%= submit_tag "Search", class: "btn btn-success" %>
+            <% end %>
   </div>
 </div>
 
