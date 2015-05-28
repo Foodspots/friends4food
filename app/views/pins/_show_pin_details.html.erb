@@ -2,7 +2,7 @@
       <% @pins.each do |pin| %>
          <div class="box panel panel-default">
                   <div class="panel-body">
-                      <p><b>Restaurant:</b> <%= link_to pin.name, pin_path(pin) %></p>
+                      <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
                       <p><b>Type:</b> </p>
                       <p><b>Distance:</b></p>
                       <p><b>Liked by: </b>
