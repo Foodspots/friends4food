@@ -34,4 +34,4 @@
           </div>
      <% end %>
 </div>
-<%= paginate @pins, theme: 'twitter-bootstrap-3' %>
+<%= paginate @pins, theme: 'twitter-bootstrap-3', :pagination_class => apply_pagination_class_for_mobile %>
