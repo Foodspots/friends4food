@@ -1,4 +1,4 @@
-<h2>My friends (<%= current_user.follows.count %>)</h2>
+<h2>My <b><%= current_user.follows.count %></b> friends</h2>
 
    <% if @followings.present? && @followings.size > 0 %>
             <ul class="list-group">

@@ -1,4 +1,4 @@
-<h2>My restaurants (<%= current_user.find_liked_items.size %>)</h2>
+<h2>My <b><%= current_user.find_liked_items.size %></b> favorite restaurants</h2>
 
 <% if current_user.find_liked_items.size > 0 %>
 

@@ -1,13 +1,11 @@
-<h2>Add friends</h2>
+<h2>Add your friends</h2>
+Choose from	the <b><%= @user.count %></b> users on Friends4food who you want to follow.
+<br></br>
 <ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge"><%= @user.count %></span>
-      <b>Number of users:</b>
            <% @user.each do |user| %>
                <li class="list-group-item">
                <%= render :partial => 'users/user', :locals => {:user => user} %>
                 </li>
           <% end %>
-  </li>
 </ul>
 
