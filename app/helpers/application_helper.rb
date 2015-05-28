@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def apply_pagination_class_for_mobile
+  def pagination_class
     'pagination-sm' if is_mobile_device?
   end
 end
