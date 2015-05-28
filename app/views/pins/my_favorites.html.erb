@@ -1,4 +1,5 @@
-<h2>My <b><%= current_user.find_liked_items.size %></b> favorite restaurants</h2>
+<h2>My favorite restaurants</h2>
+Find bellow the <b><%= current_user.find_liked_items.size %></b> restaurants you like.
 
 <% if current_user.find_liked_items.size > 0 %>
 
