@@ -1,39 +1,45 @@
-<%= link_to :back, class: "btn btn-default" do %>
-  <span class="glyphicon glyphicon-chevron-left"></span>
-    Back
-  <% end %>
-
-  <div id="follow_unfollow_btn">
-    <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>  
+<div class="row">
+  <div class="col-md-2 show_back_btn">
+    <%= link_to :back, class: "btn btn-default" do %>
+      <span class="glyphicon glyphicon-chevron-left"></span>
+        Back
+    <% end %>
   </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <h2><%=@user.name %></h2>
-      <p><%= link_to image_tag(@user.image_file_name), @user %></p>
+  <div class="col-md-1">
+    <div id="follow_unfollow_btn">
+      <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>  
     </div>
-  </div> 
+  </div>
+</div>
+<br>
 
-  <ul class="list-group">
-    <li class="list-group-item">
-      <span class="badge"><%= @user.find_liked_items.size %></span>
-        <b>Favorite restaurants:</b>
-            <% @user.find_liked_items.each do |pin| %>
-                 <li class="list-group-item">
-                 <%= link_to pin.name, pin_path(pin) %>
-                  </li>
-            <% end %>
-    </li>
-    <br></br>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h2><%=@user.name %></h2>
+    <p><%= link_to image_tag(@user.image_file_name), @user %></p>
+  </div>
+</div> 
 
-    <li class="list-group-item">
-      <span class="badge"><%= @user.followings.count %></span>
-        <b>Friends:</b>
-        <% @user.followings.each do |user| %>
-             <li class="list-group-item">
-             <%= link_to image_tag(user.image_file_name) %>
-             <%= link_to user.name, user_path(user) %>
-              </li>
-        <% end %>
-    </li>
-  </ul>
+<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"><%= @user.find_liked_items.size %></span>
+      <b>Favorite restaurants:</b>
+          <% @user.find_liked_items.each do |pin| %>
+               <li class="list-group-item">
+               <%= link_to pin.name, pin_path(pin) %>
+                </li>
+          <% end %>
+  </li>
+  <br></br>
+
+  <li class="list-group-item">
+    <span class="badge"><%= @user.followings.count %></span>
+      <b>Friends:</b>
+      <% @user.followings.each do |user| %>
+           <li class="list-group-item">
+           <%= link_to image_tag(user.image_file_name) %>
+           <%= link_to user.name, user_path(user) %>
+            </li>
+      <% end %>
+  </li>
+</ul>
