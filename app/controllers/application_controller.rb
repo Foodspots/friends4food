@@ -7,6 +7,7 @@ protect_from_forgery with: :exception
 before_filter :configure_permitted_parameters, if: :devise_controller?
 
 RECORDS_PER_PAGE = ENV['RECORDS_PER_PAGE'] || 10
+has_mobile_fu false
 
 protected
 
