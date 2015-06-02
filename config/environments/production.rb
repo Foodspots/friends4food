@@ -88,7 +88,7 @@ Altijdheerlijk::Application.configure do
   :address => "smtp.mailgun.org",
   :port => 587,
   :domain => "http://friends4food.com",
-  :user_name => "postmaste@friends4food.com",
+  :user_name => "postmaster@friends4food.com",
   :password => "32c5ac94fc0369a1cebcb421b4d3c77b"
   }
 
