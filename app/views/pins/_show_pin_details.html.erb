@@ -5,7 +5,7 @@
                   <div class="panel-body">
                       <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
                       <p><b>Type:</b> </p>
-                      <p><b>Distance: <%= pin_distance %> km</b></p>
+                      <p><b>Distance: </b> <%= pin_distance(pin) %></p>
                       <p><b>Liked by:</b>
                         <% pin.votes_for.voters.each do |p| %>
                           <% if p.present? %>
