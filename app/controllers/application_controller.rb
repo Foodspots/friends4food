@@ -11,6 +11,7 @@ RECORDS_PER_PAGE = ENV['RECORDS_PER_PAGE'] || 10
 has_mobile_fu false
 
 def current_coordinates
+  Rails.logger.info ">>>>>>>>> current_coordinates (#{cookies[:latitude]}, #{cookies[:longitude]})"
   @latitude = cookies[:latitude]
   @longitude = cookies[:longitude]
 end
