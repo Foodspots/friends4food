@@ -4,8 +4,8 @@
                   <div class="panel-body">
                       <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
                       <p><b>Type:</b> </p>
-                      <p><b>Distance:</b></p>
-                      <p><b>Liked by: </b>
+                      <p><b>Distance: <%= current_distance(pin, @latitude, @longitude) %> km</b></p>
+                      <p><b>Liked by:</b>
                         <% pin.votes_for.voters.each do |p| %>
                           <% if p.present? %>
                           <p><%= link_to p.name, user_path(@user) %></p>
@@ -28,8 +28,7 @@
                               Like 
                               <% end %> 
                             <% end %>
-                      </div> 
-                      
+                      </div>
                   </div>
           </div>
      <% end %>

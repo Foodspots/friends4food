@@ -8,8 +8,8 @@ class PinsController < ApplicationController
   end
 
   def import
-  Pin.import(params[:file])
-  redirect_to root_url, notice: "Restaurants imported."
+    Pin.import(params[:file])
+    redirect_to root_url, notice: "Restaurants imported."
   end
 
   def my_pins
