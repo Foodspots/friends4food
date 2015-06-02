@@ -1,10 +1,11 @@
 <div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
+        <% @pin = pin %>
          <div class="box panel panel-default">
                   <div class="panel-body">
                       <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
                       <p><b>Type:</b> </p>
-                      <p><b>Distance: <%= current_distance(pin, @latitude, @longitude) %> km</b></p>
+                      <p><b>Distance: <%= pin_distance %> km</b></p>
                       <p><b>Liked by:</b>
                         <% pin.votes_for.voters.each do |p| %>
                           <% if p.present? %>

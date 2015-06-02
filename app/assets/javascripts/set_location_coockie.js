@@ -11,9 +11,7 @@ $( document ).ready(function() {
 });
 
 function showLocation(position) {
-  var latitude = position.coords.latitude;
-  var longitude = position.coords.longitude;
-  set_coockie_location(latitude, longitude);
+  set_coockie_location(position.coords.latitude, position.coords.longitude);
 }
 
 function errorHandler(err) {
@@ -25,6 +23,6 @@ function errorHandler(err) {
 }
 
 function set_coockie_location(latitude, longitude){
-  document.cookie="latitude="+latitude+";";
-  document.cookie="longitude="+longitude+";";
+  document.cookie = "latitude = "+latitude+";";
+  document.cookie = "longitude = "+longitude+";";
 }
