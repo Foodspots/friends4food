@@ -1,10 +1,10 @@
 <h2>Add your friends</h2>
 Choose from	the <b><%= @user.count %></b> users on Friends4food who you want to follow.
-<ul class="list-group">
-           <% @user.each do |user| %>
-               <li class="list-group-item">
-               <%= render :partial => 'users/user', :locals => {:user => user} %>
-                </li>
-          <% end %>
-</ul>
+    <div id="pins" class="transitions-enabled">
+      <% @user.each do |user| %>
+        <div class="box panel panel-default" id = "user_<%= user.id %>">
+            <%= render :partial => 'users/user', :locals => {:user => user} %>
+        </div>
+        <% end %>
+    </div>
 

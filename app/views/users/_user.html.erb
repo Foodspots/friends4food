@@ -1,9 +1,9 @@
 <% user = local_assigns.has_key?(:user) ? user : nil %>
 <% if user %>
-  <div id="user_<%= user.id %>">
+  <div class="panel-body">
     <div class="actions">
       <p><b>Friend: </b><%= link_to user.name, user_path(user) %></p></strong>
-      <p><%= link_to image_tag(user.image_file_name), user %></p>
+      <p><%= link_to image_tag(user.image_file_name, class: 'pin_liked_image'), user %></p>
       <div class="btn-group.pull-right">
         <%= link_to user_path(user), class: "btn btn-info btn-sm" do %>
         <span class="glyphicon glyphicon-fullscreen"></span>
@@ -14,3 +14,4 @@
     </div>
   </div>
 <% end %>
+
