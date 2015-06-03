@@ -28,7 +28,6 @@
   get "search_pins" => "pins#index"
   get "search_by_location" => "users#feeds"
   get '/feeds' => 'users#feeds', :as => :feeds
-  get '/application/current_coordinates'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
