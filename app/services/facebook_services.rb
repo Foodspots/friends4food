@@ -6,7 +6,7 @@ class FacebookServices
   def follow_fb_friends(current_user)
     access_token = Koala::Facebook::API.new(@auth[:credentials][:token])
     fb_friend_ids = access_token.get_connections('me', 'friends', fields: 'id')
-
+    Rails.logger.info ">>>>>>>>>>>>> #{current_user.email} Friends - #{fb_friend_ids}"
     if fb_friend_ids.present?
       fb_friend_ids.each do |fb_friend_id|
         follow_fb_friend(fb_friend_id['id'], current_user)

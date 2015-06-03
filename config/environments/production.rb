@@ -87,9 +87,9 @@ Altijdheerlijk::Application.configure do
   :authentication => :plain,
   :address => "smtp.mailgun.org",
   :port => 587,
-  :domain => "email.altijdheerlijk.nl",
-  :user_name => "postmaster@email.altijdheerlijk.nl",
-  :password => "ikwilbubbels"
+  :domain => "http://friends4food.com",
+  :user_name => "postmaster@friends4food.com",
+  :password => "32c5ac94fc0369a1cebcb421b4d3c77b"
   }
 
   # stores images on Amazon S3 for Heroku

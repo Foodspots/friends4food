@@ -19,12 +19,12 @@ Back
   <div class="panel panel-default">
   <div class="panel-body">
     <h2><%= @pin.name %></h2>
-    <p><strong>Distance:</strong>
-    <p><strong>Type:</strong>
+    <p><strong>Distance: </strong><%= pin_distance(@pin) %></p>
+    <p><strong>Type:</strong></p>
     <p><strong>Address:</strong>
       <%= @pin.address %></p>
-    <p><strong>Place:</strong>
-        <%= @pin.place %></p>
+    <p><strong>Place:</strong> </p>
+        <%= @pin.place %>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
   </div>
 </div>
