@@ -1,17 +1,33 @@
-<%= link_to :back, class: "btn btn-default" do %>
-<span class="glyphicon glyphicon-chevron-left"></span>
-Back
-<% end %>
-<% if current_user.liked? @pin %>
-  <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
-    <span class="glyphicon glyphicon-remove"></span>
-    Unlike 
-  <% end %>
-<% else %>
-  <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
-    <span class="glyphicon glyphicon-heart"></span>
-    Like 
+<div class="col-xs-12">
+  <div class="col-xs-10">
+    <%= link_to :back, class: "btn btn-default" do %>
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    Back
     <% end %>
+    <% if current_user.liked? @pin %>
+      <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
+        <span class="glyphicon glyphicon-remove"></span>
+        Unlike 
+      <% end %>
+    <% else %>
+      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
+        <span class="glyphicon glyphicon-heart"></span>
+        Like 
+        <% end %>
+    <% end %>
+  </div>
+  <% if @latitude.present? && @longitude.present? %>
+    <% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
+    <div class="col-xs-2">
+      <form action="http://maps.google.com/maps" method="get" target="_blank">
+        <%= hidden_field_tag "saddr", "#{source_location}" %>
+        <%= hidden_field_tag "daddr", "#{destination_location}" %>
+        <%= button_tag(type: 'submit', class: "btn btn-primary pull-right") do %>
+          <span class="glyphicon glyphicon-map-marker"></span>See Route
+        <% end %>
+      </form>
+    </div>
+  </div>
 <% end %>
 <br></br>
 
@@ -23,8 +39,7 @@ Back
     <p><strong>Type:</strong></p>
     <p><strong>Address:</strong>
       <%= @pin.address %></p>
-    <p><strong>Place:</strong> </p>
-        <%= @pin.place %>
+    <p><strong>Place:</strong><%= @pin.place %></p>
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
   </div>
 </div>

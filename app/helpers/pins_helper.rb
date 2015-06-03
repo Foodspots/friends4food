@@ -8,4 +8,8 @@ module PinsHelper
       "#{Geocoder::Calculations.to_kilometers(pin.distance_from([@latitude, @longitude])).round(2)} km"
     end
   end
+
+  def source_location
+    Geocoder.search("#{@latitude}, #{@longitude}").map(&:formatted_address).first
+  end
 end
