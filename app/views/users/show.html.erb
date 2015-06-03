@@ -26,6 +26,7 @@
       <b>Favorite restaurants:</b>
           <% @user.find_liked_items.each do |pin| %>
                <li class="list-group-item">
+                <span class="glyphicon  glyphicon glyphicon-heart"></span>
                <%= link_to pin.name, pin_path(pin) %>
                 </li>
           <% end %>
