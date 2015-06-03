@@ -46,6 +46,22 @@ class User < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/default.jpg"
 
+  def friends_favorite_restaurants(sort_by_favorited = true)
+    restaurants = []
+    followings.each do |friend|
+      restaurants << friend.find_liked_items
+    end  
+    restaurants.flatten!
+
+    if sort_by_favorited
+      counts = Hash.new(0)
+      restaurants.each { |restaurant| counts[restaurant] += 1 }
+      restaurants = counts.sort_by{ |k, v| -v }.map{ |pair| pair[0] }
+    else
+      Pin.where(id: restaurants.uniq)
+    end
+  end
+
   private
     def send_welcome_email
       ModelMailer.new_user_account_notification(self).deliver

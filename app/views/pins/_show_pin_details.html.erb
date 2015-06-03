@@ -1,23 +1,26 @@
 <div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
-        <% @pin = pin %>
-         <div class="box panel panel-default">
+         <div class="box panel panel-default panel-default-box-width">
                   <div class="panel-body">
                       <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
                       <p><b>Type:</b> </p>
                       <p><b>Distance: </b> <%= pin_distance(pin) %></p>
-                      <p><b>Liked by:</b>
-                        <% pin.votes_for.voters.each do |p| %>
-                          <% if p.present? %>
-                          <p><%= link_to p.name, user_path(@user) %></p>
+                      <p><b>Liked by: </b>
+                        <p>
+                          <% pin.votes_for.voters.take(4).each do |p| %>
+                            <% if p.present? %>
+                            <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
+                            <% end %>
                           <% end %>
+                        <% if pin.votes_for.voters.count > 4 %>
+                          <b><%= link_to "...", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %></b>
+                          </p>
                         <% end %>
                       <div class="actions">
                             <p><%= link_to pin_path(pin) , class: "btn btn-info btn-sm" do %>
                             <span class="glyphicon glyphicon-fullscreen"></span>
                             View location
                             <% end %>
-
                             <% if current_user.liked? pin %>
                               <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger btn-sm" do %>
                               <span class="glyphicon glyphicon-remove"></span>

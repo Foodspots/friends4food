@@ -4,7 +4,15 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @pins = Pin.search(params[:search]).page(params[:page]).per(RECORDS_PER_PAGE)
+    @pins = Pin.search(params[:search])
+    friends_favorite_restaurants = current_user.friends_favorite_restaurants
+  
+    if friends_favorite_restaurants.present?
+      @pins = (friends_favorite_restaurants & @pins) | (@pins - friends_favorite_restaurants)    
+    end
+
+    @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)
+    
   end
 
   def import
