@@ -1,26 +1,24 @@
 <h2>My friends</h2>
 Find below the <b><%= current_user.follows.count %></b> users that you have added as a friend. 
-
    <% if @followings.present? && @followings.size > 0 %>
-            <ul class="list-group">
+        <div id="pins" class="transitions-enabled">
                 <% @followings.each do |user| %>
-                    <li class="list-group-item">
+                    <div class="box panel panel-default" id = "user_<%= user.id %>">
                     <%= render :partial => 'users/user', :locals => {:user => user} %>
-                    </li>
+                    </div>
                 <% end %>
-              </li>
-            </ul>
+        </div>
+    <% else %>
+        <p> You haven't added any friends yet, find your friends or see add people who are following you. </p>
+    <% end %> 
 
-        <% else %>
-            <p> You haven't added any friends yet, find your friends or see add people who are following you. </p>
-        <% end %> 
-
-        <%= link_to users_path, class: "btn btn-success btn-block" do %>
+<%= link_to users_path, class: "btn btn-success btn-block" do %>
 <span class="glyphicon glyphicon-chevron-right"></span>
 Add friends to your list
 <% end %></p>
 
-      
+
+
 
  
 
