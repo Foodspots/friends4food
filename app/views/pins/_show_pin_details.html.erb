@@ -7,14 +7,14 @@
                       <p><b>Distance: </b> <%= pin_distance(pin) %></p>
                       <p><b>Liked by: </b>
                         <p>
-                          <% pin.votes_for.voters.take(5).each do |p| %>
+                          <% pin.votes_for.voters.take(4).each do |p| %>
                             <% if p.present? %>
                             <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
                             <% end %>
                           <% end %>
                         </p>
-                        <% if pin.votes_for.voters.count > 5 %>
-                          <b><%= link_to "More", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %></b>
+                        <% if pin.votes_for.voters.count > 4 %>
+                          <b><%= link_to "More..", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %></b>
                           <br/><br/>
                         <% end %>
                       <div class="actions">
