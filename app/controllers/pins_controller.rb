@@ -4,7 +4,16 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def index
-    @pins = Pin.search(params[:search]).page(params[:page]).per(RECORDS_PER_PAGE)
+    current_users_follower_pin_ids = []
+    current_user.follows.each do |follower|
+      current_users_follower_pin_ids << follower.followable.votes.pluck(:votable_id)
+    end
+    
+    pins = Pin.find(current_users_follower_pin_ids.flatten)
+    most_liked_pin_ids = current_users_follower_pin_ids.flatten.sort_by{|value| current_users_follower_pin_ids.flatten.count(value)}.reverse.uniq
+  
+    pins = Pin.find(most_liked_pin_ids)
+    @pins = Kaminari.paginate_array(pins + (Pin.search(params[:search]) - pins)).page(params[:page]).per(RECORDS_PER_PAGE)
   end
 
   def import
