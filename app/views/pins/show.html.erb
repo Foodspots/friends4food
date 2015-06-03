@@ -16,19 +16,7 @@
         <% end %>
     <% end %>
   </div>
-  <% if @latitude.present? && @longitude.present? %>
-    <% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
-    <div class="col-xs-2">
-      <form action="http://maps.google.com/maps" method="get" target="_blank">
-        <%= hidden_field_tag "saddr", "#{source_location}" %>
-        <%= hidden_field_tag "daddr", "#{destination_location}" %>
-        <%= button_tag(type: 'submit', class: "btn btn-primary pull-right") do %>
-          <span class="glyphicon glyphicon-map-marker"></span>See Route
-        <% end %>
-      </form>
-    </div>
-  </div>
-<% end %>
+  
 <br></br>
 
 <div class="col-xs-12">
@@ -40,9 +28,25 @@
     <p><strong>Address:</strong>
       <%= @pin.address %></p>
     <p><strong>Place:</strong><%= @pin.place %></p>
+
     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
+       <br></br>
+       <% if @latitude.present? && @longitude.present? %>
+        <% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
+        <div class="col-xs-12">
+          <form action="http://maps.google.com/maps" method="get" target="_blank">
+            <%= hidden_field_tag "saddr", "#{source_location}" %>
+            <%= hidden_field_tag "daddr", "#{destination_location}" %>
+            <%= button_tag(type: 'submit', class: "btn btn-primary pull-right") do %>
+              <span class="glyphicon glyphicon-map-marker"></span>See route
+            <% end %>
+          </form>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
+
+
 
   <div class="panel panel-default" id="liked_by">
     <div class="panel-body">
