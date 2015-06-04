@@ -37,7 +37,7 @@
           <form action="http://maps.google.com/maps" method="get" target="_blank">
             <%= hidden_field_tag "saddr", "#{source_location}" %>
             <%= hidden_field_tag "daddr", "#{destination_location}" %>
-            <%= button_tag(type: 'submit', class: "btn btn-primary pull-right") do %>
+            <%= button_tag(type: 'submit', class: "btn btn-primary pull-left") do %>
               <span class="glyphicon glyphicon-map-marker"></span>See route
             <% end %>
           </form>
