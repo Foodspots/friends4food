@@ -30,9 +30,11 @@ class User < ActiveRecord::Base
   end
 
   def follow!(user, source=nil)
-    follow = self.follows.new
-    follow.followable = user
-    follow.save!
+    unless following?(user)
+      follow = self.follows.new
+      follow.followable = user
+      follow.save!
+    end
   end
 
   def following?(follow)

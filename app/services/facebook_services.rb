@@ -18,7 +18,7 @@ class FacebookServices
   def follow_fb_friend(fb_friend_id, current_user, bidirectional = true)
     puts "fb_friend_id: #{fb_friend_id} <==> current_user.id: #{current_user.id}"
     user = User.find_by(uid2: fb_friend_id)
-    if user && !current_user.following?(user)
+    if user.present?
       begin
         User.transaction do
           current_user.follow!(user)
