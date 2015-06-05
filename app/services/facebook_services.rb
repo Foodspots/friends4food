@@ -15,12 +15,15 @@ class FacebookServices
     end
   end
 
-  def follow_fb_friend(fb_friend_id, current_user)
+  def follow_fb_friend(fb_friend_id, current_user, bidirectional = true)
     puts "fb_friend_id: #{fb_friend_id} <==> current_user.id: #{current_user.id}"
     user = User.find_by(uid2: fb_friend_id)
     if user && !current_user.following?(user)
       begin
-        current_user.follow!(user)
+        User.transaction do
+          current_user.follow!(user)
+          user.follow!(current_user) if bidirectional
+        end
         ModelMailer.new_follower_notification(user, current_user).deliver
       rescue StandardError => e
         Rails.logger.error 'Something went wrong while following an user'
