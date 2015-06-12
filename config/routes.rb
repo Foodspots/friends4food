@@ -26,6 +26,7 @@
   get "my_friends" => "users#my_friends"
   get "followers" => "users#followers"
   get "search_pins" => "pins#index"
+  get 'search_nearest_pins' => 'pins#sorted_by_distance'
   get '/feeds' => 'users#feeds', :as => :feeds
   
   

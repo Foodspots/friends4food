@@ -15,6 +15,15 @@ class PinsController < ApplicationController
     
   end
 
+  def sorted_by_distance
+    if @latitude.present? && @longitude.present?
+      @pins = Pin.search(params[:search]).near([@latitude, @longitude], 10000)
+      @pins = @pins.page(params[:page]).per(RECORDS_PER_PAGE)
+    else
+      index
+    end
+  end
+
   def import
     Pin.import(params[:file])
     redirect_to root_url, notice: "Restaurants imported."
