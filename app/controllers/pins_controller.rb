@@ -1,6 +1,5 @@
 class PinsController < ApplicationController
   before_action :set_pin, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:destroy]
 
   def index
