@@ -28,7 +28,9 @@ class UsersController < ApplicationController
 	def feeds
     current_users_follower_pin_ids = []
     current_user.follows.each do |follower|
-      current_users_follower_pin_ids << follower.followable.votes.pluck(:votable_id)
+      if follower.followable.present?
+        current_users_follower_pin_ids << follower.followable.votes.pluck(:votable_id)
+      end
     end
     
     pins = Pin.find(current_users_follower_pin_ids.flatten.uniq)
