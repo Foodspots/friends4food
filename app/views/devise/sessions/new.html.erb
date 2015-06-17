@@ -4,34 +4,38 @@
       <h2>Discover your favorite restaurants</h2>
       </div>
        <div class="panel-heading">
-       Sign in and check out the favorite restaurants of your friends in town.
+       Sign in and discover the favorite restaurants of your friends in town.
     </div>
-<div class="panel-body">
-        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" %><br/><br/>
-      <b>Note:</b> Friends4food will <u>never post messages</u> on your Facebook wall.
-      </div>
-      </div>     
-</div>
-
-       </div>
-
-       <div class="panel-body">    
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-   
-      <div class="form-group">   
-        <%= f.label :email, "Email adres" %>   
-        <%= f.email_field :email, autofocus: true, class: "form-control", :autofocus => true %>    
-      </div>   
-             
-       <div class="form-group">  
-        <%= f.label :password, "Wachtwoord" %>  
-        <%= f.password_field :password, class: "form-control" %>
-        </div>
-      
-        <div class="form-group">   
-        <%= f.submit "Bewaar", class: "btn btn-info" %>    
-        </div>  
-
-    <% end %>    
+            <div class="panel-body">
+                      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-social btn-facebook" do %>
+                      <span class="glyphicon glyphicon-play"></span>
+                      Sign in with Facebook
+                      <% end %>
+                      <br/><br/>
+                  <b>Note:</b> Friends4food will <u>never post messages</u> on your Facebook wall.
+            </div>
+            </div>   
+            </div> 
+            <div class="panel panel-default">
+            <div class="panel-title">
+            <div class="panel-heading">
+            <b>On Friends4food you can:</b>
+            <div class="panel-body">
+                <p><span class="glyphicon glyphicon-check"></span>            
+                Save your favorite restaurants
+                </p>
+                <p><span class="glyphicon glyphicon-check"></span>
+                Discover your friends' favorites
+                </p>
+                <p><span class="glyphicon glyphicon-check"></span>            
+                Find nearby restaurants 
+                </p>
+                <p><span class="glyphicon glyphicon-check"></span>   
+                And see route details
+                </p>   
+            </div>
+  
  </div>
+
+
 
