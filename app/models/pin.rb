@@ -11,6 +11,25 @@ class Pin < ActiveRecord::Base
     self.location = "#{address} #{place}"
   end
 
+  def self.deduplicate
+    # Find all duplicate records and group them by a field
+    pins = 
+       Pin.group(:name)
+          .having('count("name") > 1')
+          .count(:name)
+
+    # Iterate on each grouped item to destroy duplicate
+    pins.each do |key, value|
+
+    # Keep one and return rest of the duplicate records
+    duplicates = Pin.where(name: key)[1..value-1]
+    puts "#{key} = #{duplicates.count}"
+
+    # Destroy duplicates and their dependents
+    duplicates.each(&:destroy)
+    end  
+  end
+
   def self.search(search)
     if search
       where('lower(name) LIKE ?', "%#{search.downcase}%")
