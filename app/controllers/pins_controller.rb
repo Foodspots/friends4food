@@ -39,10 +39,6 @@ class PinsController < ApplicationController
   def like
     @pin.liked_by current_user
     redirect_to :back, notice: 'You have added this restaurant to your favorite list.'
-    current_user_follower_ids = current_user.followers.pluck(:user_id)
-    User.find(current_user_follower_ids).each do |follower|
-      ModelMailer.new_like_notification(@pin, follower, current_user).deliver
-    end
   end
 
   def unlike
