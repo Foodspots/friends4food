@@ -41,6 +41,9 @@ GEM
     acts_as_votable (0.10.0)
     addressable (2.3.7)
     arel (4.0.2)
+    autoprefixer-rails (5.2.1)
+      execjs
+      json
     aws-sdk (1.20.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4, < 1.6.0)
@@ -52,8 +55,9 @@ GEM
       rails (>= 3.1)
     bootstrap-navbar (2.2.3)
       gem_config (~> 0.3)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     bootstrap-social-rails (4.8.0)
       railties (>= 3.1)
     bootstrap_form (2.3.0)
@@ -263,7 +267,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   aws-sdk (~> 1.20.0)
   bootstrap-kaminari-views
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.5)
   bootstrap-social-rails
   bootstrap_form
   byebug
