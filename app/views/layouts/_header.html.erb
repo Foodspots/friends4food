@@ -15,7 +15,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-        <li><%= link_to "My friends favorites", my_friends_pins_path %></li>
         <li><%= link_to "My restaurants", my_favorites_path %></li>
         <li><%= link_to "My friends", my_friends_path %></li>
         <li><%= link_to "Search restaurants", pins_path %></li>
