@@ -17,7 +17,7 @@
         <% if user_signed_in? %>
         <li><%= link_to "My restaurants", my_favorites_path %></li>
         <li><%= link_to "My friends", my_friends_path %></li>
-        <li><%= link_to "Search restaurants", pins_path %></li>
+        <li><%= link_to "Search restaurants", search_nearest_pins_path %></li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% end %>
       </ul>
