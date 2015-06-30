@@ -20,6 +20,19 @@
 <br></br>
 
 <div class="col-xs-12">
+
+<div class="panel panel-default" id="liked_by">
+  <div class="panel-body">
+    <h3>Liked by friends: </h3>
+    <% friends_who_liked_pin(@pin).each do |p| %>
+      <% if p.present? %>
+        <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
   <div class="panel panel-default">
   <div class="panel-body">
     <h2><%= @pin.name %></h2>
@@ -48,8 +61,8 @@
 
   <div class="panel panel-default" id="liked_by">
     <div class="panel-body">
-      <h3>Restaurant liked by: </h3>
-      <% friends_who_liked_pin(@pin).each do |p| %>
+      <h3>Liked by: </h3>
+      <% @pin.votes_for.voters.each do |p| %>
         <% if p.present? %>
           <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
         <% end %>
