@@ -12,4 +12,8 @@ module PinsHelper
   def source_location
     Geocoder.search("#{@latitude}, #{@longitude}").map(&:formatted_address).first
   end
+
+  def friends_who_liked_pin(pin)
+    (current_user.followings || []) & (pin.votes_for.voters || [])
+  end
 end
