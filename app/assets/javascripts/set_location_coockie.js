@@ -14,6 +14,14 @@ function showLocation(position) {
   set_coockie_location(position.coords.latitude, position.coords.longitude);
 }
 
+function errorHandler(err) {    
+    if(err.code == 1) {    
+    alert("");   
+    else if( err.code == 2) {   
+    alert("");    
+  }    
+}
+
 function set_coockie_location(latitude, longitude){
   document.cookie = "latitude = "+latitude+";";
   document.cookie = "longitude = "+longitude+";";
