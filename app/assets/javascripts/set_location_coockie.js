@@ -16,9 +16,9 @@ function showLocation(position) {
 
 function errorHandler(err) {    
     if(err.code == 1) {    
-    alert("");   
+    alert("Please share your location");   
     else if( err.code == 2) {   
-    alert("");    
+    alert("Please share your location");    
   }    
 }
 
