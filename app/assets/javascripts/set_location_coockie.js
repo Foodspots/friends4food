@@ -16,10 +16,10 @@ function showLocation(position) {
 
 function errorHandler(err) {    
     if(err.code == 1) {    
-    alert("Please share your location");   
-    else if( err.code == 2) {   
-    alert("Please share your location");    
-  }    
+      alert("Please share your location");   
+    } else if( err.code == 2) {   
+      alert("Please share your location");    
+    }    
 }
 
 function set_coockie_location(latitude, longitude){
