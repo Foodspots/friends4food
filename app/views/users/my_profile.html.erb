@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-2 show_back_btn btn_margin">
+    <%= link_to :back, class: "btn btn-default" do %>
+      <span class="glyphicon glyphicon-chevron-left"></span>
+        Back
+    <% end %>
+  </div>
+  <div class="col-md-1">
+    <div id="follow_unfollow_btn" class="btn_margin">
+      <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>  
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h2> Profile:</h2>
+    <h2><%=@user.name %></h2>
+    <p><%= link_to image_tag(@user.image_file_name), @user %></p>
+  </div>
+</div> 
+<br></br>
+
+<ul class="list-group">
+  <li class="list-group-item">
+      <b>Favorite restaurants (<%= @user.find_liked_items.size %>)</b>
+          <% @user.find_liked_items.each do |pin| %>
+               <li class="list-group-item">
+                <span class="glyphicon  glyphicon glyphicon-heart"></span>
+               <%= link_to pin.name, pin_path(pin) %>
+                </li>
+          <% end %>
+  </li>
+
+  <%= link_to pins_path, class: "btn btn-success btn-block" do %>
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    Add restaurants to your list
+  <% end %></p>
+  <br></br>
+  
+  <ul class="list-group">
+  <li class="list-group-item">
+      <b>Friends (<%= @user.followings.count %>)</b>
+      <% @user.followings.each do |user| %>
+           <li class="list-group-item">
+           <%= link_to image_tag(user.image_file_name) %>
+           <%= link_to user.name, user_path(user) %>
+            </li>
+      <% end %>
+  </li>
+
+<%= link_to users_path, class: "btn btn-success btn-block" do %>
+<span class="glyphicon glyphicon-chevron-right"></span>
+Add friends to your list
+<% end %></p>
+</ul>
