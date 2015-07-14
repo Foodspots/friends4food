@@ -15,32 +15,43 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <h2><%=@user.name %></h2>
+    <h2> Profile: <%=@user.name %></h2>
     <p><%= link_to image_tag(@user.image_file_name), @user %></p>
   </div>
 </div> 
+<br></br>
 
 <ul class="list-group">
   <li class="list-group-item">
-    <span class="badge"><%= @user.find_liked_items.size %></span>
-      <b>Favorite restaurants:</b>
+      <b>Favorite restaurants (<%= @user.find_liked_items.size %>)</b>
           <% @user.find_liked_items.each do |pin| %>
                <li class="list-group-item">
-                <span class="glyphicon  glyphicon glyphicon-heart"></span>
+                <span class="glyphicon  glyphicon glyphicon-heart" style="color:red"></span>
                <%= link_to pin.name, pin_path(pin) %>
                 </li>
           <% end %>
   </li>
-  <br></br>
 
+  <%= link_to pins_path, class: "btn btn-success btn-block" do %>
+    <span class="glyphicon glyphicon-chevron-right" ></span>
+    Add restaurants to your list
+  <% end %></p>
+  <br></br>
+  
+  <ul class="list-group">
   <li class="list-group-item">
-    <span class="badge"><%= @user.followings.count %></span>
-      <b>Friends:</b>
+      <b>Friends (<%= @user.followings.count %>)</b>
       <% @user.followings.each do |user| %>
            <li class="list-group-item">
+            <span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color:green"></span>
            <%= link_to image_tag(user.image_file_name) %>
            <%= link_to user.name, user_path(user) %>
             </li>
       <% end %>
   </li>
+
+<%= link_to users_path, class: "btn btn-success btn-block" do %>
+<span class="glyphicon glyphicon-chevron-right"></span>
+Add friends to your list
+<% end %></p>
 </ul>
