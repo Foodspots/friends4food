@@ -33,7 +33,7 @@
   </li>
 
   <%= link_to pins_path, class: "btn btn-success btn-block" do %>
-    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="glyphicon glyphicon-chevron-right" ></span>
     Add restaurants to your list
   <% end %></p>
   <br></br>
@@ -43,7 +43,7 @@
       <b>Friends (<%= @user.followings.count %>)</b>
       <% @user.followings.each do |user| %>
            <li class="list-group-item">
-            <span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color:red"></span>
+            <span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color:green"></span>
            <%= link_to image_tag(user.image_file_name) %>
            <%= link_to user.name, user_path(user) %>
             </li>
