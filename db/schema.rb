@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602123812) do
+ActiveRecord::Schema.define(version: 20150715202307) do
 
   create_table "follows", force: true do |t|
     t.integer  "user_id"
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(version: 20150602123812) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "ingredients"
-    t.string   "method"
-    t.text     "preparation"
-    t.text     "ingredients2"
+    t.string   "menu"
+    t.string   "openinghours"
+    t.text     "kitchen"
+    t.text     "neighbourhood"
     t.text     "postal_code"
     t.text     "telephone_number"
     t.text     "website"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150602123812) do
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0
     t.integer  "cached_votes_down",  default: 0
+    t.string   "price"
   end
 
   add_index "pins", ["cached_votes_down"], name: "index_pins_on_cached_votes_down"

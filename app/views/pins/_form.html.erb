@@ -7,9 +7,14 @@
     <%= p.text_field :name %>
     <%= p.text_field :address %>
     <%= p.text_field :place %>
+    <%= p.text_field :neighbourhood %>
+    <%= p.text_field :emailadress, label: "Email address" %>
     <%= p.telephone_field :telephone_number %>
     <%= p.url_field :website %>
     <%= p.text_field :type %>
+    <%= p.text_field :kitchen %>
+    <%= p.text_field :price %>
+    <%= p.text_field :description %>
     <%= p.submit "Save", class: "btn btn-success" %>
     <br></br>
   <% end %>

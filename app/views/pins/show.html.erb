@@ -23,7 +23,7 @@
 
 <div class="panel panel-default" id="liked_by">
   <div class="panel-body">
-    <h3>Liked by friends: </h3>
+    <h3>Liked by your friends: </h3>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
@@ -32,50 +32,57 @@
   </div>
 </div>
 
-
   <div class="panel panel-default">
   <div class="panel-body">
-    <h2><%= @pin.name %></h2>
-    <p><strong>Distance: </strong><%= pin_distance(@pin) %></p>
-    <p><strong>Type:</strong></p>
-    <p><strong>Address:</strong>
-      <%= @pin.address %></p>
-    <p><strong>Place: </strong><%= @pin.place %></p>
-
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
-       <br></br>
-       <% if @latitude.present? && @longitude.present? %>
-        <% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
-        <div class="col-xs-12">
-          <form action="http://maps.google.com/maps" method="get" target="_blank">
-            <%= hidden_field_tag "saddr", "#{source_location}" %>
-            <%= hidden_field_tag "daddr", "#{destination_location}" %>
-            <%= button_tag(type: 'submit', class: "btn btn-primary pull-left") do %>
-              <span class="glyphicon glyphicon-map-marker"></span>See route
-            <% end %>
-          </form>
-        </div>
-      </div>
-    <% end %>
+    <h3>Details of <%= @pin.name %>:</h3>
+    <p><strong>Type:</strong>
+    <%= @pin.type %></p>
+    <p><strong>Kitchen:</strong>
+    <%= @pin.kitchen %></p>
+    <p><strong>Price:</strong>
+    <%= @pin.price %></p>
+    <p><strong>Description:</strong>
+    <%= @pin.description %></p>
+    <p><strong>Photo:</strong></p>
+    <%= image_tag @pin.image.url(:medium) %>
   </div>
-
-  <div class="panel panel-default" id="liked_by">
-    <div class="panel-body">
-      <h3>Liked by: </h3>
-      <% @pin.votes_for.voters.each do |p| %>
-        <% if p.present? %>
-          <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <h3>Contact details:</h3>
+      <h3>Contact:</h3>
       <p><strong>Telephone number:</strong>
       <%= @pin.telephone_number %></p>
       <p><strong>Website:</strong>
       <%=  link_to @pin.website, "http://#{@pin.website}" %></p>
-    </div>
-  </div>
+      <p><strong>Email address:</strong>
+      <%= @pin.emailadress %></p>
+      <p><strong>Openingshours:</strong>
+      <%= @pin.openinghours %></p>
+      </div>
+      </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3>Navigation:</h3>
+      <p><strong>Address:</strong>
+        <%= @pin.address %></p>
+        <p><strong>Neighbourhood:</strong>
+          <%= @pin.neighbourhood %></p>
+      <p><strong>Place: </strong><%= @pin.place %></p>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
+         <br></br>
+         <% if @latitude.present? && @longitude.present? %>
+          <% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
+          <div class="col-xs-12">
+            <form action="http://maps.google.com/maps" method="get" target="_blank">
+              <%= hidden_field_tag "saddr", "#{source_location}" %>
+              <%= hidden_field_tag "daddr", "#{destination_location}" %>
+              <%= button_tag(type: 'submit', class: "btn btn-primary pull-left") do %>
+                <span class="glyphicon glyphicon-map-marker"></span>See route
+              <% end %>
+            </form>
+          </div>
+        </div>
+      <% end %>
+     
