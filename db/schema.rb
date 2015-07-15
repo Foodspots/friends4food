@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715202307) do
+ActiveRecord::Schema.define(version: 20150715212922) do
 
   create_table "follows", force: true do |t|
     t.integer  "user_id"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150715202307) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "location"
-    t.string   "type"
+    t.string   "category"
     t.integer  "cached_votes_total", default: 0
     t.integer  "cached_votes_score", default: 0
     t.integer  "cached_votes_up",    default: 0

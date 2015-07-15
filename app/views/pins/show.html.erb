@@ -35,10 +35,10 @@
   <div class="panel panel-default">
   <div class="panel-body">
     <h3>Details of <%= @pin.name %>:</h3>
-    <p><strong>Type:</strong>
-    <%= @pin.type %></p>
     <p><strong>Kitchen:</strong>
     <%= @pin.kitchen %></p>
+    <p><strong>Category:</strong>
+    <%= @pin.category %></p>
     <p><strong>Price:</strong>
     <%= @pin.price %></p>
     <p><strong>Description:</strong>
@@ -57,7 +57,7 @@
       <%=  link_to @pin.website, "http://#{@pin.website}" %></p>
       <p><strong>Email address:</strong>
       <%= @pin.emailadress %></p>
-      <p><strong>Openingshours:</strong>
+      <p><strong>Openings hours:</strong>
       <%= @pin.openinghours %></p>
       </div>
       </div>
