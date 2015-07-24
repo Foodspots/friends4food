@@ -51,6 +51,7 @@ gem 'rails_bootstrap_navbar'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'mobile-fu'
+gem 'social-share-button'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do

@@ -16,6 +16,7 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <h2> Profile: <%=@user.name %></h2>
+    <%= social_share_button_tag(@user.name, :url => "http://Friends4food.com", desc: "Check out my favorite restaurant on Friends4food", :popup => "true") %>
     <p><%= link_to image_tag(@user.image_file_name), @user %></p>
   </div>
 </div> 
