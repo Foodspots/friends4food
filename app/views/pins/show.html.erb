@@ -47,7 +47,8 @@
   <div class="panel panel-default">
   <div class="panel-body">
     <h3>Photo's of <%= @pin.name %>:</h3>
-      <%= image_tag @pin.image.url(:medium), class: "img-responsive" %>
+      <%= image_tag @pin.external_image_url, class: "img-responsive" %>
+      URL: <%= @pin.external_image_url %> 
   </div>
   </div>
 
@@ -68,6 +69,8 @@
         <%= @pin.address %></p>
         <p><strong>Neighbourhood:</strong>
           <%= @pin.neighbourhood %></p>
+          <p><strong>Postal code:</strong>
+          <%= @pin.postal_code %></p>
       <p><strong>Place: </strong><%= @pin.place %></p>
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
          <br></br>

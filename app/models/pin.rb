@@ -1,5 +1,6 @@
 class Pin < ActiveRecord::Base
   before_save :set_location
+  before_save :set_external_image_url
   acts_as_votable
   belongs_to :user
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
@@ -9,6 +10,10 @@ class Pin < ActiveRecord::Base
 
   def set_location
     self.location = "#{address} #{place}"
+  end
+
+  def set_external_image_url
+    self.external_image_url = "#{"http://s3.amazonaws.com/dinderapp/pins/"}#{name}#{"_"}#{place}#{".jpg"}"
   end
 
   def self.deduplicate
