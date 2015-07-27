@@ -16,11 +16,9 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <h2> Profile: <%=@user.name %></h2>
-    <%= social_share_button_tag(@user.name, :url => "http://Friends4food.com", desc: "Check out my favorite restaurant on Friends4food", :popup => "true") %>
     <p><%= link_to image_tag(@user.image_file_name), @user %></p>
-  </div>
-</div> 
-<br></br>
+<br>
+
 
 <ul class="list-group">
   <li class="list-group-item">
@@ -53,6 +51,11 @@
 
 <%= link_to users_path, class: "btn btn-success btn-block" do %>
 <span class="glyphicon glyphicon-chevron-right"></span>
-Add friends to your list
+Search for friends on Friends4Food
 <% end %></p>
 </ul>
+
+<b> Invite your friends to join Friends4Food </b>
+
+<%= social_share_button_tag("Check out my favorite restaurants on Friends4food", :url => "http://friends4food.com/", :popup => "true", class: "social-share-button-facebook") %>
+

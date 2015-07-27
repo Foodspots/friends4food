@@ -32,21 +32,22 @@
   </div>
 </div>
 
-<%= social_share_button_tag(@pin.name, :url => "http://Friends4food.com", desc: "Check out my favorite restaurant on Friends4food", :popup => "true") %>
-
   <div class="panel panel-default">
   <div class="panel-body">
     <h3>Details of <%= @pin.name %>:</h3>
     <p><strong>Kitchen:</strong>
     <%= @pin.kitchen %></p>
-    <p><strong>Category:</strong>
+    <p><strong>Type:</strong>
     <%= @pin.category %></p>
-    <p><strong>Price:</strong>
+    <p><strong>Price range:</strong>
     <%= @pin.price %></p>
-    <p><strong>Description:</strong>
-    <%= @pin.description %></p>
-    <p><strong>Photo:</strong></p>
-    <%= image_tag @pin.image.url(:medium), class: "img-responsive" %>
+  </div>
+  </div>
+
+  <div class="panel panel-default">
+  <div class="panel-body">
+    <h3>Photo's of <%= @pin.name %>:</h3>
+      <%= image_tag @pin.image.url(:medium), class: "img-responsive" %>
   </div>
   </div>
 
@@ -57,10 +58,6 @@
       <%= @pin.telephone_number %></p>
       <p><strong>Website:</strong>
       <%=  link_to @pin.website, "http://#{@pin.website}" %></p>
-      <p><strong>Email address:</strong>
-      <%= @pin.emailadress %></p>
-      <p><strong>Openings hours:</strong>
-      <%= @pin.openinghours %></p>
       </div>
       </div>
 

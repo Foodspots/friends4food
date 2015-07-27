@@ -52,6 +52,8 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'mobile-fu'
 gem 'social-share-button'
+gem 'whenever', :require => false
+gem 'delayed_job_active_record'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
