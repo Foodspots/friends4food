@@ -23,7 +23,7 @@
 
 <div class="panel panel-default" id="liked_by">
   <div class="panel-body">
-    <h3>Liked by your friends: </h3>
+    <h3>Visited by your friends: </h3>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
@@ -58,7 +58,7 @@
       <p><strong>Telephone number:</strong>
       <%= @pin.telephone_number %></p>
       <p><strong>Website:</strong>
-      <%=  link_to @pin.website, "http://#{@pin.website}" %></p>
+      <%=  link_to @pin.website, "#{@pin.website}" %></p>
       </div>
       </div>
 
