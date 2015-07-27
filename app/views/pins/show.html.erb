@@ -47,7 +47,7 @@
   <div class="panel panel-default">
   <div class="panel-body">
     <h3>Photo's of <%= @pin.name %>:</h3>
-      <%= image_tag @pin.external_image_url, class: "img-responsive" %>
+      <%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
       URL: <%= @pin.external_image_url %> 
   </div>
   </div>
