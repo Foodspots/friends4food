@@ -1,8 +1,4 @@
 <div class="col-xs-12">
-	<h2>Search your favorite restaurants</h2>
-	Choose from	the <b><%= @pins.total_count %></h2></b> restaurants on Friends4food and add them to your list.
-<p>
-
   <div class="panel panel-default">
   <div class="panel-body">
   	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
@@ -11,6 +7,8 @@
   	          </div>
   	          <%= submit_tag "Search", class: "btn btn-success" %>
   	        <% end %>
+            Choose from the <b><%= @pins.total_count %></h2></b> restaurants on Friends4food and add them to your list.
+<p>
   </div>
 </div>
 <%= render 'pins/show_pin_details' %>
