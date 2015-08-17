@@ -7,17 +7,30 @@
         <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
       <% end %>
     <% end %>
-    <% if current_user.liked? @pin %>
-      <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
-        <span class="glyphicon glyphicon-remove"></span>
-        Unlike 
-      <% end %>
-    <% else %>
-      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
-        <span class="glyphicon glyphicon-heart"></span>
-        Like 
-        <% end %>
-    <% end %>
+    <% if current_user.liked? pin %>
+       <button type="button" class="btn btn-default">
+         <span class="glyphicon glyphicon-heart"></span>
+       Like
+       </button>
+
+      <%= link_to like_pin_path(pin), method: :put, class: "btn btn-danger" do %>
+      <span class="glyphicon glyphicon-remove"></span>
+      Unlike
+      <% end %> 
+
+     
+     <% else %>
+       <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success" do %>
+       <span class="glyphicon glyphicon-heart"></span>
+       Like 
+       <% end %> 
+
+       <button type="button" class="btn btn-default">
+         <span class="glyphicon glyphicon-remove"></span>
+       Unlike
+       </button>
+     
+     <% end %>
   </div>
   </div>
 </div>
@@ -45,7 +58,7 @@
             <form action="http://maps.google.com/maps" method="get" target="_blank">
               <%= hidden_field_tag "saddr", "#{source_location}" %>
               <%= hidden_field_tag "daddr", "#{destination_location}" %>
-              <%= button_tag(type: 'submit', class: "btn btn-primary pull-left") do %>
+              <%= button_tag(type: 'submit', class: "btn btn-default pull-left") do %>
                 <span class="glyphicon glyphicon-map-marker"></span>See route
               <% end %>
             </form>
