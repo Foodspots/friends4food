@@ -16,7 +16,19 @@
                         <% end %>
                       <div class="actions">
                             <% if current_user.liked? pin %>
-                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
+                              <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-heart"></span>
+                              Like
+                              </button>
+
+                             <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
+                             <span class="glyphicon glyphicon-remove"></span>
+                             Unlike
+                             <% end %> 
+
+                            
+                            <% else %>
+                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success" do %>
                               <span class="glyphicon glyphicon-heart"></span>
                               Like 
                               <% end %> 
@@ -27,15 +39,6 @@
                               </button>
 
                             
-                            <% else %>
-                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success" do %>
-                              <span class="glyphicon glyphicon-heart"></span>
-                              Like 
-                              <% end %> 
-                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
-                              <span class="glyphicon glyphicon-remove"></span>
-                              Unlike
-                              <% end %> 
                             <% end %>
                       </div>
                   </div>
