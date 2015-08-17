@@ -3,8 +3,6 @@
          <div class="box panel panel-default panel-default-box-width">
                   <div class="panel-body">
                       <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
-                      <p><b>Kitchen: </b> <%= pin.kitchen %></p>
-                      <p><b>Type: </b> <%= pin.category %></p>
                       <p><b>Visited by: <% pin.votes_for.size %> </b>
                         <p>
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
@@ -17,10 +15,6 @@
                           </p>
                         <% end %>
                       <div class="actions">
-                            <p><%= link_to pin_path(pin) , class: "btn btn-info btn-sm" do %>
-                            <span class="glyphicon glyphicon-fullscreen"></span>
-                            View restaurant
-                            <% end %>
                             <% if current_user.liked? pin %>
                               <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger btn-sm" do %>
                               <span class="glyphicon glyphicon-remove"></span>

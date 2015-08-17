@@ -1,15 +1,11 @@
-<h2>My friends´ favorites</h2>
+<%= link_to pins_path, class: "btn btn-default btn-block" do %>
+<span class="glyphicon glyphicon-chevron-right"></span>
+Add restaurants
+<% end %></p>
 Find below the favorite restaurants of your <b><%= current_user.follows.count%></b> friends.
-
 <% if @pins.present? && @pins.to_a.size > 0 %>
-
-<%= render 'pins/show_pin_details' %>      
-  
+<%= render 'pins/show_pin_details' %>       
 <% else %>
 	<p> You haven't added any friends yet or your friends haven't added any restaurants. Add some (more) friends to see their favorite restaurants. </p>
 <% end %>
 
-<%= link_to users_path, class: "btn btn-success btn-block" do %>
-<span class="glyphicon glyphicon-chevron-right"></span>
-Add friends to your list
-<% end %></p>
