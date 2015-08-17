@@ -1,5 +1,12 @@
 <div class="col-xs-12">
-  <div class="col-xs-10">
+<div class="panel panel-default" id="liked_by">
+  <div class="panel-body">
+    <h3>Visited by: </h3>
+    <% friends_who_liked_pin(@pin).each do |p| %>
+      <% if p.present? %>
+        <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
+      <% end %>
+    <% end %>
     <% if current_user.liked? @pin %>
       <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
         <span class="glyphicon glyphicon-remove"></span>
@@ -12,19 +19,6 @@
         <% end %>
     <% end %>
   </div>
-  
-<br></br>
-
-<div class="col-xs-12">
-
-<div class="panel panel-default" id="liked_by">
-  <div class="panel-body">
-    <h3>Visited by: </h3>
-    <% friends_who_liked_pin(@pin).each do |p| %>
-      <% if p.present? %>
-        <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
-      <% end %>
-    <% end %>
   </div>
 </div>
 
@@ -33,6 +27,11 @@
       <h3>Navigation:</h3>
       <p><strong>Address:</strong>
         <%= @pin.address %></p>
+        <%= @pin.menu %></p>
+        <%= @pin.openinghours %></p>
+        <%= @pin.kitchen %></p>
+        <%= @pin.neighbourhood %></p>
+        <%= @pin.postal_code %></p>
       <p><strong>Place: </strong>
         <%= @pin.place %></p>
       <p><strong>Distance:</strong>
