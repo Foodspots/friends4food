@@ -1,9 +1,5 @@
 <div class="col-xs-12">
   <div class="col-xs-10">
-    <%= link_to :back, class: "btn btn-default" do %>
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    Back
-    <% end %>
     <% if current_user.liked? @pin %>
       <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
         <span class="glyphicon glyphicon-remove"></span>
@@ -23,7 +19,7 @@
 
 <div class="panel panel-default" id="liked_by">
   <div class="panel-body">
-    <h3>Visited by your friends: </h3>
+    <h3>Visited by: </h3>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
@@ -33,44 +29,10 @@
 </div>
 
   <div class="panel panel-default">
-  <div class="panel-body">
-    <h3>Details of <%= @pin.name %>:</h3>
-    <p><strong>Kitchen:</strong>
-    <%= @pin.kitchen %></p>
-    <p><strong>Type:</strong>
-    <%= @pin.category %></p>
-    <p><strong>Price range:</strong>
-    <%= @pin.price %></p>
-  </div>
-  </div>
-
-  <div class="panel panel-default">
-  <div class="panel-body">
-    <h3>Photo's of <%= @pin.name %>:</h3>
-      <%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
-      URL: <%= @pin.external_image_url %> 
-  </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <h3>Contact:</h3>
-      <p><strong>Telephone number:</strong>
-      <%= @pin.telephone_number %></p>
-      <p><strong>Website:</strong>
-      <%=  link_to @pin.website, "#{@pin.website}" %></p>
-      </div>
-      </div>
-
-  <div class="panel panel-default">
     <div class="panel-body">
       <h3>Navigation:</h3>
       <p><strong>Address:</strong>
         <%= @pin.address %></p>
-        <p><strong>Neighbourhood:</strong>
-          <%= @pin.neighbourhood %></p>
-          <p><strong>Postal code:</strong>
-          <%= @pin.postal_code %></p>
       <p><strong>Place: </strong><%= @pin.place %></p>
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
          <br></br>
