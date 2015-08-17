@@ -16,17 +16,9 @@
     <div class="panel-body">
       <h3>Navigation:</h3>
       <p><strong>Address:</strong>
-        <%= @pin.address %></p>
-        <%= @pin.menu %></p>
-        <%= @pin.openinghours %></p>
-        <%= @pin.kitchen %></p>
-        <%= @pin.neighbourhood %></p>
-        <%= @pin.postal_code %></p>
+        <%= @pin.address %></p> 
       <p><strong>Place: </strong>
         <%= @pin.place %></p>
-      <p><strong>Distance:</strong>
-         <p><strong>Distance: </strong>
-        <%= @pin.category %></p>
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
          <br></br>
          <% if @latitude.present? && @longitude.present? %>
