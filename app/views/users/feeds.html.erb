@@ -2,7 +2,7 @@
 <span class="glyphicon glyphicon-chevron-right"></span>
 Add restaurants
 <% end %></p>
-Find below the favorite places of your <b><%= current_user.follows.count%></b> friends.
+Your friends have <b><%= current_user.follows.count%></b> favorite restaurants.
 <% if @pins.present? && @pins.to_a.size > 0 %>
 <%= render 'pins/show_pin_details' %>       
 <% else %>

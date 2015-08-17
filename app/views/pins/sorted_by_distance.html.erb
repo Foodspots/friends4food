@@ -1,16 +1,13 @@
 <div class="col-xs-12">
-	<h2>Add your favorite restaurants</h2>
-	Choose from	the <b><%= @pins.total_count %></h2></b> restaurants on Friends4food which ones you like.
+	There are <b><%= @pins.total_count %></h2></b> restaurants on Friends4food.
 	<%= hidden_field_tag 'sort_by', 'distance' %>
-<p>
-
   <div class="panel panel-default">
   <div class="panel-body">
   	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
   	          <div class="form-group">
   	            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "Search for restaurants", autofocus: true %>
   	          </div>
-  	          <%= submit_tag "Search", class: "btn btn-success" %>
+  	          <%= submit_tag "Search", class: "btn btn-success btn-sm" %>
   	        <% end %>
   </div>
 </div>
