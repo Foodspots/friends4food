@@ -7,30 +7,7 @@
         <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
       <% end %>
     <% end %>
-    <% if current_user.liked? pin %>
-       <button type="button" class="btn btn-default">
-         <span class="glyphicon glyphicon-heart"></span>
-       Like
-       </button>
 
-      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
-      <span class="glyphicon glyphicon-remove"></span>
-      Unlike
-      <% end %> 
-
-     
-     <% else %>
-       <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-success" do %>
-       <span class="glyphicon glyphicon-heart"></span>
-       Like 
-       <% end %> 
-
-       <button type="button" class="btn btn-default">
-         <span class="glyphicon glyphicon-remove"></span>
-       Unlike
-       </button>
-     
-     <% end %>
   </div>
   </div>
 </div>
