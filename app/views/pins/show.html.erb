@@ -34,6 +34,8 @@
       <p><strong>Address:</strong>
         <%= @pin.address %></p>
       <p><strong>Place: </strong><%= @pin.place %></p>
+      <p><strong>Distance:</strong>
+        <%= @pin.distance %></p>
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
          <br></br>
          <% if @latitude.present? && @longitude.present? %>
