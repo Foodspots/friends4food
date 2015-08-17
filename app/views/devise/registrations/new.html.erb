@@ -1,35 +1,24 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-     <div class="panel-title">
-      <h2>Discover your friends' favorite restaurants</h2>
-      </div>
-       <div class="panel-heading">
-       Sign up and discover the favorite restaurants of your friends in town.
+    <div class="panel-heading">
+        <div class="panel-title">
+        <h2>Friends4Food</h2>
+        </div>  
     </div>
-            <div class="panel-body">
-                      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-social btn-facebook" do %>
-                      <span class="glyphicon glyphicon-play"></span>
-                      Log in with Facebook
-                      <% end %>
-                      <br/><br/>
-                  <b>Note:</b> Friends4food will <u>never post messages</u> on your Facebook wall.
-            </div>
-            </div>   
-            </div> 
-            <div class="panel panel-default">
-            <div class="panel-title">
-            <div class="panel-heading">
-            <b>On Friends4food you can:</b>
-            <div class="panel-body">
-                <p><span class="glyphicon glyphicon-check" style="color:red"></span>            
-                Save your favorite restaurants
-                </p>
-                <p><span class="glyphicon glyphicon-check" style="color:red"></span>    
-                Discover your friends' favorites
-                </p>
-            </div>
-  
- </div>
+      <div class="panel-body">
+      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-social btn-facebook" do %>
+      <span class="glyphicon glyphicon-play"></span>
+      Log in with Facebook
+      <% end %>
+      <br/><br/>
+      <b>Note:</b> Friends4food will <u>never post messages</u> on your Facebook wall.
+      </div>
+    <div class="panel-heading">
+    Find nearby restaurants visited by your friends
+    </div> 
+</div>   
+           
+
+            
 
  
  
