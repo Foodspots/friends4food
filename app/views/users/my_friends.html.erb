@@ -1,5 +1,9 @@
-<h1>Friends</h1>
-Find below the <b><%= current_user.follows.count %></b> users that you have added as a friend. 
+<%= link_to users_path, class: "btn btn-default btn-block" do %>
+<span class="glyphicon glyphicon-chevron-right"></span>
+Add friends
+<% end %></p>
+<h3>My friends</h3>
+Find below your <b><%= current_user.follows.count %></b> friends. 
    <% if @followings.present? && @followings.size > 0 %>
         <div id="pins" class="transitions-enabled">
                 <% @followings.each do |user| %>
@@ -9,13 +13,9 @@ Find below the <b><%= current_user.follows.count %></b> users that you have adde
                 <% end %>
         </div>
     <% else %>
-        <p> You haven't added any friends yet, find your friends or see add people who are following you. </p>
+        <p> You haven't added any friends yet, add your friends or invite them to join Friends4Food. </p>
     <% end %> 
 
-<%= link_to users_path, class: "btn btn-success btn-block" do %>
-<span class="glyphicon glyphicon-chevron-right"></span>
-Add friends to your list
-<% end %></p>
 
 
 

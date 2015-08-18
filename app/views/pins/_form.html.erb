@@ -2,22 +2,10 @@
   <span class="glyphicon glyphicon-chevron-left"></span>
   Back
   <% end %></p>
-
   <%= bootstrap_form_for(@pin) do |p| %>
     <%= p.text_field :name %>
     <%= p.text_field :address %>
     <%= p.text_field :place %>
-    <%= p.text_field :neighbourhood %>
-    <%= p.text_field :emailadress, label: "Email address" %>
-    <%= p.telephone_field :telephone_number %>
-    <%= p.url_field :website %>
-    <%= p.text_field :openinghours, label: "Opening hours" %>
-    <%= p.text_field :category %>
-    <%= p.text_field :kitchen %>
-    <%= p.text_field :price %>
-    <%= p.text_field :description %>
-    <%= p.text_field :external_image_url %>
-
     <%= p.submit "Save", class: "btn btn-success" %>
     <br></br>
   <% end %>
