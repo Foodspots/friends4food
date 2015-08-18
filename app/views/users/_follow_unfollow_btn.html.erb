@@ -1,15 +1,15 @@
 <% if current_user && current_user != user %>
   	<% if current_user.following?(user) %>
-    <%= link_to "Unlike friend", user_unfollow_path(user), :method => :delete, data: { disable_with: "Please wait..." }, :class => "btn btn-danger", :remote => true %>
+    <%= link_to "Unlike", user_unfollow_path(user), :method => :delete, data: { disable_with: "Please wait..." }, :class => "btn btn-danger", :remote => true %>
    	 		<button type="button" class="btn btn-default">
              <span class="glyphicon glyphicon-heart"></span>
-             Like friend
+             Like
              </button>
   	<% else %>
-    <%= link_to "Like friend", user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-success", :remote => true %>
+    <%= link_to "Like", user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-success", :remote => true %>
   			<button type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-heart"></span>
-            Unlike friend
+            Unlike
             </button>
 	<% end %>
 <% end %>
