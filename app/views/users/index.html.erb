@@ -1,5 +1,5 @@
-<h1>Friends</h1>
-<p>Add some of the <b><%= @user.count %></b> users on Friends4food or invite your Facebook Friends4food<%= social_share_button_tag("Check out my favorite restaurants on Friends4food", :url => "http://friends4food.com/", :popup => "true", class: "social-share-button-facebook") %></p>
+<h3>Add friends</h3>
+<p>Add one of the <b><%= @user.count %></b> users on Friends4food</p>
     <div id="pins" class="transitions-enabled">
       <% @user.each do |user| %>
         <div class="box panel panel-default" id = "user_<%= user.id %>">
