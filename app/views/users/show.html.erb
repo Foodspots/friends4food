@@ -2,17 +2,15 @@
   <div class="panel-body">
     <h2><%= @user.name %></h2>
     <p><%= link_to image_tag(@user.image_file_name), @user %></p>
-    <div class="col-md-1">
     <div id="follow_unfollow_btn" class="btn_margin">
       <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>  
     </div>
   </div>
   </div>
-</div> 
 
 <ul class="list-group">
   <li class="list-group-item">
-      <b>Favorite restaurants (<%= @user.find_liked_items.size %>)</b>
+      <b>Restaurants visited (<%= @user.find_liked_items.size %>)</b>
           <% @user.find_liked_items.each do |pin| %>
                <li class="list-group-item">
                 <span class="glyphicon  glyphicon glyphicon-heart" style="color:red"></span>
@@ -21,12 +19,6 @@
           <% end %>
   </li>
 
-  <%= link_to pins_path, class: "btn btn-success btn-block" do %>
-    <span class="glyphicon glyphicon-chevron-right" ></span>
-    Add restaurants to your list
-  <% end %></p>
-  <br></br>
-  
   <ul class="list-group">
   <li class="list-group-item">
       <b>Friends (<%= @user.followings.count %>)</b>
@@ -38,9 +30,3 @@
             </li>
       <% end %>
   </li>
-
-<%= link_to users_path, class: "btn btn-success btn-block" do %>
-<span class="glyphicon glyphicon-chevron-right"></span>
-Add friends to your list
-<% end %></p>
-</ul>
