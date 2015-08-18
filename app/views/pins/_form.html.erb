@@ -1,11 +1,7 @@
-<%= link_to :back, class: "btn btn-default" do %>
-  <span class="glyphicon glyphicon-chevron-left"></span>
-  Back
-  <% end %></p>
-  <%= bootstrap_form_for(@pin) do |p| %>
+<%= bootstrap_form_for(@pin) do |p| %>
     <%= p.text_field :name %>
     <%= p.text_field :address %>
     <%= p.text_field :place %>
-    <%= p.submit "Save", class: "btn btn-success" %>
+    <%= p.submit "Save", class: "btn btn-default" %>
     <br></br>
-  <% end %>
+<% end %>
