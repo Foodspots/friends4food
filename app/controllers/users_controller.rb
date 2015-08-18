@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
     
     pins = Pin.find(current_users_follower_pin_ids.flatten.uniq)
-   
+    @pins = Kaminari.paginate_array(pins).page(params[:page]).per(RECORDS_PER_PAGE)
 	end
 
 end
