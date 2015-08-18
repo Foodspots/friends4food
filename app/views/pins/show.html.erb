@@ -2,13 +2,13 @@
 <h3><%= @pin.name %></h3>
 <div class="panel panel-default" id="liked_by">
   <div class="panel-body">
-    <h2>Visited by: </h2>
+    <b>Visited by: </b>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
       <% end %>
     <% end %>
-    <p>
+    <br>
     <% if current_user.liked? @pin %>
       <button type="button" class="btn btn-default">
         <span class="glyphicon glyphicon-heart"></span>
@@ -28,14 +28,14 @@
       Unlike
       </button> 
     <% end %>
-  </p>
+  </br>
   </div>
   </div>
 </div>
   <div class="col-xs-14">
     <div class="panel panel-default">
     <div class="panel-body">
-      <h2>Navigation:</h2>
+      <b>Navigation:</b>
       <p><strong>Address:</strong>
         <%= @pin.address %></p> 
       <p><strong>Place: </strong>
