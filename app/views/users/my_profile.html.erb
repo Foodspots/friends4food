@@ -31,9 +31,9 @@
           <% end %>
   </li>
 
-  <%= link_to pins_path, class: "btn btn-success btn-block" do %>
+  <%= link_to pins_path, class: "btn btn-default btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right" ></span>
-    Add restaurants to your list
+    Add restaurants
   <% end %></p>
   <br></br>
   
@@ -49,12 +49,10 @@
       <% end %>
   </li>
 
-<%= link_to users_path, class: "btn btn-success btn-block" do %>
+<%= link_to users_path, class: "btn btn-default btn-block" do %>
 <span class="glyphicon glyphicon-chevron-right"></span>
-Search for friends on Friends4Food
+Add friends
 <% end %></p>
 </ul>
 
-<b>Share your profile on Facebook:</b>
-<%= social_share_button_tag(:url => user_path(@user), :popup => "true") %>
 
