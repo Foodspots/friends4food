@@ -2,5 +2,9 @@
 <h3>Add restaurants</h3>
 	Add some of the <b><%= @pins.total_count %></h2></b> restaurants on Friends4food.
 	<%= hidden_field_tag 'sort_by', 'distance' %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= render 'pins/show_pin_details' %>
+    </div>
+  </div>
 </div>
-<%= render 'pins/show_pin_details' %>
