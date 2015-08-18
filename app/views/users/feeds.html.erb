@@ -2,7 +2,7 @@
 <span class="glyphicon glyphicon-chevron-right"></span>
 Like restaurants
 <% end %>
-Your friends have visited <b><%= current_user.follows.count%></b> restaurants.
+Your friends have liked <b><%= current_user.follows.count%></b> restaurants.
 <% if @pins.present? && @pins.to_a.size > 0 %>
 <%= render 'pins/show_pin_details' %>       
 <% else %>
