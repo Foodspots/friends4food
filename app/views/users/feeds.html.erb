@@ -1,7 +1,7 @@
 <%= link_to search_nearest_pins_path, class: "btn btn-default btn-block" do %>
 <span class="glyphicon glyphicon-chevron-right"></span>
 Like restaurants
-<% end %></p>
+<% end %>
 Your friends have visited <b><%= current_user.follows.count%></b> restaurants.
 <% if @pins.present? && @pins.to_a.size > 0 %>
 <%= render 'pins/show_pin_details' %>       

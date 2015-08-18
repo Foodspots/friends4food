@@ -4,7 +4,7 @@
     <div class="actions">
       <p><%= link_to user.name, user_path(user) %></p>
       <p><%= link_to image_tag(user.image_file_name, class: 'pin_liked_image'), user %></p>
-      <p>Visited <b><%= user.find_liked_items.size %></b> restaurants</p>
+      <p>Liked <b><%= user.find_liked_items.size %></b> restaurants</p>
       <div class="btn-group.pull-right">
           <%= render :partial => 'users/follow_unfollow_btn', :locals => {:user => user} %>
       </div>

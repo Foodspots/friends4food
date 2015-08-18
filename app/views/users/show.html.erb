@@ -10,7 +10,7 @@
 
 <ul class="list-group">
   <li class="list-group-item">
-      <b>Restaurants visited (<%= @user.find_liked_items.size %>)</b>
+      <b>Restaurants liked (<%= @user.find_liked_items.size %>)</b>
           <% @user.find_liked_items.each do |pin| %>
                <li class="list-group-item">
                 <span class="glyphicon  glyphicon glyphicon-heart" style="color:red"></span>
