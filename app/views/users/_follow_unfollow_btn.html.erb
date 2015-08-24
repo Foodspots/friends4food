@@ -2,14 +2,14 @@
   	<% if current_user.following?(user) %>
    	 		<button type="button" class="btn btn-default">
              <span class="glyphicon glyphicon-heart"></span>
-             Like
+             Add
              </button>
-             <%= link_to "Unlike", user_unfollow_path(user), :method => :delete, data: { disable_with: "Please wait..." }, :class => "btn btn-danger", :remote => true %>
+             <%= link_to "Remove", user_unfollow_path(user), :method => :delete, data: { disable_with: "Please wait..." }, :class => "btn btn-danger", :remote => true %>
   	<% else %>
-    <%= link_to "Like", user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-success", :remote => true %>
+    <%= link_to "Add", user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-success", :remote => true %>
   			<button type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-heart"></span>
-            Unlike
+            Remove
             </button>
 	<% end %>
 <% end %>
