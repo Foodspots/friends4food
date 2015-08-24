@@ -1,6 +1,6 @@
 <div class="col-xs-14">
 	<h3>Add friends</h3>
-<p>Add one of the <b><%= @user.count %></b> users on Friends4food</p>
+<p>Add one of the <b><%= @user.count %></b> users on Friends4food as a friend to discover their favorite restaurants.</p>
     <div id="pins" class="transitions-enabled">
       <% @user.each do |user| %>
         <div class="box panel panel-default" id = "user_<%= user.id %>">
