@@ -17,24 +17,24 @@
                         <% end %>
                       <div class="actions">
                             <% if current_user.liked? pin %>
-                              <button type="button" class="btn btn-default">
+                              <button type="button" class="btn btn-success">
                                 <span class="glyphicon glyphicon-heart"></span>
                               Like
                               </button>
 
-                             <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger" do %>
+                             <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-default" do %>
                              <span class="glyphicon glyphicon-remove"></span>
                              Unlike
                              <% end %> 
 
                             
                             <% else %>
-                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-success" do %>
+                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
                               <span class="glyphicon glyphicon-heart"></span>
                               Like 
                               <% end %> 
 
-                              <button type="button" class="btn btn-default">
+                              <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span>
                               Unlike
                               </button>
