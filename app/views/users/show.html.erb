@@ -23,24 +23,12 @@
 
   <ul class="list-group">
   <li class="list-group-item">
-      <b>Follows (<%= @user.followings.count %>)</b>
+      <b>Friends (<%= @user.followings.count %>)</b>
       <% @user.followings.each do |user| %>
            <li class="list-group-item">
             <span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color:green"></span>
            <%= link_to image_tag(user.image_file_name) %>
            <%= link_to user.name, user_path(user) %>
-            </li>
-      <% end %>
-  </li>
-
-  <ul class="list-group">
-  <li class="list-group-item">
-      <b>Is followed by (<%= @user.followers.count %>)</b>
-      <% @user.followers.each do |u| %>
-           <li class="list-group-item">
-            <span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color:green"></span>
-           <%= link_to image_tag(u.image_file_name) %>
-          
             </li>
       <% end %>
   </li>
