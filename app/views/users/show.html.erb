@@ -33,10 +33,10 @@
       <% end %>
   </li>
 
-   <ul class="list-group">
+  <ul class="list-group">
   <li class="list-group-item">
-      <b>Is followed by (<%= @user.followers.count %>)</b>
-      <% @user.followers.each do |user| %>
+      <b>Is followed by (<%= @user.follows.count %>)</b>
+      <% @user.follows.each do |user| %>
            <li class="list-group-item">
             <span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color:green"></span>
            <%= link_to image_tag(user.image_file_name) %>
