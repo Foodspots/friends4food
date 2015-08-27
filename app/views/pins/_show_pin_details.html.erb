@@ -21,12 +21,10 @@
                               Liked
                               </button> 
                               <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-default btn-xs btn-link" do %>   
-                              <span class="glyphicon glyphicon-remove"></span>    
                               Unlike    
                               <% end %>                           
                             <% else %>
                               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
-                              <span class="glyphicon glyphicon-heart"></span>
                               Like 
                               <% end %>                             
                             <% end %>
