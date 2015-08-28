@@ -33,6 +33,7 @@ class FBTokenAuth
 
 	def self.from_token (token)
 		info = Info.from_hash(JSON.parse(CurbFu.get("https://graph.facebook.com/me?fields=email,name&access_token=#{token}").body))
+		return nil if info.uid.nil?
 		FBTokenAuth.new info.uid, info
 	end
 end
