@@ -28,7 +28,10 @@
   get "search_pins" => "pins#index"
   get 'search_nearest_pins' => 'pins#sorted_by_distance'
   get '/feeds' => 'users#feeds', :as => :feeds
-  
+
+  namespace :api do
+	  post 'location/create'
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
