@@ -22,18 +22,26 @@ class FBTokenAuth
 	attr_reader :uid
 	attr_reader :info
 
-	def initialize (uid, info)
+	def initialize (uid, info, token)
 		@uid = uid
 		@info = info
+		@token = token
 	end
 
 	def provider
 		'facebook'
 	end
 
+	# Simple [] definition so that auth[:credentials][:token] works for FacebookServices
+	def [](key)
+		{
+			:token => @token
+		}
+	end
+
 	def self.from_token (token)
 		info = Info.from_hash(JSON.parse(CurbFu.get("https://graph.facebook.com/me?fields=email,name&access_token=#{token}").body))
 		return nil if info.uid.nil?
-		FBTokenAuth.new info.uid, info
+		FBTokenAuth.new info.uid, info, token
 	end
 end
