@@ -29,5 +29,10 @@ class ModelMailer < ActionMailer::Base
     mail to: @user.email, subject: "Welcome!!!.", bcc: "oliviervanhees@gmail.com"
   end
 
+	def weekly_gps_report(user, top3)
+		@user = user
+		@top3 = top3
+		mail to:@user.email, subject: 'Your weekly digest'
+	end
 end
 

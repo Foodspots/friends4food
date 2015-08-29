@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :follows, :dependent => :destroy
   has_many :followers, :class_name => 'Follow', :dependent => :destroy, :as => :followable
   has_many :followings, :through => :follows, :source => :followable, :source_type => 'User'
+  has_many :visits
 
   acts_as_voter
   acts_as_votable
@@ -62,6 +63,15 @@ class User < ActiveRecord::Base
     else
       Pin.where(id: restaurants.uniq)
     end
+  end
+
+  def top_places_this_week
+    visits
+      .select('visits.pin_id AS pin_id, count(visits.pin_id) AS pin_visit_count')
+      .where('created_at >= ?', 1.week.ago.utc)
+      .group('visits.pin_id')
+      .order('count(visits.pin_id) DESC')
+      .limit(3)
   end
 
   private

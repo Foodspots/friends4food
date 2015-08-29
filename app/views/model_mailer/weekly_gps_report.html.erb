@@ -1,0 +1,7 @@
+<p>Hi <%= @user.name %>,</p>
+
+<ul>
+	<% @top3.each do |v| %>
+	<li><%= v.pin_visit_count %> - <%= v.pin.name %></li>
+	<% end %>
+</ul>
