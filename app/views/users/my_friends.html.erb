@@ -4,10 +4,10 @@
 <span class="glyphicon glyphicon-chevron-right"></span>
 Add friends
 <% end %></p>
-Find below your <b><%= current_user.follows.count %></b> friends. 
-   <% if @followings.present? && @followings.size > 0 %>
+Find below your <b><%= current_user.followings.count %></b> friends.
+   <% if current_user.followings.count > 0 %>
         <div id="pins" class="transitions-enabled">
-                <% @followings.each do |user| %>
+                <% current_user.followings.each do |user| %>
                     <div class="box panel panel-default" id = "user_<%= user.id %>">
                     <%= render :partial => 'users/user', :locals => {:user => user} %>
                     </div>

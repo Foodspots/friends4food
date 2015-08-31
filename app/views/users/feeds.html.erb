@@ -3,8 +3,8 @@
 <span class="glyphicon glyphicon-chevron-right"></span>
 Like restaurants
 <% end %>
-Your friends have liked <b><%= current_user.follows.count%></b> restaurants.
-<% if @pins.present? && @pins.to_a.size > 0 %>
+Your friends have liked <b><%= @pins.count %></b> restaurants.
+<% if @pins.present? && @pins.count > 0 %>
 <%= render 'pins/show_pin_details' %>       
 <% else %>
 	<p> You haven't added any friends yet or your friends haven't liked any restaurants. Add some (more) friends to see their favorite restaurants. </p>

@@ -18,6 +18,7 @@ class PinsController < ApplicationController
     if @latitude.present? && @longitude.present?
       @pins = Pin.search(params[:search]).near([@latitude, @longitude], 10000)
       @pins = @pins.page(params[:page]).per(RECORDS_PER_PAGE)
+      render locals: {current_user: current_user}
     else
       index
     end
@@ -47,6 +48,7 @@ class PinsController < ApplicationController
   end
 
   def show
+	  render locals: {current_user: current_user}
   end
 
   def new
