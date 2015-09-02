@@ -26,7 +26,7 @@ class ModelMailer < ActionMailer::Base
 
   def new_user_account_notification(user)
     @user = user
-    mail to: @user.email, subject: "Welcome!!!.", bcc: "oliviervanhees@gmail.com"
+    mail to: @user.email, subject: "#{@user.name}, start now discovering your friends' favorites. ", bcc: "oliviervanhees@gmail.com"
   end
 
 	def weekly_gps_report(user, top3)

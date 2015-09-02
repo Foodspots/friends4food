@@ -11,7 +11,7 @@
                             <div class='contentEditable' style='text-align: center;'>
                               <h2 style="font-size: 20px;">Your weekly recipe for discovering new restaurants!</h2>
                               <br>
-                              <p>Hi @user.name, find below the restaurants you have visited last week.</p>
+                              <p>Hi <% @user.name %>, find below the restaurants you have visited last week.</p>
                             </div>
                           </div>
                         </td>
@@ -43,7 +43,7 @@
                               <p>You have visited <% v.name %> <% v.pin_visit_count %> times this week. 
                               </p>
                               <br><br>
-                              <a target='_blank' href="#" class='link2' style='color:#ffffff'>Like <% v.name %></a>
+                              <p>View restaurant <%= v.name %> <%= link_to "here", v.pin_url %>.
                               <br>
                             </div>
                           </div>
@@ -73,7 +73,7 @@
                               <p>Invite your friends to join Friends4Food and discover the favorite hotspots in town!
                               </p>
                               <br><br>
-                              <a target='_blank' href="#" class='link2' style='color:#ffffff;'>Add friends</a>
+                               <p>Add <%= link_to "here", users_url %> more friends to Friends4Food and discover their favorite hotspots in town!
                               <br>
                             </div>
                           </div>
