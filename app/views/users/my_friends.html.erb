@@ -4,7 +4,7 @@
 <span class="glyphicon glyphicon-chevron-right"></span>
 Add friends
 <% end %></p>
-Find below your <b><%= current_user.followings.count %></b> friends.
+Find below your <b><%= current_user.followings.count %></b> friends. <u>Tip</u>: Send your friends an invite to join Friends4Food as well > <%= share_snippet %> 
    <% if current_user.followings.count > 0 %>
         <div id="pins" class="transitions-enabled">
                 <% current_user.followings.each do |user| %>
@@ -17,7 +17,7 @@ Find below your <b><%= current_user.followings.count %></b> friends.
         <p> You haven't added any friends yet, add your friends or invite them to join Friends4Food. </p>
     <% end %> 
 </div>
-<%= share_snippet %>
+
 
 
 
