@@ -22,7 +22,7 @@
           <% @user.visits.each do |p| %>
                <li class="list-group-item">
                 <span class="glyphicon  glyphicon glyphicon-heart" style="color:red"></span>
-               <%= link_to p.name, pin_path(p) %>
+               <%= link_to p.name, pin_path(pin) %>
                 </li>
           <% end %>
   </li>
