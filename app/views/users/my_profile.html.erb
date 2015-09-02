@@ -14,19 +14,6 @@
   </div>
 </div>
 
-
-
-  <ul class="list-group">
-  <li class="list-group-item">
-      <b>Visited restaurants</b>
-          <% @user.visits.each do |p| %>
-               <li class="list-group-item">
-               <%= link_to @p.name, pin_path(p) %>
-                </li>
-          <% end %>
-  </li>
-    <br></br>
-
   <ul class="list-group">
   <li class="list-group-item">
       <b>Liked restaurants (<%= @user.find_liked_items.size %>)</b>
