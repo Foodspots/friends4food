@@ -19,25 +19,15 @@
   <ul class="list-group">
   <li class="list-group-item">
       <b>Visited restaurants</b>
-          <% @user.visits.each do |p| %>
+          <% @user.visits.each do |pin| %>
                <li class="list-group-item">
-                <span class="glyphicon  glyphicon glyphicon-heart" style="color:red"></span>
-               <%= link_to p.name, pin_path(pin) %>
+               <%= link_to pin.name, pin_path(pin) %>
                 </li>
           <% end %>
   </li>
     <br></br>
 
-  <ul class="list-group">
-  <li class="list-group-item">
-      <b>Liked restaurants (<%= @user.find_liked_items.size %>)</b>
-          <% @user.find_liked_items.each do |pin| %>
-               <li class="list-group-item">
-                <span class="glyphicon  glyphicon glyphicon-heart" style="color:red"></span>
-               <%= link_to pin.name, pin_path(pin) %>
-                </li>
-          <% end %>
-  </li>
+
 
   <%= link_to pins_path, class: "btn btn-default btn-block" do %>
     <span class="glyphicon glyphicon-chevron-right" ></span>
