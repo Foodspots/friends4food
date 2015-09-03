@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
 
   def recent_visits
     visits
-      .group('visits.pin_id')
+      .select('DISTINCT(visits.pin_id), *')
       .order('created_at DESC')
       .limit(5)
   end
