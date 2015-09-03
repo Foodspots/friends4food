@@ -74,6 +74,13 @@ class User < ActiveRecord::Base
       .limit(3)
   end
 
+  def recent_visits
+    visits
+      .group('visits.pin_id')
+      .order('created_at DESC')
+      .limit(5)
+  end
+
   private
     def send_welcome_email
       ModelMailer.new_user_account_notification(self).deliver
