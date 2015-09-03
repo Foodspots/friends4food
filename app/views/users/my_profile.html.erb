@@ -9,7 +9,7 @@
 	<span class="list-group-item"><strong>Liked restaurants (<%= @user.find_liked_items.size %>)</strong></span>
 	<% @user.find_liked_items.each do |pin| %>
 		<span class="list-group-item">
-			<span class="glyphicon  glyphicon glyphicon-heart" style="color: red;"></span>
+			<span class="glyphicon glyphicon-heart" style="color: red;"></span>
 			<%= link_to pin.name, pin_path(pin) %>
 		</span>
 	<% end %>
@@ -23,7 +23,7 @@
 	<span class="list-group-item"><strong>Friends (<%= @user.followings.count %>)</strong></span>
 	<% @user.followings.each do |user| %>
 		<span class="list-group-item">
-			<span class="glyphicon  glyphicon glyphicon glyphicon-ok" style="color: green;"></span>
+			<span class="glyphicon glyphicon-ok" style="color: green;"></span>
 			<%= link_to image_tag(user.image_file_name) %>
 			<%= link_to user.name, user_path(user) %>
 		</span>
