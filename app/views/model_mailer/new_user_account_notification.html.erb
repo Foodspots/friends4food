@@ -38,9 +38,9 @@
                         <td>
                           <div class='contentEditableContainer contentTextEditable'>
                             <div class='contentEditable' style='text-align: left;'>
-                              <h2 style="font-size: 20px;"><% u.name %></h2>
+                              <h2 style="font-size: 20px;"><% u.user.name %></h2>
                               <br>
-                              <p>View the <%= u.find_liked_items.size %> favorite restaurants of <%= u.name %>. 
+                              <p>View the <%= u.pin.find_liked_items.size %> favorite restaurants of <%= u.name %>. 
                               </p>
                               <br><br>
                               <p><%= link_to "View profile", u.user_url %> more friends to Friends4Food and discover their favorite hotspots in town!
