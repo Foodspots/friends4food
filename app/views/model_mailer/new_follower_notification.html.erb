@@ -11,7 +11,7 @@
                             <div class='contentEditable' style='text-align: center;'>
                               <h2 style="font-size: 20px;">You are now followed by <b><%= @current_user.name %></b>. </h2>
                               <br>
-                              <p>View the profile of <%= @current_user.name %> <%= link_to "here", current_user_url %>.
+                              <p><%= link_to "View", @current_user_url %> the profile of <%= @current_user.name %> </p>
                             </div>
                           </div>
                         </td>
@@ -36,7 +36,7 @@
                             <div class='contentEditable' style='text-align: center;'>
                               <h2 style="font-size: 20px;">Add more friends</h2>
                               <br>
-                              <p>Add <%= link_to "here", users_url %> more friends to Friends4Food and discover their favorite hotspots in town!
+                              <p><%= link_to "Add", users_url %> more friends to Friends4Food and discover their favorite restaurants in town!
                               </p>
                               <br>
                             </div>

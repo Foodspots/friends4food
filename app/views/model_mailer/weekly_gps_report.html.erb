@@ -40,10 +40,10 @@
                             <div class='contentEditable' style='text-align: left;'>
                               <h2 style="font-size: 20px;"><% v.name %></h2>
                               <br>
-                              <p>You have visited <% v.name %> <% v.pin_visit_count %> times this week. 
+                              <p>You have visited <% v.pin.name %> <% v.pin_visit_count %> times this week. 
                               </p>
                               <br><br>
-                              <p>View restaurant <%= v.name %> <%= link_to "here", v.pin_url %>.
+                              <p>View restaurant <%= v.pin.name %> <%= link_to "here", v.pin_url %>.
                               <br>
                             </div>
                           </div>
