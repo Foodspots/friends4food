@@ -65,6 +65,30 @@ class User < ActiveRecord::Base
     end
   end
 
+	def checkin(latitude, longitude)
+		# Check if the user is at a restaurant
+		pin = Pin.near([latitude, longitude], Settings.app.tracking.distance, :units => :km).first
+
+		# First, see how long ago the previous checkin was
+		last_visit = visits.last
+		if (Time.now.to_i - last_visit.created_at.to_i) < Settings.app.tracking.timeout
+			# The last checkin was within the timeout, so if we're not still at the same place, remove that checkin
+			if pin == last_visit.pin
+				# We're at the same place we were before, so this is still the save visit
+				last_visit.touch
+				return
+			else
+				# We're at a different place now, ignore the previous checkin
+				last_visit.destroy
+			end
+		end
+
+		# Finally, if we're at a place, log a visit
+		unless pin.nil?
+			Visit.create :pin => pin, :user => self
+		end
+	end
+
   def top_places_this_week
     visits
       .select('visits.pin_id AS pin_id, count(visits.pin_id) AS pin_visit_count')
@@ -72,6 +96,13 @@ class User < ActiveRecord::Base
       .group('visits.pin_id')
       .order('count(visits.pin_id) DESC')
       .limit(3)
+  end
+
+  def recent_visits
+    visits
+      .select('DISTINCT(visits.pin_id), *')
+      .order('created_at DESC')
+      .limit(5)
   end
 
   private

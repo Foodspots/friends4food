@@ -1,5 +1,6 @@
 app:
   tracking:
     distance: 0.1
+    timeout: 3600
   share:
     url: 'http://friends4food.com/'

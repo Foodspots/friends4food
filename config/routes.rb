@@ -29,6 +29,8 @@
   get 'search_nearest_pins' => 'pins#sorted_by_distance'
   get '/feeds' => 'users#feeds', :as => :feeds
 
+  get '/app' => redirect('https://itunes.apple.com/nl/app/friends4food-tracker/id1035358443')
+
   namespace :api do
 	  post 'location/create'
   end
