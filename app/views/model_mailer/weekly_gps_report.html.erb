@@ -11,7 +11,7 @@
                             <div class='contentEditable' style='text-align: center;'>
                               <h2 style="font-size: 20px;">Your weekly recipe for discovering new restaurants!</h2>
                               <br>
-                              <p>Hi <% @user.name %>, find below the restaurants you have visited last week.</p>
+                              <p>Hi <%= @user.name %>, find below the restaurants you have visited last week.</p>
                             </div>
                           </div>
                         </td>
@@ -40,7 +40,7 @@
                             <div class='contentEditable' style='text-align: left;'>
                               <h2 style="font-size: 20px;"><% v.pin.name %></h2>
                               <br>
-                              <p>You have visited <% v.pin.name %> <% v.pin_visit_count %> times this week. 
+                              <p>You have visited <%= v.pin.name %> <%= v.pin_visit_count %> times this week. 
                               </p>
                               <br><br>
                               <p>View restaurant <%= v.pin.name %>.
