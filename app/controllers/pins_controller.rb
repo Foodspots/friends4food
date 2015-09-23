@@ -61,7 +61,6 @@ class PinsController < ApplicationController
   def create
     @pin = current_user.pins.build(pin_params)
     if @pin.save
-      ModelMailer.new_pin_notification(@pin).deliver
       redirect_to @pin, notice: 'You have added this restaurant.'
     else
       render action: 'new'
