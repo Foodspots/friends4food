@@ -1,0 +1,141 @@
+body {
+  font-family: 'Open Sans',Helvetica;
+  color:#1b4252;
+  background: #b3c2ac;
+
+
+  nav.navbar-default {
+    background: #1b4252;
+    border:none;
+    border-radius:0px;
+    a.navbar-brand {
+      color: #ddb360;
+    }
+  }
+
+  #logo {
+    font-size: 46px;
+    font-weight: bold;
+    color: #ddb360;
+    //float:right;
+
+    span {
+      font-weight: normal;
+      color: white;
+    }
+  }
+
+  .panel-default {
+    background:none;
+    border:none;
+    border-bottom: 1px solid #1b4252;
+    border-radius: 0px;
+    box-shadow: none;
+
+
+    h3, h3 a, h3 a:hover {
+      color: #0088a2;
+      margin-top: 0px;
+    }
+
+    .likedby {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1b4252;
+      margin-top: 35px;
+      span {
+        color: #0088a2;
+      }
+
+    }
+
+    .friends {
+      a:first-of-type {
+        padding-right: 6px;
+      }
+    }
+
+    .btn-like, .btn-liked {
+      width: 110px;
+    }
+  }
+
+  .btn{
+    border-radius: 0px;
+    color:white;
+  }
+
+
+  .btn-like, .btn-like:active {
+    background: #1b4252;
+    background-image: image-url('like.png');
+
+    &:hover {
+      color: white;
+      font-weight: bold;
+    }
+
+  }
+
+  .btn-liked, .btn-liked:active {
+    cursor: default;
+    background-color: #009245;
+    background-image: image-url('liked.png');
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .btn-add, .btn-add:active {
+    background-color: #009245;
+    background-image: image-url('add.png');
+  }
+
+  .btn-remove, .btn-remove:active {
+    background-color: #1b4252;
+    background-image: image-url('remove.png');
+  }
+
+
+  .btn-icon,.btn-icon:active, .btn-icon:hover, .btn-icon:active:hover{
+    background-position: center left !important;
+    background-repeat: no-repeat !important;
+    border-left: 2px solid transparent !important;
+    background-size: 30px !important;
+    padding-left:32px;
+  }
+
+  .btn-add {
+    @media screen and (max-width: 530px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 530px) {
+      width: 500px;
+    }
+  }
+
+
+  .friendspanel{
+    width:400px;
+    .avatar{
+      float:left;
+      margin-right:10px;
+      margin-bottom:10px;
+
+      img{
+        width:110px;
+        height:auto;
+      }
+    }
+    .btn-group {
+      margin-top:10px;
+      .btn {
+        margin-right: 10px;
+      }
+    }
+  }
+
+
+
+}

@@ -1,9 +1,10 @@
 <h3>Favorite restaurants of my friends</h3>
-<%= link_to search_nearest_pins_path, class: "btn btn-default btn-block" do %>
-<span class="glyphicon glyphicon-chevron-right"></span>
+<p>
+<%= link_to search_nearest_pins_path, class: "btn btn-add btn-icon" do %>
 Like restaurants
 <% end %>
-Your friends have liked <b><%= @pins.count %></b> restaurants.
+</p>
+<p>Your friends have liked <span><%= @pins.count %></span> restaurants.</p>
 <% if @pins.present? && @pins.count > 0 %>
 <%= render 'pins/show_pin_details' %>       
 <% else %>

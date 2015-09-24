@@ -2,23 +2,22 @@
       <% @pins.each do |pin| %>
          <div class="box panel panel-default panel-default-box-width">
                   <div class="panel-body">
-                      <p><b><%= link_to pin.name, pin_path(pin) %></b></p>
+                      <h3><%= link_to pin.name, pin_path(pin) %></h3>
                       <p><%= pin_distance(pin) %> away</p>
-                      <p><b>Liked by: <% pin.votes_for.count %> </b>
-                        <p>
+                      <p class="likedby">Liked by: <span> <% pin.votes_for.count %> friends </span>
+                        <p class="friends">
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
                             <% if p.present? %>
                             <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
                             <% end %>
                           <% end %>
                         <% if friends_who_liked_pin(pin).count > 3 %>
-                          <b><%= link_to "...", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %></b>
+                          <%= link_to "...", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
                           </p>
                         <% end %>
                       <div class="actions">
                             <% if current_user.liked? pin %>
-                              <button type="button" class="btn btn-success">
-                              <span class="glyphicon glyphicon-heart"></span>
+                              <button type="button" class="btn btn-icon btn-liked">
                               Liked
                               </button> 
                               <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-default btn-xs btn-link" do %>   
@@ -26,8 +25,7 @@
                               Unlike    
                               <% end %>                           
                             <% else %>
-                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-default" do %>
-                            
+                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-icon btn-like" do %>
                               Like 
                               <% end %>                             
                             <% end %>
