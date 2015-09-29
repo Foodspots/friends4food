@@ -71,10 +71,10 @@ class User < ActiveRecord::Base
 
 		# First, see how long ago the previous checkin was
 		last_visit = visits.last
-		if (Time.now.to_i - last_visit.created_at.to_i) < Settings.app.tracking.timeout
+		if (not last_visit.nil?) and (Time.now.to_i - last_visit.created_at.to_i) < Settings.app.tracking.timeout
 			# The last checkin was within the timeout, so if we're not still at the same place, remove that checkin
 			if pin == last_visit.pin
-				# We're at the same place we were before, so this is still the save visit
+				# We're at the same place we were before, so this is still the same visit
 				last_visit.touch
 				return
 			else
