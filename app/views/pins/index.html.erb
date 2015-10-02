@@ -1,18 +1,19 @@
 <div class="col-xs-14">
   <h3>Add HotSpots</h3>
-  <p>
-  <%= link_to search_nearest_pins_path, class: "btn btn-add btn-icon" do %>
-  Search nearby HotSpots
-  <% end %>
-  </p>
   <div class="panel panel-default">
   <div class="panel-body">
-    <p>Or search in our database of <b><%= @pins.total_count %></b> HotSpots.</p>
+    <p>Find the HotSpots nearby.</p>
+    <%= link_to search_nearest_pins_path, class: "btn btn-add btn-icon" do %>
+    Find HotSpots nearby
+    <% end %>
+    <br></br>
+ 
   	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
+    <p>Or search in our database of <b><%= @pins.total_count %></b> HotSpots.</p>
   	          <div class="form-group">
   	            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "[enter restaurant name]", autofocus: true %>
   	          </div>
-  	          <%= submit_tag "Search", class: "btn btn-success btn-sm" %>
+  	          <%= submit_tag "Search in database", class: "btn btn-add btn-icon" %>
   	        <% end %>
   </div>
 </div>
