@@ -1,22 +1,18 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div class="panel-title">
-        <h2>Friends4Food</h2>
-        </div>  
+          <li>Create your own account</li>
+          <li>Discover your Friends' Favorites</li>
+          <li>Add your favorite HotSpots</li> 
     </div>
       <div class="panel-body">
       <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-social btn-facebook" do %>
       <span class="glyphicon glyphicon-play"></span>
-      Log in with Facebook
+      Connect with Facebook
       <% end %>
       <br/><br/>
-      <b>Note:</b> Friends4food will <u>never post messages</u> on your Facebook wall.
+      <b>Note:</b> HotSpots.me will <u>never</u> post messages on your Facebook wall.
       </div>
-    <div class="panel-heading">
-    <h3>Find nearby restaurants visited by your friends</h3>
-    </div> 
-</div>   
-           
+</div>      
 
             
 
