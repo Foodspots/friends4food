@@ -21,8 +21,8 @@
         <div class="collapse navbar-collapse" id="menu">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "My Friends", my_friends_path %></li>
+            <li><%= link_to "My HotSpots", my_profile_path %></li>
             <li><%= link_to "Add HotSpots", pins_path %></li>
-            <li><%= link_to "My profile", my_profile_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% end %>
           </ul>

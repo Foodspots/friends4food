@@ -1,0 +1,14 @@
+<div class="list-group">
+  <span class="list-group-item"><strong>My recently visited HotSpots</strong></span>
+  <p>
+  <%= link_to app_path, class: "btn btn-add btn-icon" do %>
+  <u>Coming Soon:</u> Download our mobile app and view your visited HotSpots
+  <% end %>
+  </p>  
+  <% @user.recent_visits.each do |v| %>
+    <span class="list-group-item">
+      <span class="glyphicon glyphicon-pushpin" style="color: black;"></span>
+      <%= link_to pin_path(v.pin) do %><%= v.pin.name %><% end %> - Last checkin: <%= l v.created_at, format: :short %>
+    </span>
+  <% end %>
+</div>

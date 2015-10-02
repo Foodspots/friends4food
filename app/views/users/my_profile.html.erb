@@ -1,49 +1,20 @@
-<div class="panel panel-default">
-	<div class="panel-body">
-		<h2><%=@user.name %></h2>
-		<p><%= link_to image_tag(@user.image_file_name), @user %></p>
-	</div>
-</div>
+ <div class="col-xs-14">
+ <h3><%= link_to image_tag(@user.image_file_name), @user %><%= @user.name %>' favorite HotSpots</h3>
+ <div class="panel panel-default">
+   <div class="panel-body">
+    <p>
+    <%= link_to my_recently_visited_path, class: "btn btn-add btn-icon" do %>
+    View your recently visited HotSpots
+    <% end %>
+    </p>  
+     </div>
+     </div>
 
-<div class="list-group">
-	<span class="list-group-item"><strong>Liked restaurants (<%= @user.find_liked_items.size %>)</strong></span>
-	<% @user.find_liked_items.each do |pin| %>
-		<span class="list-group-item">
-			<span class="glyphicon glyphicon-heart" style="color: red;"></span>
-			<%= link_to pin.name, pin_path(pin) %>
-		</span>
-	<% end %>
-	<%= link_to pins_path, class: 'list-group-item text-center' do %>
-		<span class="glyphicon glyphicon-chevron-right"></span>
-		Add restaurants
-	<% end %>
-</div>
+ <% @user.find_liked_items.each do |pin| %>
+   <%= render 'pins/show_pin_details' %>  
+ <% end %>
 
-<div class="list-group">
-	<span class="list-group-item"><strong>Friends (<%= @user.followings.count %>)</strong></span>
-	<% @user.followings.each do |user| %>
-		<span class="list-group-item">
-			<span class="glyphicon glyphicon-ok" style="color: green;"></span>
-			<%= link_to image_tag(user.image_file_name) %>
-			<%= link_to user.name, user_path(user) %>
-		</span>
-	<% end %>
-	<%= link_to users_path, class: 'list-group-item text-center' do %>
-		<span class="glyphicon glyphicon-chevron-right"></span>
-		Add friends
-	<% end %>
-</div>
+  
+  </div>
 
-<div class="list-group">
-	<span class="list-group-item"><strong>Recent visits</strong></span>
-	<% @user.recent_visits.each do |v| %>
-		<span class="list-group-item">
-			<span class="glyphicon glyphicon-pushpin" style="color: black;"></span>
-			<%= link_to pin_path(v.pin) do %><%= v.pin.name %><% end %> - Last checkin: <%= l v.created_at, format: :short %>
-		</span>
-	<% end %>
-	<%= link_to app_path, class: 'list-group-item text-center' do %>
-		<span class="glyphicon glyphicon-chevron-right"></span>
-		Download the Tracker app to automatically log visits
-	<% end %>
-</div>
+

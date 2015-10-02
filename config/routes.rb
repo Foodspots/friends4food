@@ -22,8 +22,8 @@
   get "my_profile" => "users#my_profile"
   get "my_pins" => "pins#my_pins"
   get "upload" => "pins#upload"
-  get "my_favorites" => "pins#my_favorites"
   get "my_friends" => "users#my_friends"
+  get "my_recently_visited" => "users#my_recently_visited"
   get "followers" => "users#followers"
   get "search_pins" => "pins#index"
   get 'search_nearest_pins' => 'pins#sorted_by_distance'
