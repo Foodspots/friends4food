@@ -1,20 +1,28 @@
 <div class="col-xs-14">
 <h3>My friends</h3>
-<%= link_to users_path, class: "btn btn-icon btn-add" do %>
-Add friends
-<% end %></p>
-Find below your <b><%= current_user.followings.count %></b> friends. <u>Tip</u>: Send your friends an invite to join Friends4Food as well > <%= share_snippet %> 
    <% if current_user.followings.count > 0 %>
-        <div id="pins" class="transitions-enabled">
-                <% current_user.followings.each do |user| %>
-                    <div class="box panel panel-default friendspanel" id = "user_<%= user.id %>">
-                    <%= render :partial => 'users/user', :locals => {:user => user} %>
-                    </div>
-                <% end %>
-        </div>
+   Find below your <b><%= current_user.followings.count %></b> friends on HotSpots.me
+   <p><%= link_to users_path, class: "btn btn-icon btn-add" do %>
+   Add friends to discover new HotSpots
+   <% end %></p>
+      
     <% else %>
-        <p> You haven't added any friends yet, add your friends or invite them to join Friends4Food. </p>
+    You haven't added any friends yet. Start now and discover new HotSpots!
+     <p>
+     <%= link_to users_path, class: "btn btn-add btn-icon" do %>
+     Add friends to discover new HotSpots
+     <% end %>
+     </p>
     <% end %> 
+
+    <div id="pins" class="transitions-enabled">
+            <% current_user.followings.each do |user| %>
+                <div class="box panel panel-default friendspanel" id = "user_<%= user.id %>">
+                <%= render :partial => 'users/user', :locals => {:user => user} %>
+                </div>
+            <% end %>
+    </div>
+
 </div>
 
 

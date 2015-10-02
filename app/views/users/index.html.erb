@@ -1,6 +1,9 @@
 <div class="col-xs-14">
 	<h3>Add friends</h3>
-<p>Add one of the <b><%= @user.count %></b> users on Friends4food as a friend to discover their favorite restaurants.</p>
+<p>Add your friends and discover their favorite flavor.</p>
+
+<%= share_snippet %> <u>Tip</u>: invite your Facebook friends to join HotSpots.me as well.
+
     <div id="pins" class="transitions-enabled">
       <% @user.each do |user| %>
         <div class="box panel panel-default" id = "user_<%= user.id %>">
@@ -9,7 +12,7 @@
         <% end %>
     </div>
  </div>
- <%= share_snippet %>
+
 
 
 
