@@ -2,27 +2,26 @@
   <div class="container">
 
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="col-md-6 pull-right">
+    <div class="col-md-6 pull-left">
       <div id="logo">HOT<span>SPOTS&middot;</span>ME</div>
     </div>
 
-
-    <div class="col-md-6 pull-left">
+    <% if user_signed_in? %>
+    <div class="col-md-6 pull-middle">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Restaurants", root_path, class:"navbar-brand" %>
-          <%= link_to "Friends", my_friends_path, class:"navbar-brand" %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="menu">
           <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
+            <li><%= link_to "My Friends", my_friends_path %></li>
+            <li><%= link_to "Add HotSpots", pins_path %></li>
             <li><%= link_to "My profile", my_profile_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% end %>
