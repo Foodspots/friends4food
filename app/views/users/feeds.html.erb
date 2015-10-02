@@ -1,13 +1,21 @@
-<h3>Favorite restaurants of my friends</h3>
+<h3>Favorite Hotspots of my friends</h3>
+<p>Your friends have liked <span><%= @pins.count %></span> HotSpots.</p>
+
+<% if @pins.present? && @pins.count > 0 %>
 <p>
-<%= link_to search_nearest_pins_path, class: "btn btn-add btn-icon" do %>
-Like restaurants
+<%= link_to pins_path, class: "btn btn-add btn-icon" do %>
+Add HotSpots
+<% end %>
+</p>  
+
+<% else %>
+<p>
+<%= link_to users_path, class: "btn btn-add btn-icon" do %>
+Add friends to discover new HotSpots
 <% end %>
 </p>
-<p>Your friends have liked <span><%= @pins.count %></span> restaurants.</p>
-<% if @pins.present? && @pins.count > 0 %>
-<%= render 'pins/show_pin_details' %>       
-<% else %>
-	<p> You haven't added any friends yet or your friends haven't liked any restaurants. Add some (more) friends to see their favorite restaurants. </p>
+
 <% end %>
+
+<%= render 'pins/show_pin_details' %>  
 
