@@ -14,7 +14,6 @@
     </p>  
  
   	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
-    <p>Or search in our database of <b><%= @pins.total_count %></b> HotSpots.</p>
   	          <div class="form-group">
   	            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "[enter restaurant name]", autofocus: true %>
   	          </div>
