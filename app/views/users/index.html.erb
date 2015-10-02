@@ -6,7 +6,7 @@
 
     <div id="pins" class="transitions-enabled">
       <% @user.each do |user| %>
-        <div class="box panel panel-default friendspanel" id = "user_<%= user.id %>">
+        <div class="box panel panel-default" id = "user_<%= user.id %>">
             <%= render :partial => 'users/user', :locals => {:user => user} %>
         </div>
         <% end %>
