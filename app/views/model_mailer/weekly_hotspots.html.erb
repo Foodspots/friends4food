@@ -9,9 +9,9 @@
                         <td>
                           <div class='contentEditableContainer contentTextEditable'>
                             <div class='contentEditable' style='text-align: center;'>
-                              <h2 style="font-size: 20px;">Your weekly recipe for discovering new restaurants!</h2>
+                              <h2 style="font-size: 20px;">Your weekly recipe to get ready for the weekend!</h2>
                               <br>
-                              <p>Hi <%= @current_user.name %>, find below the restaurants you have visited last week.</p>
+                              <p>Hi <%= @current_user.name %>, to enjoy the fullest from your weekend we have selected the most popular restaurants of your friends. We have made a list of restaurants that your friends have liked this week. So, where are you waiting for? Check out your personal suggestions and try out the restaurants you haven't tried before. Tip: take your friends to one of the places they have liked as well :)</p>
                             </div>
                           </div>
                         </td>
@@ -40,10 +40,10 @@
                             <div class='contentEditable' style='text-align: left;'>
                               <h2 style="font-size: 20px;"><%= v.pin.name %></h2>
                               <br>
-                              <p>You have visited <%= v.pin.name %> <%= v.pin_visit_count %> times this week. 
+                              <p>% u.user.name %> has liked <%= v.pin.name %> this week. 
                               </p>
                               <br><br>
-                              <p>View restaurant <%= v.pin.name %>.
+                              <p>View restaurant <%= v.pin.url %>.
                               <br>
                             </div>
                           </div>

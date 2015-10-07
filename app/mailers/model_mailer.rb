@@ -1,5 +1,5 @@
 class ModelMailer < ActionMailer::Base
-  default from: "alerts@friends4food.com"
+  default from: "alerts@foodspots.me"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -11,7 +11,7 @@ class ModelMailer < ActionMailer::Base
     @pin = pin
     @follower = follower
     @current_user = current_user
-    mail to: @follower.email, subject: "Your friend #{@current_user.name}, likes restaurant #{@pin.name}.", bcc: "oliviervanhees@gmail.com"
+    mail to: @follower.email, subject: "Your friend #{@current_user.name}, likes #{@pin.name}.", bcc: "oliviervanhees@gmail.com"
   end
 
   def new_follower_notification(user, current_user)
@@ -28,13 +28,13 @@ class ModelMailer < ActionMailer::Base
 	def weekly_gps_report(user, top3)
 		@user = user
 		@top3 = top3
-		mail to:@user.email, subject: '#{@user.name}, your recently visited HotSpots.'
+		mail to:@user.email, subject: '#{@user.name}, we have some personal news for you.'
 	end
 
   def weekly_hotspots(user, top3)
     @user = user
     @top3 = top3
-    mail to:@user.email, subject: '#{@user.name}, your HotSpots for the weekend!'
+    mail to:@user.email, subject: '#{@user.name}, your recipe for this weekend!'
   end
 
 end

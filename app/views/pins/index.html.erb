@@ -1,23 +1,17 @@
 <div class="col-xs-14">
-  <h3>Add HotSpots</h3>
+  <h3>Like restaurants</h3>
   <div class="panel panel-default">
-    <p>We offer three ways to easily find your HotSpots.</p>
+    <p>Let us help you to easily find your avorite restaurant.</p>
     <%= link_to search_nearest_pins_path, class: "btn btn-add btn-icon" do %>
-    Find HotSpots nearby
+    Find restaurants nearby
     <% end %>
     <br></br>
-
-    <p>
-    <%= link_to my_recently_visited_path, class: "btn btn-add btn-icon" do %>
-    View your recently visited HotSpots
-    <% end %>
-    </p>  
  
   	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
   	          <div class="form-group">
   	            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "[enter restaurant name]", autofocus: true %>
   	          </div>
-  	          <%= submit_tag "Search in database", class: "btn btn-add btn-icon" %>
+  	          <%= submit_tag "Search in our database", class: "btn btn-add btn-icon" %>
   	        <% end %>
 </div>
 

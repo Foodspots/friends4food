@@ -79,7 +79,7 @@ Altijdheerlijk::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
    # required for Heroku
-  config.action_mailer.default_url_options = { :host => 'http://friends4food.com/' }
+  config.action_mailer.default_url_options = { :host => 'http://foodspots.me/' }
 
   config.action_mailer.delivery_method = :smtp
   
@@ -87,9 +87,9 @@ Altijdheerlijk::Application.configure do
   :authentication => :plain,
   :address => "smtp.mailgun.org",
   :port => 587,
-  :domain => "http://friends4food.com",
-  :user_name => "postmaster@friends4food.com",
-  :password => "32c5ac94fc0369a1cebcb421b4d3c77b"
+  :domain => "http://foodspots.me",
+  :user_name => "postmaster@foodspots.me",
+  :password => "5548c6ab28baae083db9cc4603c2ba2a"
   }
 
   # stores images on Amazon S3 for Heroku

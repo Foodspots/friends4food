@@ -1,18 +1,18 @@
 <div class="col-xs-14">
 <h3>Your Friends' Favorites</h3>
-<p>Your friends have liked <span><%= @pins.count %></span> HotSpots.</p>
+<p>Your friends have liked <span><%= @pins.count %></span> restaurants.</p>
 
 <% if @pins.present? && @pins.count > 0 %>
 <p>
 <%= link_to pins_path, class: "btn btn-add btn-icon" do %>
-Add HotSpots
+Like restaurants
 <% end %>
 </p>  
 
 <% else %>
 <p>
 <%= link_to users_path, class: "btn btn-add btn-icon" do %>
-Add friends to discover new HotSpots
+Add friends to discover new restaurants
 <% end %>
 </p>
 

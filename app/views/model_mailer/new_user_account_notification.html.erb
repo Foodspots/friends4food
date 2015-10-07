@@ -9,9 +9,10 @@
                         <td>
                           <div class='contentEditableContainer contentTextEditable'>
                             <div class='contentEditable' style='text-align: center;'>
-                              <h2 style="font-size: 20px;">Welcome to Friends4Food!</h2>
+                              <h2 style="font-size: 20px;">Welcome to FoodSpots.me</h2>
                               <br>
-                              <p>Hi <% @user.name %>, thank you for creating an account at Friends4Food. At Friends4Food you can discover the favorite restaurants of your friends. Please find below the <b><%= @user.followings.count %></b> friends that are already listed on Friends4Food.</p>
+                              <p>Hi <% @user.name %>, you are now an official member of FoodSpots.me. You can now start discovering the favorite restaurants of your friends. On FoodSpots.me you will find a list of the most favorite restaurants of your friends. Also, you will receive a weekly update with the popular restaurants of your friends for that week. </p>
+                              <p>Below you find some of your Facebook friends that are already member of FoodSpots.me. Invite more friends to join FoodSpots.me to make sure you will never miss a thing!</p>
                             </div>
                           </div>
                         </td>
@@ -40,10 +41,8 @@
                             <div class='contentEditable' style='text-align: left;'>
                               <h2 style="font-size: 20px;"><% u.user.name %></h2>
                               <br>
-                              <p>View the <%= u.pin.find_liked_items.size %> favorite restaurants of <%= u.name %>. 
+                              <p><%= link_to "View", u.user_url %> the profile of <%= u.name %> who likes <%= u.pin.find_liked_items.size %> restaurants. 
                               </p>
-                              <br><br>
-                              <p><%= link_to "View profile", u.user_url %> more friends to Friends4Food and discover their favorite hotspots in town!
                               <br>
                             </div>
                           </div>

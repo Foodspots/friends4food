@@ -3,7 +3,7 @@
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="col-md-6 pull-left">
-      <div id="logo">HOT<span>SPOTS&middot;</span>ME</div> 
+      <div id="logo">FOOD<span>SPOTS&middot;</span>ME</div> 
     </div>
 
     <% if user_signed_in? %>
@@ -21,8 +21,7 @@
         <div class="collapse navbar-collapse" id="menu">
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "My Friends", my_friends_path %></li>
-            <li><%= link_to "My HotSpots", my_profile_path %></li>
-            <li><%= link_to "Add HotSpots", pins_path %></li>
+            <li><%= link_to "My FoodSpots", my_profile_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% end %>
           </ul>
