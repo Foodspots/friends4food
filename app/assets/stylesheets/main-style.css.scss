@@ -13,15 +13,18 @@ body {
     }
   }
 
-  #logo {
-    font-size: 46px;
-    font-weight: bold;
-    color: #ddb360;
-    //float:right;
+  .logocontainer{
+    max-width: 75%;
+    #logo{
+      font-size: 46px;
+      font-weight: bold;
+      color: #ddb360;
+      //float:right;
 
-    span {
-      font-weight: normal;
-      color: white;
+      span{
+        font-weight: normal;
+        color: white;
+      }
     }
   }
 

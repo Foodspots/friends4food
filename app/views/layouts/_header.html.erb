@@ -2,8 +2,8 @@
   <div class="container">
 
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="col-md-6 pull-left">
-      <%= link_to my_profile_path do %><div id="logo">FOOD<span>SPOTS&middot;</span>ME</div><% end %>
+    <div class="col-md-6 pull-left logocontainer">
+      <%= link_to my_profile_path do %><img id="logo" src="<%= asset_url('logo.png') %>" class="img-responsive"><% end %>
     </div>
 
     <% if user_signed_in? %>
