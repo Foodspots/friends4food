@@ -19,14 +19,14 @@
     <br>
     <br>
     <% if current_user.liked? @pin %>
-      <button type="button" class="btn btn-liked">
+      <button type="button" class="btn btn-liked btn-icon">
       Liked
       </button>
-      <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-default btn-xs btn-link" do %>   
+      <%= link_to unlike_pin_path(@pin), method: :put, class: "btn btn-danger" do %>
       Unlike    
       <% end %> 
     <% else %>
-      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-like" do %>
+      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-like btn-icon" do %>
       Like 
       <% end %> 
     <% end %>
