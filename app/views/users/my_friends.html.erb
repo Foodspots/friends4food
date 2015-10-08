@@ -2,7 +2,7 @@
 <h3>My friends</h3>
 <div class="panel panel-default">
    <% if current_user.followings.count > 0 %>
-   <p>You have <b><%= current_user.followings.count %></b> friends.</p>
+   <p>You have already <b><%= current_user.followings.count %></b> friends. Add some more!</p>
    <p><%= link_to users_path, class: "btn btn-icon btn-add" do %>
    Add friends
    <% end %></p>
