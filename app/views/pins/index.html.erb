@@ -2,9 +2,7 @@
   <h3>Like restaurants</h3>
   <div class="panel panel-default pinindexpanel">
     <p>Let us help you to easily find your avorite restaurant.</p>
-    <%= link_to search_nearest_pins_path, class: "btn btn-add btn-icon" do %>
-    Find restaurants nearby
-    <% end %>
+    <div class="btn btn-add btn-icon ask_location">Find restaurants nearby</div>
     <br></br>
  
   	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left pin-search-form") do %>
