@@ -3,7 +3,7 @@
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="col-md-6 pull-left">
-      <div id="logo">FOOD<span>SPOTS&middot;</span>ME</div> 
+      <%= link_to my_profile_path do %><div id="logo">FOOD<span>SPOTS&middot;</span>ME</div><% end %>
     </div>
 
     <% if user_signed_in? %>
