@@ -161,6 +161,12 @@ body {
     border: 1px solid #1b4252;
   }
 
+  .pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus {
+    color: #009245;
+    background-color: #1b4252;
+    border-color: #1b4252;
+  }
+
   .pinindexpanel {
     margin-bottom: 60px;
   }
