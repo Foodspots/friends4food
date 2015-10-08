@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= javascript_include_tag 'facebooksdk' %>
 </head>
-<body>
+<body class="<%= yield(:bodyclass) %>">
 
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KVMXBW"

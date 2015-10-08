@@ -3,6 +3,20 @@ body {
   color:#1b4252;
   background: #b3c2ac;
 
+  &.login {
+    background-image: asset_url('photo-hotspots-me.jpeg');
+    background-size: cover;
+
+    .loginnote {
+      color: white;
+    }
+
+    .loginpanel{
+      padding: 10px;
+      background-color: rgba(27, 66, 82, 0.4);
+    }
+  }
+
   .pin-search-form {
     padding-left: 0;
 
