@@ -7,8 +7,6 @@
    <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>
  </div>
 </div>
- <% @user.find_liked_items.each do |pin| %>
-   <%= render 'pins/show_pin_details' %>  
- <% end %>
+	 <%= render 'pins/show_pin_details' %>
 
  </div>
