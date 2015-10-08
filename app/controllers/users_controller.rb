@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 	def my_profile
 		@user = current_user
 		@pins = Kaminari.paginate_array(@user.find_liked_items).page(params[:page]).per(RECORDS_PER_PAGE)
+		render locals: {current_user: current_user}
 	end	
 
 	def my_friends

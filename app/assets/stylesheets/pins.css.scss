@@ -35,3 +35,18 @@
 .more_link_color {
   color: #31B0D5;
 }
+
+.panel.pin h3 {
+  min-height: 60px;
+}
+
+.panel.pin .friends {
+  height: 50px;
+  overflow: hidden;
+}
+
+.panel-default.pin {
+  border-top: 1px dotted #1b4252;
+  border-left: 1px dotted #1b4252;
+  border-right: 1px dotted #1b4252;
+}

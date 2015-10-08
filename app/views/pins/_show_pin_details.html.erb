@@ -1,9 +1,9 @@
 <div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
-         <div class="box panel panel-default panel-default-box-width">
+         <div class="box panel panel-default panel-default-box-width pin">
                   <div class="panel-body">
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
-                      <p class="likedby">Favorite FoodSpot of: <span> <% pin.votes_for.count %> </span>
+                      <p class="likedby">Favorite FoodSpot of: <span> <%= pin.votes_for.size %> </span></p>
                         <p class="friends">
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
                             <% if p.present? %>
@@ -19,7 +19,7 @@
                               <button type="button" class="btn btn-icon btn-liked">
                               Liked
                               </button> 
-                              <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-default btn-xs btn-link" do %>   
+                              <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger" do %>
           
                               Unlike    
                               <% end %>                           
