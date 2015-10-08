@@ -18,11 +18,7 @@
                             <% if current_user.liked? pin %>
                               <button type="button" class="btn btn-icon btn-liked">
                               Liked
-                              </button> 
-                              <%= link_to unlike_pin_path(pin), method: :put, class: "btn btn-danger" do %>
-          
-                              Unlike    
-                              <% end %>                           
+                              </button>                         
                             <% else %>
                               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-icon btn-like" do %>
                               Like 

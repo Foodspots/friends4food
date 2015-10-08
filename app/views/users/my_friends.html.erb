@@ -2,16 +2,16 @@
 <h3>My friends</h3>
 <div class="panel panel-default">
    <% if current_user.followings.count > 0 %>
-   <p>Find below your <b><%= current_user.followings.count %></b> friends on FoodSpots.me</p>
+   <p>You have <b><%= current_user.followings.count %></b> friends.</p>
    <p><%= link_to users_path, class: "btn btn-icon btn-add" do %>
-   Add friends to discover new FoodSpots
+   Add friends
    <% end %></p>
       
     <% else %>
     <p>You haven't added any friends yet. Add them now!</p>
      <p>
      <%= link_to users_path, class: "btn btn-add btn-icon" do %>
-     Add friends to discover new FoodSpots
+     Add friends
      <% end %>
      </p>
     <% end %> 
