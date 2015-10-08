@@ -17,11 +17,11 @@
                       <div class="actions">
                             <% if current_user.liked? pin %>
                               <button type="button" class="btn btn-icon btn-liked">
-                              Liked
+                              Favorite
                               </button>                         
                             <% else %>
                               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-icon btn-like" do %>
-                              Like 
+                              Like
                               <% end %>                             
                             <% end %>
                       </div>

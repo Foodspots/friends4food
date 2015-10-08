@@ -91,8 +91,8 @@ body {
 
 
   .btn-like, .btn-like:active {
-    background: #1b4252;
-    background-image: image-url('like.png');
+    background: #009245;
+    background-image: image-url('liked.png');
 
     &:hover {
       color: white;
@@ -103,8 +103,8 @@ body {
 
   .btn-liked, .btn-liked:active {
     cursor: default;
-    background-color: #009245;
-    background-image: image-url('liked.png');
+    background-color: #1b4252;
+    background-image: image-url('like.png');
 
     &:hover {
       color: white;
