@@ -3,6 +3,13 @@ body {
   color:#1b4252;
   background: #b3c2ac;
 
+  .pin-search-form {
+    padding-left: 0;
+
+    input {
+      border-radius: 0;
+    }
+  }
 
   nav.navbar-default {
     background: #1b4252;

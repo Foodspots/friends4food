@@ -7,7 +7,7 @@
     <% end %>
     <br></br>
  
-  	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left") do %>
+  	<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left pin-search-form") do %>
   	          <div class="form-group">
   	            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "[enter restaurant name]", autofocus: true %>
   	          </div>
