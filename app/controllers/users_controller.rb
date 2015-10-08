@@ -36,4 +36,7 @@ class UsersController < ApplicationController
     	@pins = Kaminari.paginate_array(pins).page(params[:page]).per(RECORDS_PER_PAGE)
 	end
 
+	def my_recently_visited
+		@user = current_user
+	end
 end
