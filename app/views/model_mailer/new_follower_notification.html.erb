@@ -11,7 +11,7 @@
                             <div class='contentEditable' style='text-align: center;'>
                               <h2 style="font-size: 20px;">You are now followed by <b><%= @current_user.name %></b>. </h2>
                               <br>
-                              <p><b>View</b> the profile of <%= @current_user.name %> </p>
+                              <p><u><%= link_to "View", my_friends_url %></u> the profile of <%= @current_user.name %> </p>
                             </div>
                           </div>
                         </td>
@@ -22,5 +22,10 @@
                 </tr>
               </table>  
             </div>
+
+            <div class='movableContent'>
+              <table width="580" border="0" cellspacing="0" cellpadding="0" align="center">
+                <tr><td height='40' colspan="3"></td></tr>
+                <tr>
 
 <!-- =============== END BODY =============== -->
