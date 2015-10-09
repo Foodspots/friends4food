@@ -4,7 +4,7 @@ en:
   devise:
     callbacks:
       user:
-        success: "You are now logged in successfully"
+        success: "You can now start discovering your friends favorites"
         failure: "Please log in with your Facebook account"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
@@ -18,7 +18,7 @@ en:
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "Log in to start discovering restaurants"
+      unauthenticated: "Log in to start discovering your friends flavor"
       authenticated: "You are logged in successfully."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
