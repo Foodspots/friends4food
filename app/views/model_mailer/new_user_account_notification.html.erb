@@ -2,17 +2,16 @@
               <table width="580" border="0" cellspacing="0" cellpadding="0" align="center">
                 <tr><td height='15'></td></tr>
                 <tr>
-                  <td style='border: 1px solid #27A1E5; border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px'>
+                  <td style='border: 1px solid #1B4252; border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px'>
                     <table width="480" border="0" cellspacing="0" cellpadding="0" align="center">
                       <tr><td height='25'></td></tr>
                       <tr>
                         <td>
                           <div class='contentEditableContainer contentTextEditable'>
                             <div class='contentEditable' style='text-align: center;'>
-                              <h2 style="font-size: 20px;">Welcome to FoodSpots.me</h2>
+                              <h2 style="font-size: 20px;">Hi <% @user.name %>, welcome to FoodSpots.me. </h2>
                               <br>
-                              <p>Hi <% @user.name %>, you are now an official member of FoodSpots.me. You can now start discovering the favorite restaurants of your friends. On FoodSpots.me you will find a list of the most favorite restaurants of your friends. Also, you will receive a weekly update with the popular restaurants of your friends for that week. </p>
-                              <p>Below you find some of your Facebook friends that are already member of FoodSpots.me. Invite more friends to join FoodSpots.me to make sure you will never miss a thing!</p>
+                              <p>You can now start discovering the favorite restaurants of your friends. On <%= link_to "FoodSpots.me", root_path %> you will find a list of the most favorite restaurants of your friends. Also, you will receive a weekly update with the popular restaurants of your friends. </p>
                             </div>
                           </div>
                         </td>
@@ -28,30 +27,4 @@
               <table width="580" border="0" cellspacing="0" cellpadding="0" align="center">
                 <tr><td height='40' colspan="3"></td></tr>
                 <tr>
-
-                  
-            	<ul>
-            	
-            		<% @user.followings.each do |u| %>
-            		<td width='150'>
-                    <table width='150' border='0' cellpadding="0" cellspacing="0" align="center">
-                      <tr>
-                        <td>
-                          <div class='contentEditableContainer contentTextEditable'>
-                            <div class='contentEditable' style='text-align: left;'>
-                              <h2 style="font-size: 20px;"><% u.user.name %></h2>
-                              <br>
-                              <p><%= link_to "View", u.user_url %> the profile of <%= u.name %> who likes <%= u.pin.find_liked_items.size %> restaurants. 
-                              </p>
-                              <br>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-
-            		<% end %>
-            	</ul>
-
 <!-- =============== END BODY =============== -->
