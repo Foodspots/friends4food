@@ -13,7 +13,7 @@
     <h4>Liked by: </h4>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
-        <%= link_to image_tag(p.image_file_name, class: 'pin_liked_image'), p %>
+        <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
       <% end %>
     <% end %>
     <br>

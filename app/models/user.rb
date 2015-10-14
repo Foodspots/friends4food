@@ -89,6 +89,10 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def photo_url
+		image_file_name.gsub('http://', 'https://')
+	end
+
   def top_places_this_week
     visits
       .select('visits.pin_id AS pin_id, count(visits.pin_id) AS pin_visit_count')
