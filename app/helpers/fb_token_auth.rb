@@ -11,7 +11,7 @@ class FBTokenAuth
 		end
 
 		def image
-			"http://graph.facebook.com/#{@uid}/picture?type=square"
+			"https://graph.facebook.com/#{@uid}/picture?type=square"
 		end
 
 		def self.from_hash(hash)

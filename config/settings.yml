@@ -3,4 +3,4 @@ app:
     distance: 0.1
     timeout: 3600
   share:
-    url: 'http://foodspots.me/?utm_source=facebook&utm_medium=dm&utm_campaign=invite'
+    url: 'https://foodspots.me/?utm_source=facebook&utm_medium=dm&utm_campaign=invite'
