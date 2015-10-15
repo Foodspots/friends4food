@@ -3,7 +3,7 @@
          <div class="box panel panel-default panel-default-box-width pin">
                   <div class="panel-body">
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
-                      <p class="likedby">Liked by:</p>
+                      <p class="likedby">Liked by: (<%=pin.votes_for.size %>)</p>
                         <p class="friends">
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
                             <% if p.present? %>
