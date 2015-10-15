@@ -2,6 +2,7 @@
  <div class="avatar">
    <%= link_to image_tag(@user.photo_url + '&width=160&height=160'), @user %>
  </div>
+ <br></br>
  <div id="follow_unfollow_btn" class="btn_margin">
    <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>
  </div>
