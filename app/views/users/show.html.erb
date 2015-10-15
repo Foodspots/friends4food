@@ -2,10 +2,10 @@
  <div class="avatar">
    <%= link_to image_tag(@user.photo_url + '&width=160&height=160'), @user %>
  </div>
- <br></br>
- <div id="follow_unfollow_btn" class="btn_margin">
+ 
+ <p><div id="follow_unfollow_btn" class="btn_margin">
    <%= render :partial => 'follow_unfollow_btn', :locals => {:user => @user} %>
- </div>
+ </div></p>
  <h3><%= @user.name %>'s profile</h3>
  <div class="panel panel-default">
  <p>View the favorite FoodSpots of <%= @user.name %>.</p>
