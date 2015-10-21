@@ -1,20 +1,15 @@
 <div class="col-xs-14">
-<h3>Your Friends' Favorites</h3>
+<h3>Your Friends' FoodSpots</h3>
 <% if @pins.present? && @pins.count > 0 %>
-<p>Find below the favorite restaurants of your friends.</p>
-<p>
-<%= link_to pins_path, class: "btn btn-add btn-icon" do %>
-Like restaurants
-<% end %>
-</p>  
+<p>Find below the favorite FoodSpots of your friends.</p>
 
 <% else %>
-<p>Add some friends to discover their favorite flavor!</p>
-<p>
+<p>Add some friends to discover their FoodSpots!</p>
+
 <%= link_to users_path, class: "btn btn-add btn-icon" do %>
 Add friends
 <% end %>
-</p>
+
 
 <% end %>
 <%= render partial: 'pins/show_pin_details' %>
