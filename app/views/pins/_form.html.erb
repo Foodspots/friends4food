@@ -2,6 +2,9 @@
     <%= p.text_field :name %>
     <%= p.text_field :address %>
     <%= p.text_field :place %>
+    <%= p.url_field :website %>
+    <%= p.telephone_field :telephone_number %>
+    <%= p.email_field :emailadress %>
     <%= p.submit "Save", class: "btn btn-success" %>
     <br></br>
   <% end %>
