@@ -5,7 +5,7 @@
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
                       <%= link_to image_tag(pin.external_image_url, :width => "150", class: "img-responsive"), pin %>
                       <p><b><%= pin_distance(pin) %></b> away</p>
-                      <p class="likedby">Liked by friends: (<%=pin.votes_for.size %>)</p>
+                      <p class="likedby">FoodSpot of: (<%=pin.votes_for.size %>)</p>
                         <p class="friends">
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
                             <% if p.present? %>
