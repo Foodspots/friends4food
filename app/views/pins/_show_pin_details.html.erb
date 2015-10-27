@@ -3,6 +3,7 @@
          <div class="box panel panel-default panel-default-box-width pin">
                   <div class="panel-body">
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
+                      <%= image_tag pin.external_image_url, :width => "150", class: "img-responsive" %>
                       <%= image_tag "https://maps.google.com/maps/api/staticmap?size=200x200&sensor=false&zoom=16&markers=#{pin.latitude}%2C#{pin.longitude}", class: "img-responsive" %>
                       <p><b><%= pin_distance(pin) %></b> away</p>
                       <p class="likedby">Liked by: (<%=pin.votes_for.size %>)</p>
