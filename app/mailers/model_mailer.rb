@@ -7,17 +7,10 @@ class ModelMailer < ActionMailer::Base
   #   en.model_mailer.new_record_notification.subject
   #
 
-  def new_like_notification(pin, follower, current_user)
-    @pin = pin
-    @follower = follower
-    @current_user = current_user
-    mail to: @follower.email, subject: "Your friend #{@current_user.name}, likes #{@pin.name}.", bcc: "oliviervanhees@gmail.com"
-  end
-
   def new_follower_notification(user, current_user)
     @user = user
     @current_user = current_user
-    mail to: user.email, subject: "#{@user.name}, you are now followed by #{current_user.name}.", bcc: "oliviervanhees@gmail.com"
+    mail to: "oliviervanhees@gmail.com", "foodspotsjeroen@gmail.com", subject: "#{@user.name}, you are now followed by #{current_user.name}."
   end
 
   def new_user_account_notification(user)
