@@ -10,7 +10,7 @@ class ModelMailer < ActionMailer::Base
   def new_follower_notification(user, current_user)
     @user = user
     @current_user = current_user
-    mail to: "oliviervanhees@gmail.com", "foodspotsjeroen@gmail.com", subject: "#{@user.name}, you are now followed by #{current_user.name}."
+    mail to: "oliviervanhees@gmail.com", subject: "#{@user.name}, you are now followed by #{current_user.name}.", bcc: "foodspotsjeroen@gmail.com"
   end
 
   def new_user_account_notification(user)
