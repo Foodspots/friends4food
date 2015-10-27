@@ -3,7 +3,7 @@
          <div class="box panel panel-default panel-default-box-width pin">
                   <div class="panel-body">
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
-                      <%= image_tag pin.external_image_url, :width => "100", class: "img-responsive" %>
+                      <%= image_tag pin.external_image_url, :width => "150", class: "img-responsive" %>
                       <p class="likedby">Liked by: (<%=pin.votes_for.size %>)</p>
                         <p class="friends">
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
@@ -22,7 +22,7 @@
                               </button>                         
                             <% else %>
                               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-icon btn-like" do %>
-                              Like
+                              Add FoodSpot
                               <% end %>                             
                             <% end %>
                       </div>
