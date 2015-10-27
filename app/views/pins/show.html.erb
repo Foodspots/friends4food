@@ -2,15 +2,9 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <h3><%= @pin.name %></h3>
+<%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
   </div>
   </div>
-</div>
-
-<div class="panel panel-default">
-<div class="panel-body">
-  <h3>Photo of <%= @pin.name %>:</h3>
-    <%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
-</div>
 </div>
 
 <div class="col-xs-14">
