@@ -4,12 +4,7 @@
 <p>Find below the favorite FoodSpots of your friends.</p>
 
 <% else %>
-<p>Add some friends to discover their FoodSpots!</p>
-
-<%= link_to users_path, class: "btn btn-add btn-icon" do %>
-Add friends
-<% end %>
-
+<p>First add some friends!</p>
 
 <% end %>
 <%= render partial: 'pins/show_pin_details' %>

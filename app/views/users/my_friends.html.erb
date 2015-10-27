@@ -1,22 +1,6 @@
 <div class="col-xs-14">
 <h3>My friends</h3>
-<div class="panel panel-default">
-   <% if current_user.followings.count > 0 %>
-   <p>You have already <b><%= current_user.followings.count %></b> friends. Add some more!</p>
-   <p><%= link_to users_path, class: "btn btn-icon btn-add" do %>
-   Add friends
-   <% end %></p>
-      
-    <% else %>
-    <p>You haven't added any friends yet. Add them now!</p>
-     <p>
-     <%= link_to users_path, class: "btn btn-add btn-icon" do %>
-     Add friends
-     <% end %>
-     </p>
-    <% end %> 
-</div>
-
+ <p>Find below the friends you have added.</p>
     <div id="pins" class="transitions-enabled">
             <% current_user.followings.each do |user| %>
                 <div class="box panel panel-default" id = "user_<%= user.id %>">
