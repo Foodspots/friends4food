@@ -17,7 +17,7 @@
 
   resources :users 
 
-  root "users#feeds"
+  root "pins#index"
   get "my_friends_pins" => "users#feeds"
   get "my_profile" => "users#my_profile"
   get "my_pins" => "pins#my_pins"
