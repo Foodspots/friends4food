@@ -4,6 +4,7 @@
                   <div class="panel-body">
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
                       <%= image_tag "https://maps.google.com/maps/api/staticmap?size=200x200&sensor=false&zoom=16&markers=#{pin.latitude}%2C#{pin.longitude}", class: "img-responsive" %>
+                      <p><%= pin_distance(pin) %> away</p>
                       <p class="likedby">Liked by: (<%=pin.votes_for.size %>)</p>
                         <p class="friends">
                           <% friends_who_liked_pin(pin).take(3).each do |p| %>
