@@ -4,9 +4,13 @@ module ApplicationHelper
 	end
 
 	def phone_number_link(text)
-	  sets_of_numbers = text.scan(/[0-9]+/)
-	  number = "#{sets_of_numbers.join('-')}"
-	  link_to text, "tel:#{number}"
+		if text.nil?
+			''
+		else
+			sets_of_numbers = text.scan(/[0-9]+/)
+			number = "#{sets_of_numbers.join('-')}"
+			link_to text, "tel:#{number}"
+		end
 	end
 
 	def share_snippet
