@@ -46,6 +46,13 @@
   overflow: hidden;
 }
 
+.pin-img {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+
 .panel-default.pin {
   border-top: 1px dotted #1b4252;
   border-left: 1px dotted #1b4252;
