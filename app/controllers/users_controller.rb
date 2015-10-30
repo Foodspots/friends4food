@@ -7,7 +7,9 @@ class UsersController < ApplicationController
 	end
 
 	def index
-	  @user = User.all.order("updated_at DESC")
+	  @user = User.all.order("updated_at DESC").select do |u|
+		  not (u == current_user or current_user.following?(u))
+	  end
 	  render locals: {current_user: current_user}
 	end
 
