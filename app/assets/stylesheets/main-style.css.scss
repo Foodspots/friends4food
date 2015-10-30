@@ -189,3 +189,11 @@ body {
     color: black;
   }
 }
+
+.friends {
+  .panel h3 {
+    height: 55px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
