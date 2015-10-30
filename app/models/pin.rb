@@ -45,5 +45,13 @@ class Pin < ActiveRecord::Base
       Pin.create! row.to_hash
     end
   end
+
+	def safe_image_url
+		if external_image_url.nil?
+			Settings.app.pins.default_image
+		else
+			URI.escape(external_image_url.gsub('http://', 'https://'))
+		end
+	end
 end
 	

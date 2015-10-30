@@ -4,3 +4,5 @@ app:
     timeout: 3600
   share:
     url: 'https://foodspots.me/?utm_source=facebook&utm_medium=dm&utm_campaign=invite'
+  pins:
+    default_image: 'https://s3.amazonaws.com/dinderapp/pins/Caffe%20Oslo_Amsterdam.jpg'
