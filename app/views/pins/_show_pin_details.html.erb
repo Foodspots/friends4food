@@ -1,5 +1,6 @@
 <div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
+		<% liking_friends = friends_who_liked_pin(pin) %>
          <div class="box panel panel-default panel-default-box-width pin">
                   <div class="panel-body">
                       <h3><%= link_to pin.name, pin_path(pin) %></h3>
@@ -7,14 +8,14 @@
 					  	<div class="pin-img" style="background-image:url(<%= pin.safe_image_url %>);"></div>
 					  <% end %>
                       <p><b><%= pin_distance(pin) %></b> away</p>
-                      <p class="likedby">FoodSpot of: (<%=pin.votes_for.size %>)</p>
+                      <p class="likedby">FoodSpot of: (<%= liking_friends.count %>)</p>
                         <p class="friends">
-                          <% friends_who_liked_pin(pin).take(3).each do |p| %>
+                          <% liking_friends.take(3).each do |p| %>
                             <% if p.present? %>
                             <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
                             <% end %>
                           <% end %>
-                        <% if friends_who_liked_pin(pin).count > 3 %>
+                        <% if liking_friends.count > 3 %>
                           <%= link_to "...", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
                           </p>
                         <% end %>
