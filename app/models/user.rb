@@ -102,6 +102,10 @@ class User < ActiveRecord::Base
       .limit(3)
   end
 
+	def new_likes_this_week
+		votes.where('created_at >= ?', 1.week.ago.utc).votables
+	end
+
   def recent_visits
     visits
       .select('DISTINCT(visits.pin_id), *')
