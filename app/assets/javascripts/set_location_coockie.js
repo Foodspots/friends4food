@@ -12,6 +12,8 @@ function set_coockie_location(latitude, longitude){
 	window.location = '/search_nearest_pins';
 }
 
+
+
 $(function() {
 	$(".ask_location").on('click', function () {
 		if(navigator.geolocation){

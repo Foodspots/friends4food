@@ -55,18 +55,16 @@
 		  <%= @pin.place %></p>
 		<%= image_tag "https://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
 		   <br></br>
-		   <% if @latitude.present? && @longitude.present? %>
-			<% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
-			<div class="col-xs-12">
-			  <form action="http://maps.google.com/maps" method="get" target="_blank">
-				<%= hidden_field_tag "saddr", "#{source_location}" %>
-				<%= hidden_field_tag "daddr", "#{destination_location}" %>
-				<%= button_tag(type: 'submit', class: "btn btn-default pull-left") do %>
-				  <span class="glyphicon glyphicon-map-marker"></span>See route
-				<% end %>
-			  </form>
-			</div>
-		  <% end %>
+		<% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
+		<div class="col-xs-12">
+		  <form action="http://maps.google.com/maps" method="get" target="_blank" class="route_form">
+			<%= hidden_field_tag "saddr", "#{source_location}" %>
+			<%= hidden_field_tag "daddr", "#{destination_location}" %>
+			<%= button_tag(type: 'submit', class: "btn btn-default pull-left") do %>
+			  <span class="glyphicon glyphicon-map-marker"></span>See route
+			<% end %>
+		  </form>
+		</div>
 	  </div>
   </div>
 </div>
