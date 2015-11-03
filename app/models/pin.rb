@@ -12,7 +12,7 @@ class Pin < ActiveRecord::Base
     self.location = "#{address} #{place}"
   end
 
-  def self.set_external_image_url
+  def set_external_image_url
      self.external_image_url = "#{"http://s3.amazonaws.com/dinderapp/pins/"}#{name}#{"_"}#{place}#{".jpg"}"
    end
 
