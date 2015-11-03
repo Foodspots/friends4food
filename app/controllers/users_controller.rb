@@ -23,6 +23,10 @@ class UsersController < ApplicationController
 		render locals: {current_user: current_user}
 	end
 
+	def welcome
+		@user = current_user
+	end
+
 	def followers
 		@followers = current_user.followers.collect(&:user)
 	end

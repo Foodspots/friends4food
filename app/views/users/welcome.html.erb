@@ -1,0 +1,27 @@
+<% content_for(:bodyclass, 'login')%>
+<div class="row">
+  <div class="col-md-10 col-md-push-1">
+    <div class="panel panel-default loginpanel">
+      <div class="panel-body loginnote">
+      	<h3>Hi <%= @user.name %>,</h3>
+
+      	<p>
+
+      	You are now succesfully connected to <b><%=current_user.followings.count %></b> of your Facebook Friends. 
+      	
+
+        <br/><br/>
+
+        <h3>Almost there...</h3>
+
+        <p>You are only one step away from using Foodspots.me. Share your location with us and get exploring.</p>
+        
+        <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
+        <span class="glyphicon glyphicon-play"></span>
+        Share your location
+        <% end %>
+
+        </div>
+    </div>
+  </div>
+</div>
