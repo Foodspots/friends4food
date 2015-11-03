@@ -36,7 +36,7 @@
   <div class="panel-body">
     <h4>Contact details:</h4>
     <p><strong>Website:</strong>
-      <%= link_to @pin.website, "#{@pin.website}" %></p>
+      <%= link_to @pin.website, "#{@pin.website}", :target => "_blank" %></p>
     <p><strong>Telephone number: </strong>
       <%= phone_number_link(@pin.telephone_number)%></p>
       <p><strong>Email address: </strong>
