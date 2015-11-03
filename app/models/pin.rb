@@ -11,7 +11,9 @@ class Pin < ActiveRecord::Base
     self.location = "#{address} #{place}"
   end
 
-
+  def set_external_image_url
+     self.external_image_url = "#{"http://s3.amazonaws.com/dinderapp/pins/"}#{name}#{"_"}#{place}#{".jpg"}"
+   end
 
   def self.deduplicate
     # Find all duplicate records and group them by a field
