@@ -22,6 +22,7 @@
   get "my_profile" => "users#my_profile"
   get "my_pins" => "pins#my_pins"
   get "upload" => "pins#upload"
+  get "download" => "pins#download"
   get "my_friends" => "users#my_friends"
   get "my_recently_visited" => "users#my_recently_visited"
   get "followers" => "users#followers"

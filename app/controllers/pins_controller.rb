@@ -10,8 +10,7 @@ class PinsController < ApplicationController
       @pins = (friends_favorite_restaurants & @pins) | (@pins - friends_favorite_restaurants)    
     end
 
-    @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)
-    
+    @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)  
   end
 
   def sorted_by_distance
@@ -27,6 +26,15 @@ class PinsController < ApplicationController
   def import
     Pin.import(params[:file])
     redirect_to root_url, notice: "Restaurants imported."
+  end
+
+  def download
+    @pin = Pin.order(:name)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @pin.to_csv }
+      format.xls { send_data @pin.to_csv(col_sep: "\t") }
+    end
   end
 
   def my_pins
