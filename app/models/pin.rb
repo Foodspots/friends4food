@@ -43,20 +43,23 @@ class Pin < ActiveRecord::Base
     end
   end
 
-  def self.import(file)
-    CSV.foreach(file.path, headers: true, quote_char: "\"") do |row|
-      Pin.create! row.to_hash
-    end
-  end
+	def self.import(file)
+		CSV.foreach(file.path, headers: true, quote_char: "\"") do |row|
+			pin = Pin.find_or_initialize_by(id: row['id'])
+			pin.update_attributes! row.to_hash
+		end
+	end
 
-  def self.to_csv(options = {:quote_char => "\"", :force_quotes => true})
-    CSV.generate(options) do |csv|
-      csv << column_names
-      all.each do |pin|
-        csv << pin.attributes.values_at(*column_names)
-      end
-    end
-  end
+	def self.to_csv(o)
+		options = {:quote_char => "\"", :force_quotes => true}
+		options.merge! o
+		CSV.generate(options) do |csv|
+			csv << column_names
+			all.each do |pin|
+				csv << pin.attributes.values_at(*column_names)
+			end
+		end
+	end
 
 	def safe_image_url
 		if external_image_url.nil?
