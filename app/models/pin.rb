@@ -44,12 +44,12 @@ class Pin < ActiveRecord::Base
   end
 
   def self.import(file)
-    CSV.foreach(file.path, headers: true, col_sep: ';' ) do |row|
+    CSV.foreach(file.path, headers: true) do |row|
       Pin.create! row.to_hash
     end
   end
 
-  def self.to_csv(options = {})
+  def self.to_csv(options = {:quote_char => "\""})
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |pin|
