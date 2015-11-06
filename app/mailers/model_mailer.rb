@@ -18,22 +18,16 @@ class ModelMailer < ActionMailer::Base
     mail to: @user.email, subject: "#{@user.name}, start now discovering your friends' favorites. ", bcc: "oliviervanhees@gmail.com"
   end
 
-	def weekly_gps_report(user, top3)
-		@user = user
-		@top3 = top3
-		mail to:@user.email, subject: "#{@user.name}, we have some personal news for you."
-	end
-
-  	def weekly_friend_like_report(user, top3)
-		@user = user
-		@top3 = top3
-		mail to:@user.email, subject: "#{@user.name}, we have some personal news for you."
-	end
-
-  def weekly_hotspots(user, top3)
+  def weekly_gps_report(user, top3)
     @user = user
     @top3 = top3
-    mail to:@user.email, subject: '#{@user.name}, your recipe for this weekend!'
+    mail to:@user.email, subject: "#{@user.name}, we have some personal news for you.", bcc: "oliviervanhees@gmail.com"
+  end
+
+    def weekly_friend_like_report(user, top3)
+    @user = user
+    @top3 = top3
+    mail to:@user.email, subject: "#{@user.name}, we have some personal news for you.", bcc: "oliviervanhees@gmail.com"
   end
 
 end
