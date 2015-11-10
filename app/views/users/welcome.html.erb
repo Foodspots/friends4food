@@ -5,6 +5,8 @@
       <div class="panel-body loginnote">
       	<h3>Hi <%= @user.name %>,</h3>
 
+		  <% if not @welcomed %>
+			  <%# This is shown the very first login %>
       	<p>
 
       	You are now succesfully imported <b><%= current_user.follows.count %></b> of your Facebook Friends. 
@@ -13,6 +15,10 @@
         <br/><br/>
 
         <h3>Almost there...</h3>
+		  <% else %>
+			  <%# This is shown after the first login, when someone needs to re-share their location %>
+			  <%# You can put some extra text here if you want%>
+		  <% end %>
 
         <p>You are only one step away from using Foodspots.me. Share your location with us and get exploring.</p>
         

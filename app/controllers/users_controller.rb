@@ -25,6 +25,17 @@ class UsersController < ApplicationController
 
 	def welcome
 		@user = current_user
+		@welcomed = @user.welcomed
+		if not @welcomed
+			# User is new
+			@user.welcomed = true
+			@user.save
+		else
+			# Existing user, check if we can skip the location share page
+			unless @latitude.nil? and @longitude.nil?
+				redirect_to root_url
+			end
+		end
 	end
 
 	def followers
