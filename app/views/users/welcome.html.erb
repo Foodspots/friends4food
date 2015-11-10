@@ -6,26 +6,26 @@
       	<h3>Hi <%= @user.name %>,</h3>
 
 		  <% if not @welcomed %>
-			  <%# This is shown the very first login %>
-      	<p>
-
-      	You are now succesfully imported <b><%= current_user.follows.count %></b> of your Facebook Friends. 
-      	
-
-        <br/><br/>
-
-        <h3>Almost there...</h3>
+  			  <%# This is shown the very first login %>
+        	<p>You are now succesfully connected to <h3><%= current_user.follows.count %></h3> of your Friends.</p>
+          <br/><br/>
+          <h3>Almost there...</h3>
+          <p>You are only one step away from discovering the nearest FoodSpots. Click the button below!</p>
+          <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
+          <span class="glyphicon glyphicon-play"></span>
+          Share your location
+          <% end %>       
 		  <% else %>
-			  <%# This is shown after the first login, when someone needs to re-share their location %>
-			  <%# You can put some extra text here if you want%>
+         <%# This is shown every second login when no location has been shared yet%>
+  			 <p>Thank you for using Foodspots. Oops, you haven't shared your location yet.</p> 
+         <br/><br/>
+         <h3>Complete your registration</h3>
+         <p>Click the button below and discover the nearest FoodSpots.</p>
+         <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
+         <span class="glyphicon glyphicon-play"></span>
+         Share your location
+         <% end %>
 		  <% end %>
-
-        <p>You are only one step away from using Foodspots.me. Share your location with us and get exploring.</p>
-        
-        <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
-        <span class="glyphicon glyphicon-play"></span>
-        Share your location
-        <% end %>
 
         </div>
     </div>

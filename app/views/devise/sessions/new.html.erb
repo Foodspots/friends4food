@@ -4,22 +4,21 @@
 		<div class="panel panel-default loginpanel">
 			<div class="panel-body loginnote">
 			<h3>Welcome to Foodspots</h3>
-			<p>We will help you find the best Foodspots in town, based on the opinion of your friends.</p>
-			<br></br>
+			<p>Discover your friends' favorite spots in town.</p>
+		
 			<h3>How does it work? </h3>
 			  <ol>
-				<li>Connect with Facebook to see your friends on FoodSpots.</li>
-				<li>Share you location to find FoodSpots nearby.</li>
-				<li>Explore the nearest FoodSpots of your friends.</li>
+				<li>Connect with Facebook</li>
+				<li>Share you location</li>
+				<li>Discover new FoodSpots</li>
 			  </ol>
-			  <br></br>
 			  <h3>Start now!</h3>
 			  <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-social btn-facebook" do %>
 			  <span class="glyphicon glyphicon-play"></span>
 			  Connect with Facebook
 			  <% end %>
 			  <br/><br/>
-			  <b>Note:</b> FoodSpots.me will <u>never</u> post messages on your Facebook wall.
+			  <u>Note: FoodSpots will never post on your wall</u>
 			  </div>
 		</div>
 	</div>
