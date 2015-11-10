@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 		if not @welcomed
 			# User is new
 			@user.welcomed = true
-			@user.save
+			@user.save!
 		else
 			# Existing user, check if we can skip the location share page
 			unless @latitude.nil? and @longitude.nil?
