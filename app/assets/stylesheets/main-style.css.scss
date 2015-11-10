@@ -50,7 +50,7 @@ body {
   }
 
   .panel-default {
-    background:#F0EFEA;
+    background-color: rgba(27, 66, 82, 0.15);
     border:none;
     border-bottom: 1px solid #1b4252;
     border-radius: 0px;
@@ -58,6 +58,11 @@ body {
 
 
     h3, h3 a, h3 a:hover {
+      color: #1b4252;
+      margin-top: 0px;
+    }
+
+    h1, h1 a, h1 a:hover {
       color: #DDB360;
       margin-top: 0px;
     }

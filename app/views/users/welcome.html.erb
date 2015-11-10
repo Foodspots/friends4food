@@ -2,13 +2,13 @@
   <div class="col-md-10 col-md-push-1">
     <div class="panel panel-default loginpanel">
       <div class="panel-body loginnote">
-      	<h3>Hi <%= @user.name %>,</h3>
+      	<h1>Hi <%= @user.name %>,</h1>
 
 		  <% if not @welcomed %>
   			  <%# This is shown the very first login %>
         	<p>You have succesfully connected with <h3><%= current_user.follows.count %></h3> of your Friends.</p>
           <br/><br/>
-          <h3>Almost there...</h3>
+          <h1>Almost there...</h1>
           <p>You are only one step away from discovering the nearest FoodSpots. Click the button below!</p>
           <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
           <span class="glyphicon glyphicon-play"></span>
@@ -18,7 +18,7 @@
          <%# This is shown every second login when no location has been shared yet%>
   			 <p>Thank you for using Foodspots. Oops, you haven't shared your location yet.</p> 
          <br/><br/>
-         <h3>Complete your registration</h3>
+         <h1>Complete your registration</h1>
          <p>Click the button below and discover the nearest FoodSpots.</p>
          <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
          <span class="glyphicon glyphicon-play"></span>
