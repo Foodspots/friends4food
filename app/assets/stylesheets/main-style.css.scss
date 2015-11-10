@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans',Helvetica;
   color:#1b4252;
-  background: #FFFFFF;
+  background-color: rgba(240, 240, 240, 0.75);
 
   &.login {
     background-image: asset_url('FoodSpots.jpg');
