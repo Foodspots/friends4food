@@ -9,7 +9,7 @@ function set_coockie_location(latitude, longitude){
   document.cookie = "latitude = "+latitude+";";
   document.cookie = "longitude = "+longitude+";";
 
-	window.location = '/search_nearest_pins';
+	window.location = '/';
 }
 
 
