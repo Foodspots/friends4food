@@ -1,3 +1,4 @@
+<% content_for(:bodyclass, 'login')%>
 <div class="row">
   <div class="col-md-10 col-md-push-1">
     <div class="panel panel-default loginpanel">
@@ -6,10 +7,15 @@
 
 		  <% if not @welcomed %>
   			  <%# This is shown the very first login %>
-        	<p>You have succesfully connected with <h3><%= current_user.follows.count %></h3> of your Friends.</p>
+        	<p>You have succesfully connected with <b><%= current_user.follows.count %></b> of your Friends:</p>
+
+          <% @current_user.followings.each do |user| %>
+          <li> <%=user.name %> </li>
+          <% end %>  
+
           <br/><br/>
           <h1>Almost there...</h1>
-          <p>You are only one step away from discovering the nearest FoodSpots. Click the button below!</p>
+          <p>You are only one step away from discovering the hottest FoodSpots. Click the button below!</p>
           <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
           <span class="glyphicon glyphicon-play"></span>
           Share your location
