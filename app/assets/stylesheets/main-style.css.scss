@@ -4,7 +4,7 @@ body {
   background: #FFFFFF;
 
   &.login {
- 
+    background-image: asset_url('FoodSpots.jpg');
     background-size: cover;
 
     .loginnote {
@@ -12,8 +12,8 @@ body {
     }
 
     .loginpanel{
-      padding: 10px;
-      background-color: rgba(27, 66, 82, 0.4);
+      padding: 20px;
+      background-color: rgba(27, 66, 82, 0.75);
     }
   }
 
@@ -58,7 +58,7 @@ body {
 
 
     h3, h3 a, h3 a:hover {
-      color: #0088a2;
+      color: #DDB360;
       margin-top: 0px;
     }
 
