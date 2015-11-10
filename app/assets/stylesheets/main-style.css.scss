@@ -18,10 +18,11 @@ body {
   }
 
   .pin-search-form {
-    padding-left: 0;
+    padding-left: 10;
+    margin-top: -10px;
 
     input {
-      border-radius: 0;
+      border-radius: 2px;
     }
   }
 
@@ -51,11 +52,9 @@ body {
 
   .panel-default {
     background-color: rgba(27, 66, 82, 0.15);
-    border:none;
-    border-bottom: 1px solid #1b4252;
-    border-radius: 0px;
+    border: 1px dotted #1b4252;
     box-shadow: none;
-
+  
 
     h3, h3 a, h3 a:hover {
       color: #1b4252;

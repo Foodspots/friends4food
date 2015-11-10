@@ -1,8 +1,8 @@
 <div class="col-xs-14">
-<h2>Add FoodSpots</h2>
-
-<p>Check out the nearest FoodSpots below.</p>
-
+<div class="panel panel-default">
+<div class="panel-body">
+<h3>Search FoodSpots:</h3>
+<br>
 <%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left pin-search-form") do %>
           <div class="form-group">
             <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "[restaurant name]", autofocus: true %>
@@ -10,6 +10,8 @@
           <%= submit_tag "Search", class: "btn btn-default" %>
         <% end %>
 	<%= hidden_field_tag 'sort_by', 'distance' %>
+</div>
+</div>
 	<%= render 'pins/show_pin_details', locals: {current_user: current_user} %>
 </div>
 

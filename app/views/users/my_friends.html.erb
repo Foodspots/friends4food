@@ -1,6 +1,6 @@
 <div class="col-xs-14">
 <h2>My friends</h2>
- <p>Find below the friends you have added.</p>
+ <p>Find below the friends you have added. <u>Tip: <%= link_to "Add Friends", users_path %></u></p>
     <div id="pins" class="transitions-enabled friends">
             <% current_user.followings.each do |user| %>
                 <div class="box panel panel-default" id = "user_<%= user.id %>">
