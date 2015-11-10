@@ -165,18 +165,18 @@ body {
   }
 
   .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
-    background-color:  #009245;
-    border-color: #009245;
+    background-color:  #DDB360;
+    border-color: #DDB360;
   }
 
   .pagination > li > a, .pagination > li > span {
-    color: #009245;
+    color: #DDB360;
     background-color: #1b4252;
     border: 1px solid #1b4252;
   }
 
   .pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus {
-    color: #009245;
+    color: #DDB360;
     background-color: #1b4252;
     border-color: #1b4252;
   }
