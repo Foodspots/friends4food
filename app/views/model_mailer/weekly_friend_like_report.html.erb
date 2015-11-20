@@ -9,9 +9,9 @@
 						<td>
 							<div class='contentEditableContainer contentTextEditable'>
 								<div class='contentEditable' style='text-align: center;'>
-									<h2 style="font-size: 30px;">Weekly update for <%= @user.name %><h2>
+									<h2 style="font-size: 30px;">Your friends's favorite flavour<h2>
 									<br>
-									<p>Discover the latest FoodSpots of your friends. Find below which restaurants have been added by your friends in the last 7 days.</h2>
+									<p>Discover the latest FoodSpots of your friends. Find below which restaurants have been liked by your friends in the last 7 days.</h2>
 								</div>
 							</div>
 						</td>
@@ -40,11 +40,8 @@
 									<div class='contentEditableContainer contentTextEditable'>
 										<div class='contentEditable' style='text-align: left;'>
 											<h2 style="font-size: 20px;"><%= pin.name %></h2>
-											<%= image_tag pin.external_image_url, class: "friendspanel" %>
-									
-											<p>Has received <%= users.size %> new like(s)!</p>
-											<br>
-											<h3>Discover <u><%= link_to pin.name, pin_url(pin, host: 'foodspots.me') %></u></h3>
+											<p>Has been liked by <%= users.size %> of your friend(s) this week.</p>
+											<u>View <%= link_to pin.name, pin_url(pin, host: 'foodspots.me') %></u>
 										</div>
 									</div>
 								</td>

@@ -27,7 +27,7 @@ class ModelMailer < ActionMailer::Base
     def weekly_friend_like_report(user, top3)
     @user = user
     @top3 = top3
-    mail to:@user.email, subject: "#{@user.name}, we have some personal news for you.", bcc: "oliviervanhees@gmail.com"
+    mail to:@user.email, subject: "#{@user.name}, discover your friends' favorite flavour", bcc: "oliviervanhees@gmail.com"
   end
 
 end
