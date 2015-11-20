@@ -22,6 +22,7 @@
       <button type="button" class="btn btn-liked btn-icon">
       Liked
       </button>
+      <%= link_to "Unlike", unlike_pin_path(@pin), method: :put %>
     <% else %>
       <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-like btn-icon" do %>
       Like 
