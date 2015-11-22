@@ -2,37 +2,36 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <h3><%= @pin.name %></h3>
-<%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
-  </div>
-  </div>
-</div>
+<% if current_user.liked? @pin %>
+<p><b>You have liked this FoodSpot.</b></p>Don't like it anymore? <%= link_to "remove", unlike_pin_path(@pin), method: :put %>
+     <% else %>
+       <p>Do you like this FoodSpot?<p>
+       <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-icon btn-like" do %>
+       Like FoodSpot
+       <% end %>                             
+     <% end %>
+     </div>
+     </div>
 
-<div class="col-xs-14">
+
 <div class="panel panel-default" id="liked_by">
   <div class="panel-body">
-    <h4>Liked by:</h4>
+    <h4>Favorite FoodSpot of:</h4>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
       <% end %>
     <% end %>
     <br>
-    <br>
-    <% if current_user.liked? @pin %>
-      <button type="button" class="btn btn-liked btn-icon">
-      Liked
-      </button>
-      <%= link_to "Unlike", unlike_pin_path(@pin), method: :put %>
-    <% else %>
-      <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-like btn-icon" do %>
-      Like 
-      <% end %> 
-    <% end %>
   </div>
   </div>
+
+  <div class="panel panel-default">
+  <div class="panel-body">
+<%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
+</div>
 </div>
 
-<div class="col-xs-14">
   <div class="panel panel-default">
   <div class="panel-body">
     <h4>Contact details:</h4>
@@ -46,7 +45,7 @@
 </div>
 </div>
 
-<div class="col-xs-14">
+
   <div class="panel panel-default">
 	  <div class="panel-body">
 		<h4>Navigation:</h4>
@@ -68,9 +67,9 @@
 		</div>
 	  </div>
   </div>
-</div>
 
-<div class="col-xs-14">
+
+
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="fb-comments" data-width="100%" data-numposts="3" data-href="<%= request.original_url %>"></div>

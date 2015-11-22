@@ -20,9 +20,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="menu">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "My Friends", my_friends_path %></li>
             <li><%= link_to "My FoodSpots", my_profile_path %></li>
             <li><%= link_to "Search FoodSpots", search_nearest_pins_path %></li>
+            <li><%= link_to "My Friends", my_friends_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             <% end %>
           </ul>

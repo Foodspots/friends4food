@@ -84,8 +84,8 @@ body {
       }
     }
 
-    .btn-like, .btn-liked {
-      width: 110px;
+    .btn-like, .btn-liked, .btn-view {
+      width: 200px;
     }
   }
 
@@ -96,24 +96,26 @@ body {
 
 
   .btn-like, .btn-like:active {
-    background: #009245;
-    background-image: image-url('liked.png');
+    background: #DDB360;
+    background-image: image-url('like.png');
 
-    &:hover {
-      color: white;
-      font-weight: bold;
+   &:hover {
+     font-weight: bold;
+     background-color: #1b4252;
+     color: #ffffff;
+     font-weight: bold;
     }
 
   }
 
   .btn-liked, .btn-liked:active {
-    cursor: default;
     background-color: #1b4252;
     background-image: image-url('like.png');
+  }
 
-    &:hover {
-      color: white;
-    }
+  .btn-view, .btn-view:active {
+    background-color: #1b4252;
+    background-image: image-url('like.png');
   }
 
   .btn-add, .btn-add:active {
