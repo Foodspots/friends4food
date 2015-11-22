@@ -7,7 +7,7 @@ before_filter :current_coordinates
 protect_from_forgery with: :exception
 before_filter :configure_permitted_parameters, if: :devise_controller?
 
-RECORDS_PER_PAGE = ENV['RECORDS_PER_PAGE'] || 8
+RECORDS_PER_PAGE = ENV['RECORDS_PER_PAGE'] || 6
 has_mobile_fu false
 
 def current_coordinates
