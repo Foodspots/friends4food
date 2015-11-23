@@ -110,7 +110,6 @@ class User < ActiveRecord::Base
     visits
       .select('DISTINCT(visits.pin_id), *')
       .order('created_at DESC')
-      .limit(5)
   end
 
   private
