@@ -34,17 +34,11 @@
 
   <div class="panel panel-default">
   <div class="panel-body">
-    <h4>Contact details:</h4>
-    <p><strong>Website:</strong>
-      <%= link_to @pin.website, "#{@pin.website}", :target => "_blank" %></p>
-    <p><strong>Telephone number: </strong>
-      <%= phone_number_link("#{0}#{@pin.telephone_number}")%></p>
-      <p><strong>Email address: </strong>
-        <%= mail_to @pin.emailadress, "#{@pin.emailadress}" %></p>
+    <h3>Make a reservation:
+      <%= phone_number_link("#{0}#{@pin.telephone_number}")%></h3>
     </div>
 </div>
 </div>
-
 
   <div class="panel panel-default">
 	  <div class="panel-body">
