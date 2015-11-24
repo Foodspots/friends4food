@@ -5,7 +5,7 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   #before_save :geocode
-  #geocoded_by :location, :if => :location_changed?
+  geocoded_by :location, :if => :location_changed?
 
 
   #def set_location
