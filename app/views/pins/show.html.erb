@@ -3,28 +3,23 @@
 <div class="panel-body">
 <h3><%= @pin.name %></h3>
 <% if current_user.liked? @pin %>
-<p><b>You have liked this FoodSpot.</b></p>Don't like it anymore? <%= link_to "remove", unlike_pin_path(@pin), method: :put %>
+<p><b>You have liked this FoodSpot.</b></p>Don't like it anymore? <%= link_to "Remove FoodSpot", unlike_pin_path(@pin), method: :put %>
      <% else %>
        <p>Do you like this FoodSpot?<p>
        <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-icon btn-like" do %>
        Like FoodSpot
        <% end %>                             
      <% end %>
-     </div>
-     </div>
-
-
-<div class="panel panel-default" id="liked_by">
-  <div class="panel-body">
-    <h4>Favorite FoodSpot of:</h4>
+     <br></br>
+    <p><b>Favorite FoodSpot of:</p></b>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
       <% end %>
     <% end %>
-    <br>
-  </div>
-  </div>
+    </div>
+    </div>
+
 
   <div class="panel panel-default">
   <div class="panel-body">
@@ -33,16 +28,10 @@
 </div>
 
   <div class="panel panel-default">
-  <div class="panel-body">
-    <h3>Make a reservation:
-      <%= phone_number_link("#{0}#{@pin.telephone_number}")%></h3>
-    </div>
-</div>
-</div>
-
-  <div class="panel panel-default">
 	  <div class="panel-body">
-		<h4>Navigation:</h4>
+      <h3>Contact:</h3>
+      <p><strong>Call now:</strong>
+        <u><%= phone_number_link("#{0}#{@pin.telephone_number}")%></u>
 		<p><strong>Address:</strong>
 		  <%= @pin.address %></p>
 		<p><strong>Place: </strong>
