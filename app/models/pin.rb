@@ -1,6 +1,6 @@
 class Pin < ActiveRecord::Base
   before_save :set_location
-  before_save :set_external_image_url
+  #before_save :set_external_image_url
   acts_as_votable
   belongs_to :user
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
