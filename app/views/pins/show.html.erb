@@ -38,7 +38,7 @@
     <p><strong>Website:</strong>
       <%= link_to @pin.website, "#{@pin.website}", :target => "_blank" %></p>
     <p><strong>Telephone number: </strong>
-      <%= phone_number_link(@pin.telephone_number)%></p>
+      <%= phone_number_link("#{0}#{@pin.telephone_number}")%></p>
       <p><strong>Email address: </strong>
         <%= mail_to @pin.emailadress, "#{@pin.emailadress}" %></p>
     </div>
