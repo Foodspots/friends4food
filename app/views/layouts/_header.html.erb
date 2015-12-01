@@ -3,7 +3,7 @@
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="col-md-6 pull-left logocontainer">
-      <h3>FOODSPOTS.ME</h3>
+      <%= link_to '/' do %><img id="logo" src="<%= asset_url('FoodSpots.me_logo.png') %>" class="img-responsive"><% end %>
     </div>
 
     <% if user_signed_in? %>
@@ -19,7 +19,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="menu">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-middle">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Search", search_path %></li>
             <li><%= link_to "My FoodSpots", my_profile_path %></li>
