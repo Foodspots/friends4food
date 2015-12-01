@@ -1,4 +1,5 @@
 <div class="col-xs-14">
+<div class="center">
 <%= link_to pins_path, class: "btn btn-default-enabled" do %>
 Friends Favorites
 <% end %> 
@@ -13,6 +14,6 @@ Nearby FoodSpots
 <p>You haven't any friends added yet. <u><%= link_to "Add friends", users_path %></u></p>
 
 <% end %>
-
+</div>
 <%= render partial: 'pins/show_pin_details' %>
 </div>

@@ -41,7 +41,7 @@ body {
       font-size: 46px;
       font-weight: bold;
       color: #ddb360;
-      float:middle;
+      //float:left;
 
       span{
         font-weight: normal;
@@ -119,8 +119,11 @@ body {
   }
 
   .btn-default {
+    font-size: 18px;
     background-color: #ffffff;
     color: #ffffff;
+    border: 1px #1b4252;
+    border-radius: 5px;
 
     &:hover {
       background-color: #1b4252;
@@ -130,6 +133,9 @@ body {
 
   .btn-default-enabled {
     background-color: #1b4252;
+    font-size: 18px;
+    border: 1px #1b4252;
+    border-radius: 5px;
 
     &:hover {
       background-color: #1b4252;
@@ -164,6 +170,13 @@ body {
       width: 500px;
     }
   }
+
+  div.center {
+
+    width: 100%;
+    text-align: center;
+  }
+
 
 
   .friendspanel{
