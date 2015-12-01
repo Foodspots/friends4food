@@ -13,6 +13,17 @@ class PinsController < ApplicationController
     @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)  
   end
 
+  def search
+   @pins = Pin.search(params[:search])
+    friends_favorite_restaurants = current_user.friends_favorite_restaurants
+  
+    if friends_favorite_restaurants.present?
+      @pins = (friends_favorite_restaurants & @pins) | (@pins - friends_favorite_restaurants)    
+    end
+
+    @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)  
+  end
+
   def sorted_by_distance
     if @latitude.present? && @longitude.present?
       @pins = Pin.search(params[:search]).near([@latitude, @longitude], 10000)
