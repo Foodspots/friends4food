@@ -8,9 +8,11 @@
  <p><div id="follow_unfollow_btn" class="btn_margin">
  
      	 <% if current_user.following?(@user) %>
-     	 			<p><b><%= @user.name %> is your friend.</b></p>No love anymore? <%= link_to "remove", user_unfollow_path(@user), method: :put %>    
+     	 			<p><b><%= @user.name %> is your friend.</b></p>No love anymore? 
+     	 			<%= link_to "Remove", user_unfollow_path(@user), :method => :delete, data: { disable_with: "Please wait..." }, :remote => true %>
        	<% else %>
-             <%= link_to "Add Friend", user_follow_path(@user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-icon btn-like", :remote => true %>
+       		<p>Do like the FoodSpots of <b><%= @user.name %>?</b></p> 
+             <%= link_to "Add Friend", user_follow_path(@user), :method => :post, data: { disable_with: "Please wait..." }, :remote => true %>
      	<% end %>
 
 
