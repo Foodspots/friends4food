@@ -1,5 +1,7 @@
 <div class="col-xs-14">
+<div class="center">
  <p>Click <u><%= link_to "here", users_path %></u> to add some more friends.</p>
+</div>
     <div id="pins" class="transitions-enabled friends">
             <% current_user.followings.each do |user| %>
                 <div class="box panel panel-default" id = "user_<%= user.id %>">

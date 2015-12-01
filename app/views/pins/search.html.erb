@@ -1,14 +1,17 @@
-<h4>Search for your favorite FoodSpots.</h4>
+
 <div class="col-xs-14">
 <div class="panel panel-default">
 <div class="panel-body">
-<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-left pin-search-form") do %>
+<div class="center">
+<p>Search for your favorite FoodSpots.</p>
+<%= form_tag(search_pins_path, method: :get, class: "navbar-form navbar-center pin-search-form") do %>
           <div class="form-group">
-            <%= text_field_tag 'search', params[:search], class: "form-control", placeholder: "[restaurant name]", autofocus: true %>
+            <%= text_field_tag 'search', params[:search], class: "form-control input-sm", placeholder: "[restaurant name]", autofocus: true %>
           </div>
-          <%= submit_tag "Search", class: "btn btn-default" %>
+          <%= submit_tag "Search", class: "btn btn-default-enabled" %>
         <% end %>
 	
+</div>
 </div>
 </div>
 	<%= render 'pins/show_pin_details', locals: {current_user: current_user} %>

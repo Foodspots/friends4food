@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans',Helvetica;
-  color:#1b4252;
+  color:#1b4252; 
   background-color: rgba(240, 240, 240, 0.75);
 
   &.login {
@@ -21,13 +21,16 @@ body {
     padding-left: 10;
     margin-top: -10px;
 
+
     input {
-      border-radius: 2px;
+      border-radius: 5px;
+      width: 150px;
+      text-align: center;
     }
   }
 
   nav.navbar-default {
-    background: #1b4252;
+    background: #76C190;
     border:none;
     border-radius:0px;
     a.navbar-brand {
@@ -40,7 +43,7 @@ body {
     #logo{
       font-size: 46px;
       font-weight: bold;
-      color: #ddb360;
+      color: #1b4252;
       //float:left;
 
       span{
@@ -51,10 +54,10 @@ body {
   }
 
   .panel-default {
-    background-color: rgba(27, 66, 82, 0.15);
-    border: 1px dotted #1b4252;
+    background-color: rgba(118, 193, 144, 0.25);
+    border: 1px #76C190;
     box-shadow: none;
-  
+
 
     h3, h3 a, h3 a:hover {
       color: #1b4252;
@@ -62,7 +65,7 @@ body {
     }
 
     h1, h1 a, h1 a:hover {
-      color: #DDB360;
+      color: #1b4252;
       font-size: 18px;
       margin-top: 0px;
     }
@@ -90,13 +93,13 @@ body {
   }
 
   .btn{
-    border-radius: 0px;
+    border-radius: 5px;
     color:white;
   }
 
 
   .btn-like, .btn-like:active {
-    background: #DDB360;
+    background: #1b4252;
     background-image: image-url('like.png');
 
    &:hover {
@@ -114,7 +117,7 @@ body {
   }
 
   .btn-view, .btn-view:active {
-    background-color: #1b4252;
+    background-color: #76C190;
     background-image: image-url('like.png');
   }
 
@@ -132,13 +135,13 @@ body {
   }
 
   .btn-default-enabled {
-    background-color: #1b4252;
+    background-color: #76C190;
     font-size: 14px;
     border: 1px #1b4252;
     border-radius: 5px;
 
     &:hover {
-      background-color: #1b4252;
+      background-color: #76C190;
       color: #ffffff;
      }
   }
@@ -149,7 +152,7 @@ body {
   }
 
   .btn-remove, .btn-remove:active {
-    background-color: #1b4252;
+    background-color: #76C190;
     background-image: image-url('remove.png');
   }
 
@@ -200,24 +203,24 @@ body {
   }
 
   .pagination>li:first-child>a, .pagination>li:first-child>span, .pagination > li:last-child > a, .pagination > li:last-child > span {
-    border-radius: 0;
+    border-radius: 5;
   }
 
   .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
-    background-color:  #DDB360;
-    border-color: #DDB360;
+    background-color:  #1b4252;
+    border-color: #1b4252;
   }
 
   .pagination > li > a, .pagination > li > span {
-    color: #DDB360;
-    background-color: #1b4252;
-    border: 1px solid #1b4252;
+    color: #1b4252;
+    background-color: #76C190;
+    border: 1px solid #76C190;
   }
 
   .pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus {
-    color: #DDB360;
-    background-color: #1b4252;
-    border-color: #1b4252;
+    color: #1b4252;
+    background-color: #76C190;
+    border-color: #76C190;
   }
 
   .pinindexpanel {
