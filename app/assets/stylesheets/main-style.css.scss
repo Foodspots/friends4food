@@ -44,7 +44,7 @@ body {
       font-size: 46px;
       font-weight: bold;
       color: #1b4252;
-      //float:left;
+      float:left;
 
       span{
         font-weight: normal;
@@ -100,7 +100,9 @@ body {
 
 
   .btn-like, .btn-like:active {
-    background: #1b4252;
+    background: #ffffff;
+    color: #1b4252;
+    border: 1px solid #1b4252;
     background-image: image-url('like.png');
 
    &:hover {
@@ -114,29 +116,46 @@ body {
 
   .btn-liked, .btn-liked:active {
     background-color: #1b4252;
+    border: 1px solid #1b4252;
+    color: #fffffff;
     background-image: image-url('like.png');
+
+    &:hover {
+      font-weight: bold;
+      color: #ffffff;
+      font-weight: bold;
+     }
   }
 
   .btn-view, .btn-view:active {
+    border: 1px solid #1b4252;
     background-color: #76C190;
-    background-image: image-url('like.png');
+    color: #1b4252;
+
+    &:hover {
+      font-weight: bold;
+      background-color: #1b4252;
+      color: #ffffff;
+      font-weight: bold;
+     }
   }
 
   .btn-default {
     font-size: 14px;
-    background-color: #76C190;
+    background-color: #fffffff;
     color: #1b4252;
     border: 1px solid #1b4252;
     border-radius: 5px;
 
     &:hover {
       background-color: #1b4252;
+      border: 1px solid #1b4252;
       color: #ffffff;
      }
   }
 
   .btn-default-enabled {
-    background-color: #fffffff;
+    background-color: #76C190;
     font-size: 14px;
     color: #1b4252;
     border: 1px solid #1b4252;
@@ -144,16 +163,18 @@ body {
 
 
     &:hover {
-      background-color: #fffffff;
-      font-size: 14px;
-      border: 1px solid #1b4252;
-      border-radius: 5px;
+    background-color: #76C190;
+    font-size: 14px;
+    color: #1b4252;
+    border: 1px solid #1b4252;
+    border-radius: 5px;
      }
   }
 
   .btn-default-search {
-    background-color: #76C190;
-    border: 1px #1b4252;
+    background-color: #ffffff;
+    color: #1b4252;
+    border: 1px solid #1b4252;
     border-radius: 5px;
 
     &:hover {
