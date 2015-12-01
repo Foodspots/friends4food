@@ -1,6 +1,6 @@
 app:
   tracking:
-    distance: 0.05
+    distance: 0.02
     timeout: 3600
   share:
     url: 'https://foodspots.me/?utm_source=facebook&utm_medium=dm&utm_campaign=invite'
