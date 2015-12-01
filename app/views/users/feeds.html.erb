@@ -1,12 +1,21 @@
 <div class="col-xs-14">
-<h2>Your Friends' FoodSpots</h2>
+
+
+<%= link_to feeds_path, class: "btn btn-default-enabled" do %>
+Friends favorites
+<% end %> 
+
+<%= link_to search_nearest_pins_path, class: "btn btn-default" do %>
+Nearby FoodSpots
+<% end %>   
+
 <% if @pins.present? && @pins.count > 0 %>
-<p>Find below the favorite FoodSpots of your friends.</p>
 
 <% else %>
-<p>First add some friends!</p>
+<p>You haven't any friends added yet. <u><%= link_to "Add friends", users_path %></u></p>
 
 <% end %>
+
 <%= render partial: 'pins/show_pin_details' %>
 </div>
 

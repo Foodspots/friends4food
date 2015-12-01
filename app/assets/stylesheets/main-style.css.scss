@@ -41,7 +41,7 @@ body {
       font-size: 46px;
       font-weight: bold;
       color: #ddb360;
-      //float:right;
+      float:middle;
 
       span{
         font-weight: normal;
@@ -71,7 +71,7 @@ body {
       font-size: 14px;
       font-weight: bold;
       color: #1b4252;
-      margin-top: 35px;
+      margin-top: 5px;
       span {
         color: #0088a2;
       }
@@ -116,6 +116,25 @@ body {
   .btn-view, .btn-view:active {
     background-color: #1b4252;
     background-image: image-url('like.png');
+  }
+
+  .btn-default {
+    background-color: #ffffff;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #1b4252;
+      color: #ffffff;
+     }
+  }
+
+  .btn-default-enabled {
+    background-color: #1b4252;
+
+    &:hover {
+      background-color: #1b4252;
+      color: #ffffff;
+     }
   }
 
   .btn-add, .btn-add:active {

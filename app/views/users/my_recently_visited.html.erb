@@ -1,6 +1,6 @@
  <div class="col-xs-14">
 
-<p>You have visisted the following FoodSpots.</p>
+<% if @user.recent_visits.size > 0 %>
 
 <% @user.recent_visits.each do |v| %>
     <span class="list-group-item">
@@ -10,3 +10,10 @@
   <% end %>
 
 </div>
+
+<% else %>
+<b>Coming Soon</b>
+<br></br>
+<p>Click <u>here</u> to download our app and receive personal suggestions.</p>
+
+<% end %>
