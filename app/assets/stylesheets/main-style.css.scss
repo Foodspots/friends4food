@@ -20,6 +20,8 @@ body {
   .pin-search-form {
     padding-left: 10;
     margin-top: -10px;
+    width: 100px;
+    text-align: center;
 
 
     input {
@@ -178,6 +180,7 @@ body {
     color: #1b4252;
     border: 1px solid #1b4252;
     border-radius: 5px;
+    width: 200px;
 
     &:hover {
       background-color: #1b4252;
@@ -188,7 +191,10 @@ body {
   .form-control-search {
     border: 1px #1b4252;
     border-radius: 5px;
+    width: 200px;
     height:30px;
+    text-align: center;
+
   }
 
   .btn-add, .btn-add:active {
