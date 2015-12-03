@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans',Helvetica;
   color:#1b4252; 
-  background-color: rgba(240, 240, 240, 0.75);
+  background-color: rgba(240, 240, 240, 0.5);
 
   &.login {
     background-image: asset_url('FoodSpots.jpg');
@@ -13,7 +13,7 @@ body {
 
     .loginpanel{
       padding: 10px;
-      background-color: rgba(240, 240, 240, 0.75);
+      background-color: rgba(247, 247, 247, 0.7);
     }
   }
 
@@ -55,7 +55,7 @@ body {
   }
 
   .panel-default {
-    background-color: rgba(118, 193, 144, 0.25);
+    background-color: rgba(11, 26, 32, 0.1);
     border: 1px #76C190;
     box-shadow: none;
 
