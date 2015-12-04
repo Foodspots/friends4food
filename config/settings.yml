@@ -1,7 +1,7 @@
 app:
   tracking:
-    distance: 0.02
-    timeout: 3600
+    distance: 0.01
+    timeout: 1800
   share:
     url: 'https://foodspots.me/?utm_source=facebook&utm_medium=dm&utm_campaign=invite'
   pins:
