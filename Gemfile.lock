@@ -42,6 +42,7 @@ GEM
       tzinfo (~> 1.1)
     acts_as_votable (0.10.0)
     addressable (2.3.8)
+    api-pagination (4.1.1)
     arel (5.0.1.20140414130214)
     aws-sdk (1.20.0)
       json (~> 1.4)
@@ -279,6 +280,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  api-pagination
   aws-sdk (~> 1.20.0)
   bootstrap-kaminari-views
   bootstrap-sass (~> 3.2.0)

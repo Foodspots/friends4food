@@ -35,6 +35,10 @@
 
   namespace :api do
 	  post 'location/create'
+	  get 'pins' => 'pins#sorted_by_distance'
+	  get 'pins/likes' => 'pins#likes'
+	  get 'pins/friends' => 'pins#friends_who_like'
+	  put 'pins/like' => 'pins#like'
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

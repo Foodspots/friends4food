@@ -56,6 +56,7 @@ gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 gem 'curb-fu'
 gem 'config'
+gem 'api-pagination'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
