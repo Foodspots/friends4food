@@ -6,7 +6,7 @@ class Api::PinsController < ApiController
 	end
 
 	def likes
-		pins = Pin.where(:id => JSON.parse(params[:pins]))
+		pins = Pin.where(:id => params[:pins])
 
 		res = pins.map do |pin|
 			{
@@ -19,7 +19,7 @@ class Api::PinsController < ApiController
 	end
 
 	def friends_who_like
-		pins = Pin.where(:id => JSON.parse(params[:pins]))
+		pins = Pin.where(:id => params[:pins])
 
 		res = pins.map do |pin|
 			{
