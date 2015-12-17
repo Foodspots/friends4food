@@ -29,29 +29,16 @@ body {
   }
 
   nav.navbar-default {
-    background: #76C190;
+    background: #76c190;
     border:none;
     border-radius:0px;
-    a.navbar-brand {
-      color: #ddb360;
-    }
+     height:60px;
+
   }
 
   .logocontainer{
-    width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    #logo{
-      font-size: 46px;
-      font-weight: bold;
-      color: #1b4252;
-      float:left;
-
-      span{
-        font-weight: normal;
-        color: white;
-      }
-    }
+    width:85px;
+    height:85px;   
   }
 
   .panel-default {

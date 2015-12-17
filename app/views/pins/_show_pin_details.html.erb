@@ -7,7 +7,7 @@
                       <%= link_to pin do %>
 					  	<div class="pin-img" style="background-image:url(<%= pin.safe_image_url %>);"></div>
 					  <% end %>
-                      <p><b><%= pin_distance(pin) %></b> away</p>
+                      <p><b><%= pin_distance(pin) %></b> away (<%= pin.place  %>)</p>
                       <p class="likedby">Favorite FoodSpot of: (<%= liking_friends.count %>)</p>
                         <p class="friends">
                           <% liking_friends.take(3).each do |p| %>
