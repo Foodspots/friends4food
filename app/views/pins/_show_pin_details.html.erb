@@ -8,7 +8,7 @@
 					  	<div class="pin-img" style="background-image:url(<%= pin.safe_image_url %>);"></div>
 					  <% end %>
                       <p><b><%= pin_distance(pin) %></b> away (<%= pin.place  %>)</p>
-                      <p class="likedby">Favorite FoodSpot of: (<%= liking_friends.count %>)</p>
+                      <p class="likedby">Liked by: (<%= liking_friends.count %>)</p>
                         <p class="friends">
                           <% liking_friends.take(3).each do |p| %>
                             <% if p.present? %>
@@ -21,12 +21,8 @@
                         <% end %>
                       <div class="actions">
                             <% if current_user.liked? pin %>
-                              <p>You have liked this FoodSpot<p>
-                              <%= link_to pin_path(pin), class: "btn btn-icon btn-liked" do %>
-                              Your FoodSpot
-                              <% end %>               
+                              <b>You have liked <%= link_to pin.name, pin_path(pin) %><b>  
                             <% else %>
-                              <p>Do you like this FoodSpot?<p>
                               <%= link_to like_pin_path(pin), method: :put, class: "btn btn-icon btn-like" do %>
                               Like FoodSpot
                               <% end %>                             

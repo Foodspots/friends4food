@@ -11,7 +11,7 @@
        <% end %>                             
      <% end %>
      <br></br>
-    <p><b>Favorite FoodSpot of:</p></b>
+    <p><b>Liked by:</p></b>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>

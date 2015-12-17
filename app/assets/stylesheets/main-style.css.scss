@@ -32,8 +32,13 @@ body {
     background: #76c190;
     border:none;
     border-radius:0px;
-     height:60px;
+    height:60px;
+    color: #1b4252;
 
+  }
+
+  nav navbar-nav navbar-right bold{
+  color: #1b4252;
   }
 
   .logocontainer{
@@ -88,14 +93,12 @@ body {
 
 
   .btn-like, .btn-like:active {
-    background: #ffffff;
-    color: #1b4252;
+    background: #1b4252;
+    color: #fffff;
     border: 1px solid #1b4252;
     background-image: image-url('like.png');
 
    &:hover {
-     font-weight: bold;
-     background-color: #1b4252;
      color: #ffffff;
      font-weight: bold;
     }
@@ -103,13 +106,12 @@ body {
   }
 
   .btn-liked, .btn-liked:active {
-    background-color: #76C190;
+    background-color: #1b4252;
     border: 1px solid #1b4252;
-    color: #fffffff;
+    color: #ffffff;
     background-image: image-url('like.png');
 
     &:hover {
-      font-weight: bold;
       color: #ffffff;
       font-weight: bold;
      }
