@@ -1,8 +1,6 @@
 <% if current_user && current_user != user %>
   	 <% if current_user.following?(user) %>
-   	 		     <%= link_to user_path(user), class: "btn btn-icon btn-view" do %>
-   	 		     View FoodSpots
-   	 		     <% end %>               
+   	 		   <b><%= link_to user.name, user_path(user)%> is your friend. <b>       
     	<% else %>
           <%= link_to "Add Friend", user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-icon btn-like", :remote => true %>
   	<% end %>
