@@ -29,7 +29,7 @@ body {
   }
 
   nav.navbar-default {
-    background: #76c190;
+    background: rgba(118, 193, 144, 0.65);
     border:none;
     border-radius:0px;
     height:60px;
@@ -247,13 +247,13 @@ body {
 
   .pagination > li > a, .pagination > li > span {
     color: #1b4252;
-    background-color: #76C190;
+    background-color: rgba(118, 193, 144, 0.65);
     border: 1px solid #76C190;
   }
 
   .pagination>.disabled>span, .pagination>.disabled>span:hover, .pagination>.disabled>span:focus, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus {
     color: #1b4252;
-    background-color: #76C190;
+    background-color: rgba(118, 193, 144, 0.65);
     border-color: #76C190;
   }
 
