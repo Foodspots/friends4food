@@ -36,6 +36,7 @@
   namespace :api do
 	  post 'location/create'
 	  get 'pins' => 'pins#sorted_by_distance'
+	  get 'pins/popular' => 'pins#popular'
 	  get 'pins/likes' => 'pins#likes'
 	  get 'pins/friends' => 'pins#friends_who_like'
 	  put 'pins/like' => 'pins#like'

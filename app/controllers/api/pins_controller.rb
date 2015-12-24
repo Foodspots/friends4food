@@ -1,4 +1,15 @@
 class Api::PinsController < ApiController
+	def popular
+		pins = Pin.all
+		friends_favorite_restaurants = current_user.friends_favorite_restaurants
+
+		if friends_favorite_restaurants.present?
+			pins = (friends_favorite_restaurants & pins) | (pins - friends_favorite_restaurants)
+		end
+
+		paginate json: pins
+	end
+
 	def sorted_by_distance
 		pins = Pin.search(params[:search]).near([params[:latitude], params[:longitude]], 10000)
 
