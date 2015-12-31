@@ -22,7 +22,7 @@
           <div class="col-md-4 hidden-sm hidden-xsno-padding">
             <div class="collapse navbar-collapse no-padding-left" id="menu">
               <ul class="nav navbar-nav bold">
-                <li><%= link_to "Friends", my_friends_path %></li>
+                <li><%= link_to '/' do %>Friends<% end %></li>
                 <li><%= link_to "Nearby", search_nearest_pins_path %></li>
                 <li><%= link_to "Mine", my_profile_path %></li>
               </ul>
@@ -66,7 +66,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
-          <%= link_to "Friends", my_friends_path, class:"mobile-link" %>
+          <li><%= link_to '/' do %>Friends<% end %></li>
         </div>
         <div class="col-xs-4">
           <%= link_to "Nearby", search_nearest_pins_path, class:"mobile-link" %>

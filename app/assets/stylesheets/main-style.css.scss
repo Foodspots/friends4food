@@ -35,7 +35,7 @@ body {
     height:60px;
     color: #1b4252;
     @media (max-width: 992px) {
-      height:auto;
+      height: 175px;
     }
 
     .navbar-nav > li > a {
@@ -136,6 +136,7 @@ body {
       display: block;
       text-align: center;
       color: #fff;
+      font-size: 17px;
       padding-top: 5px;
       border-right: 2px solid #fff;
       height: 30px;
@@ -155,6 +156,8 @@ body {
 
 
     .navbar-form{
+      border: none;
+      padding-top: 0;
 
       .form-group {
         min-width: 100%;
@@ -165,6 +168,7 @@ body {
         border: 0px solid;
         height:40px;
         min-width: 100%;
+        box-shadow: none;
       }
 
       ::-webkit-input-placeholder {
@@ -174,12 +178,15 @@ body {
       }
 
       ::-moz-focus-inner {
-        border: 0;
         padding: 0;
+        border: none;
+        border-color: transparent
       }
 
       input:focus{
-        outline: 0;
+        outline: none !important;
+        border: none;
+        border-color: transparent
       }
     }
 
