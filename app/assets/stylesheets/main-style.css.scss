@@ -49,6 +49,16 @@ body {
     .col-md-2  {
       width: 15.666667%;
     }
+
+    .dropdown-toggle {
+      border: none;
+
+      .icon-bar {
+        background-color: #fff;
+      }
+
+    }
+
   }
 
   nav navbar-nav navbar-right bold{
@@ -66,27 +76,27 @@ body {
   }
 
   .search {
-    padding-top: 12px;
-
-    input {
-      max-width: 280px;
-      display: inline-block;
-      margin-right: 10px;
-      background-color: rgb(229, 225, 225);
-      @media (max-width: 1200px) {
-        max-width: 210px;
+    .navbar-form{
+      margin-top: 12px;
+      .form-control {
+        min-width: 280px;
+        display: inline-block;
+        margin-right: 10px;
+        background-color: rgb(229, 225, 225);
+        @media (max-width: 1200px) {
+          min-width: 205px;
+        }
       }
+
+      .btn {
+        border-radius: 2px;
+        width: 125px;
+        background-color: #1B4151;
+        border-color: #1B4151;
+        font-size: 12px;
+      }
+
     }
-
-    .btn {
-      border-radius: 2px;
-      width: 125px;
-      background-color: #1B4151;
-      border-color: #1B4151;
-      font-size: 12px;
-    }
-
-
   }
 
   .no-padding {
@@ -104,6 +114,9 @@ body {
       color: #1B4151;
     }
 
+    .caret {
+      margin-left: 10px;
+    }
     .dropdown-menu {
       text-align: center;
       background: rgba(118, 193, 144, 1);
@@ -134,12 +147,42 @@ body {
   }
 
   .mobile-search {
+
     height: 60px;
     background-color: #DCD9D4;
     padding:15px 0;
-    input {
-      background-color: #DCD9D4;
+
+
+
+    .navbar-form{
+
+      .form-group {
+        min-width: 100%;
+      }
+
+      .form-control {
+        background-color: #DCD9D4;
+        border: 0px solid;
+        height:40px;
+        min-width: 100%;
+      }
+
+      ::-webkit-input-placeholder {
+        color:    #1B4151;;
+        font-size: 16px;
+        text-align: left;
+      }
+
+      ::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+      }
+
+      input:focus{
+        outline: 0;
+      }
     }
+
   }
 
   .mobile-userdrop {
