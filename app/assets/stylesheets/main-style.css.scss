@@ -34,8 +34,9 @@ body {
     border-radius:0px;
     height:60px;
     color: #1b4252;
+    
     @media (max-width: 992px) {
-      height: 175px;
+      height: auto;
     }
 
     .navbar-nav > li > a {
@@ -158,6 +159,7 @@ body {
     .navbar-form{
       border: none;
       padding-top: 0;
+      margin-bottom: 0px;
 
       .form-group {
         min-width: 100%;
