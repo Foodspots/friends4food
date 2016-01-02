@@ -7,6 +7,9 @@ $(function() {
 			$('.pagination').empty().append($("<img>").attr('src', "<%= asset_path('ajax-loader.gif') %>"));
 			$.getScript(next_page).done(function () {
 				currently_loading = false;
+				if (history && history.pushState) {
+					history.pushState({}, document.title, next_page);
+				}
 			});
 		}
 	});
