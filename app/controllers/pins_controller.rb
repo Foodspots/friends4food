@@ -14,7 +14,7 @@ class PinsController < ApplicationController
 
 	respond_to do |format|
 		format.html
-		format.js
+		format.js {render 'addnextpage'}
 	end
   end
 
