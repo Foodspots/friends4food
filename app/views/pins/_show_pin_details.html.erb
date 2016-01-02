@@ -1,35 +1,6 @@
 <div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
-		<% liking_friends = friends_who_liked_pin(pin) %>
-         <div class="box panel panel-default panel-default-box-width pin">
-                  <div class="panel-body">
-                      <h3><%= link_to pin.name, pin_path(pin) %></h3>
-                      <%= link_to pin do %>
-					  	<div class="pin-img" style="background-image:url(<%= pin.safe_image_url %>);"></div>
-					  <% end %>
-                      <p><b><%= pin_distance(pin) %></b> away (<%= pin.place  %>)</p>
-                      <p class="likedby">Liked by: (<%= liking_friends.count %>)</p>
-                        <p class="friends">
-                          <% liking_friends.take(3).each do |p| %>
-                            <% if p.present? %>
-                            <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
-                            <% end %>
-                          <% end %>
-                        <% if liking_friends.count > 3 %>
-                          <%= link_to "...", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
-                          </p>
-                        <% end %>
-                      <div class="actions">
-                            <% if current_user.liked? pin %>
-                              <b>You have liked <%= link_to pin.name, pin_path(pin) %><b>  
-                            <% else %>
-                              <%= link_to like_pin_path(pin), method: :put, class: "btn btn-icon btn-like" do %>
-                              Like FoodSpot
-                              <% end %>                             
-                            <% end %>
-                      </div>
-                  </div>
-          </div>
+		<%= render partial: 'pins/pin_detail', locals: {pin: pin} %>
      <% end %>
 </div>
 <div class="text-center">
