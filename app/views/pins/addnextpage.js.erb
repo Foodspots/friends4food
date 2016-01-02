@@ -1,4 +1,4 @@
-$('#pins').append('<% @pins.each do |pin| %><%= j render partial: "pin_detail", locals: {pin: pin} %><% end %>')
+$('#pins').append('<% @pins.each do |pin| %><%= j render partial: 'pins/pin_detail', locals: {pin: pin} %><% end %>')
 		.masonry('reload');
 <% if @pins.next_page %>
 $('.pagination').replaceWith("<%= j paginate @pins, theme: 'twitter-bootstrap-3', :pagination_class => pagination_class %>");

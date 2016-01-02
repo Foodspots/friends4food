@@ -1,6 +1,6 @@
 <div id="pins" class="transitions-enabled">
       <% @pins.each do |pin| %>
-		<%= render partial: "pin_detail", locals: {pin: pin} %>
+		<%= render partial: 'pins/pin_detail', locals: {pin: pin} %>
      <% end %>
 </div>
 <div class="text-center">
