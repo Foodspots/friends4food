@@ -1,0 +1,13 @@
+var currently_loading = false;
+$(function() {
+	$(window).on('scroll', function() {
+		var next_page = $('.pagination .next_page a').attr('href');
+		if (!currently_loading && next_page && $(window).scrollTop() > $(document).height() - $(window).height() - 500) {
+			currently_loading = true;
+			$('.pagination').empty().append($("<img>").attr('src', "<%= asset_path('ajax-loader.gif') %>"));
+			$.getScript(next_page).done(function () {
+				currently_loading = false;
+			});
+		}
+	});
+});

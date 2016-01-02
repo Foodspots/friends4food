@@ -16,4 +16,5 @@
 //= require jquery.turbolinks
 //= require bootstrap
 //= require turbolinks
+//= require endlessscroll.js.erb
 //= require_tree .
