@@ -10,7 +10,12 @@ class PinsController < ApplicationController
       @pins = (friends_favorite_restaurants & @pins) | (@pins - friends_favorite_restaurants)    
     end
 
-    @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)  
+    @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)
+
+	respond_to do |format|
+		format.html
+		format.js
+	end
   end
 
   def search
