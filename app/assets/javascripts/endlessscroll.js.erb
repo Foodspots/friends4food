@@ -1,5 +1,6 @@
 var currently_loading = false;
 $(function() {
+	$(".pagination").hide();
 	$(window).on('scroll', function() {
 		var next_page = $('.pagination .next_page a').attr('href');
 		if (!currently_loading && next_page && $(window).scrollTop() > $(document).height() - $(window).height() - 500) {
