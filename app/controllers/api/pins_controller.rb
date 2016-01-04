@@ -1,9 +1,13 @@
 class Api::PinsController < ApiController
 	def popular
-		pins = Pin.all
+		pins = Pin.near([params[:latitude], params[:longitude]], 10000)
 		friends_favorite_restaurants = current_user.friends_favorite_restaurants
 
 		if friends_favorite_restaurants.present?
+			friends_favorite_restaurants = friends_favorite_restaurants.map do |r|
+				Pin.near([params[:latitude], params[:longitude]], 10000).find(r.id)
+			end
+
 			pins = (friends_favorite_restaurants & pins) | (pins - friends_favorite_restaurants)
 		end
 
