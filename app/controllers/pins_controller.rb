@@ -18,6 +18,16 @@ class PinsController < ApplicationController
 	end
   end
 
+  def popular
+	  @pins = Pin.order(cached_votes_score: :desc)
+	  @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)
+
+	  respond_to do |format|
+		  format.html
+		  format.js {render 'addnextpage'}
+	  end
+  end
+
   def search
    @pins = Pin.search(params[:search])
     friends_favorite_restaurants = current_user.friends_favorite_restaurants
