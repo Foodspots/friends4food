@@ -24,7 +24,7 @@
               <ul class="nav navbar-nav bold">
                 <li><%= link_to '/' do %>Friends<% end %></li>
                 <li><%= link_to "Nearby", search_nearest_pins_path %></li>
-                <li><%= link_to "Mine", my_profile_path %></li>
+                <li><%= link_to "Popular", pins_path %></li>
               </ul>
             </div>
           </div>
@@ -32,7 +32,9 @@
             <div class="user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><%= link_to "My FoodSpots", my_profile_path %></li>
                 <li><%= link_to "My Friends", my_friends_path %></li>
+                <li><%= link_to "Recently visited", my_recently_visited_path %></li>
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
               </ul>
             </div>
@@ -54,7 +56,9 @@
               <span class="icon-bar"></span>
             </a>
             <ul class="dropdown-menu">
+              <li><%= link_to "My FoodSpots", my_profile_path %></li>
               <li><%= link_to "My Friends", my_friends_path %></li>
+              <li><%= link_to "Recently visited", my_recently_visited_path %></li>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
@@ -72,7 +76,7 @@
           <%= link_to "Nearby", search_nearest_pins_path, class:"mobile-link" %>
         </div>
         <div class="col-xs-4">
-          <%= link_to "Mine", my_profile_path , class:"mobile-link last-item" %>
+          <%= link_to "Popular", pins_path , class:"mobile-link last-item" %>
         </div>
       </div>
     </div>
