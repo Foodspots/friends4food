@@ -1,22 +1,17 @@
 <div class="col-xs-14">
-<div class="center">
-	
+ 	<div class="center">
 <% if @user.recent_visits.size > 0 %>
 <p>Find below the restaurants you have recently visited.</p>
-</div>
+<% @user.recent_visits.each do |v| %>
+    <span class="list-group-item">
+      <span class="glyphicon glyphicon-pushpin" style="color: black;"></span>
+      <%= link_to pin_path(v.pin) do %><%= v.pin.name %><% end %>
+    </span>
+  <% end %>
 
-<div id="pins" class="transitions-enabled">
-<% @user.recent_visits.each do %>
- <%= render partial: 'pins/show_pin_details' %>
- <% end %>
 </div>
 
 <% else %>
-<div class="center">
 <p>Click <u>here</u> to download our app and track your recently visited restaurants.</p>
 </div>
-
 <% end %>
-</div>
-
-
