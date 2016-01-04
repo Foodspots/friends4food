@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse no-padding-left" id="menu">
               <ul class="nav navbar-nav bold">
                 <li><%= link_to '/' do %>Friends<% end %></li>
-                <li><%= link_to "Nearby", search_nearest_pins_path %></li>
+                <li><%= link_to "Nearby", search_nearest_pins_path, class: 'location_before' %></li>
                 <li><%= link_to "Popular", pins_path %></li>
               </ul>
             </div>
