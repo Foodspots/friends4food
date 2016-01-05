@@ -98,6 +98,7 @@ class PinsController < ApplicationController
   end
 
   def edit
+	  render locals: {current_user: current_user}
   end
 
   def create
