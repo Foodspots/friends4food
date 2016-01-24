@@ -128,11 +128,17 @@ body {
     }
   }
 
+
   .menu-mobile {
     height: 60px;
     background-color: #1B4151;
     padding: 15px 0;
+    @media (max-width: 450px) {
+      .col-xs-4 {
+        padding-right: 0px;
+      }
 
+    }
     a {
       display: block;
       text-align: center;
@@ -141,6 +147,12 @@ body {
       padding-top: 5px;
       border-right: 2px solid #fff;
       height: 30px;
+      @media (max-width: 450px) {
+        text-align: left;
+        font-size: 13px;
+        padding-left: 10px;
+      }
+
     }
 
     a.last-item {
@@ -208,8 +220,13 @@ body {
     .dropdown-menu {
       background-color: #76c190;
       text-align: center;
-      right: 0;
+      right: 2px;
       top: 45px;
+
+      @media (max-width: 650px) {
+        margin-left: -60px;
+      }
+
       a:hover {
         background-color: #76c190;
       }
