@@ -22,7 +22,6 @@
 $('document').ready(function() {
     $(".mobile-search input[type='text']").on('input', function() {
         if ($(this).val().length >=  3) {
-            console.log("submit");
             $(".mobile-search .pin-search-form").submit()
         }
     });
