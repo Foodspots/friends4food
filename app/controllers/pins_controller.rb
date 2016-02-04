@@ -23,7 +23,7 @@ class PinsController < ApplicationController
 	  @pins = Kaminari.paginate_array(@pins).page(params[:page]).per(RECORDS_PER_PAGE)
 
 	  respond_to do |format|
-		  format.html
+		  format.html {render locals: {current_user: current_user}}
 		  format.js {render 'addnextpage'}
 	  end
   end
