@@ -24,7 +24,7 @@ class PinsController < ApplicationController
 
 	  respond_to do |format|
 		  format.html {render locals: {current_user: current_user}}
-		  format.js {render 'addnextpage'}
+		  format.js {render 'addnextpage', locals: {current_user: current_user}}
 	  end
   end
 
