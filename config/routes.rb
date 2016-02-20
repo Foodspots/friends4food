@@ -17,11 +17,11 @@
 
   resources :users 
 
-  root "pins#index"
+  root "users#my_friends"
   get "my_profile" => "users#my_profile"
   get "my_pins" => "pins#my_pins"
   get "search" => "pins#search"
-  get "popular" => "pins#popular"
+  get "popular" => "pins#index"
   get "upload" => "pins#upload"
   get "download" => "pins#download"
   get "my_friends" => "users#my_friends"

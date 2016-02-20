@@ -289,6 +289,18 @@ body {
     color:white;
   }
 
+  .btn-CTA{
+    background: #1b4252;
+    color: #ffffff;
+    margin-top: 5px;
+    border: 5px solid #1b4252;
+    border-radius:5px;
+
+   &:hover {
+     color: #fffff;
+     font-weight: bold;
+    }
+ }
 
   .btn-like, .btn-like:active {
     background: #1b4252;

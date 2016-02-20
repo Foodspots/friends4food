@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 	end	
 
 	def my_friends
+		@followings = current_user.followings
 		render locals: {current_user: current_user}
 	end
 
