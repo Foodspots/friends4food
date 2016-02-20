@@ -1,7 +1,7 @@
 <div class="col-xs-14">
 <div class="center">
 <% if @followings.present? && @followings.size > 0 %>
- <p>Find below a list of your friends. Click on their name to discover their favorite FoodSpots.
+ <p>Find below a list of your friends. Click on their name to discover their favorite FoodSpots or <u><%= link_to "add", users_path %></u> some more friends.</p>
 </div>
     <div id="pins" class="transitions-enabled friends">
             <% current_user.followings.each do |user| %>
