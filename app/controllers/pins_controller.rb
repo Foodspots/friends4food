@@ -45,7 +45,6 @@ class PinsController < ApplicationController
   end
 
   def sorted_by_distance
-  before_filter :index
     if @latitude.present? && @longitude.present?    
       @pins = Pin.search(params[:search]).near([@latitude, @longitude], 10000)
       @pins = @pins.page(params[:page]).per(RECORDS_PER_PAGE)
