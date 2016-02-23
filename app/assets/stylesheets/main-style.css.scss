@@ -315,6 +315,19 @@ body {
 
   }
 
+    .btn-follow, .btn-follow:active {
+    background: #1b4252;
+    color: #fffff;
+    border: 1px solid #1b4252;
+    background-image: image-url('like.png');
+
+   &:hover {
+     color: #ffffff;
+     font-weight: bold;
+    }
+
+  }
+
   .btn-liked, .btn-liked:active {
     background-color: #1b4252;
     border: 1px solid #1b4252;
