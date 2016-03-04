@@ -42,6 +42,11 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def home
+		@user = current_user
+		@welcomed = @user.welcomed
+	end
+
 	def followers
 		@followers = current_user.followers.collect(&:user)
 	end

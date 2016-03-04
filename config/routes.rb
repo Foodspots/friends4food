@@ -17,7 +17,7 @@
 
   resources :users 
 
-  root "users#my_friends"
+  root "users#home"
   get "my_profile" => "users#my_profile"
   get "my_pins" => "pins#my_pins"
   get "search" => "pins#search"

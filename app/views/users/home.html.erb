@@ -1,0 +1,29 @@
+<% content_for(:bodyclass, 'login')%>
+<div class="row">
+  <div class="col-md-10 col-md-push-1">
+    <div class="panel panel-default loginpanel">
+      <div class="panel-body loginnote">
+      	<h1><%= @user.name %></h1>
+        <%= link_to image_tag(@user.photo_url + '&width=160&height=160'), @user %>
+         </div>
+         </div>
+      <div class="panel panel-default loginpanel">
+        <div class="panel-body loginnote">
+		  <% if not @welcomed %>
+  			  <%# This is shown the very first login %>
+        	<p>Yeah, you are now connected with <b><%= current_user.follows.count %> of your Facebook friends.</b> Do you want to know their favorite FoodSpots in town?</p>
+		  <% else %>
+         <%# This is shown every second login when no location has been shared yet%>
+  			 <p>You are connected with <b><%= current_user.follows.count %> of your Facebook friends.</b> Do you want to check their favorite FoodSpots?</p>
+		  <% end %>
+          <%= link_to "Check out your friends", my_friends_path(@user), class: 'btn btn-CTA btn-sm' %>
+        </div>
+    </div>
+    <div class="panel panel-default loginpanel">
+        <div class="panel-body loginnote">
+        <p>Looking for a nice place to eat tonight? View <b>the most popular FoodSpots of your friends!</b></p>
+        <%= link_to "View popular FoodSpots", popular_path(@pin), class: 'btn btn-CTA btn-sm' %>
+        </div>
+    </div>
+  </div>
+</div>
