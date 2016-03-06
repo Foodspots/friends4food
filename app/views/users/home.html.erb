@@ -14,7 +14,7 @@
         	<p>Yeah, you are now connected with <b><%= current_user.follows.count %> of your Facebook friends.</b> Do you want to know their favorite FoodSpots in town?</p>
 		  <% else %>
          <%# This is shown every second login when no location has been shared yet%>
-  			 <p>You are connected with <b><%= current_user.follows.count %> of your Facebook friends.</b> Do you want to check their favorite FoodSpots?</p>
+  			 <p>You are connected with <b><%= current_user.follows.count %> of your Facebook friends.</b> Do you want to check out their favorite FoodSpots?</p>
 		  <% end %>
           <%= link_to "Check out your friends", my_friends_path(@user), class: 'btn btn-CTA btn-sm' %>
         </div>
@@ -22,7 +22,7 @@
     <div class="panel panel-default loginpanel">
         <div class="panel-body loginnote">
         <p>Looking for a nice place to eat tonight? View <b>the most popular FoodSpots of your friends!</b></p>
-        <%= link_to "View popular FoodSpots", popular_path(@pin), class: 'btn btn-CTA btn-sm' %>
+        <%= link_to "View popular FoodSpots", pins_path(@pin), class: 'btn btn-CTA btn-sm' %>
         </div>
     </div>
   </div>

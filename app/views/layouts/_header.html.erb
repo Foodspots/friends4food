@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse no-padding-left" id="menu">
               <ul class="nav navbar-nav bold">
                 <li><%= link_to "Friends", my_friends_path %></li>
-                <li><%= link_to "Popular", popular_path %></li>
+                <li><%= link_to "Popular", pins_path %></li>
                 <li><%= link_to "Nearby", search_nearest_pins_path, class: 'location_before' %></li>
               </ul>
             </div>
@@ -68,13 +68,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
-          <li><%= link_to '/' do %>Friends<% end %></li>
+          <li><%= link_to "Friends", my_friends_path %></li>
         </div>
         <div class="col-xs-4">
-          <%= link_to "Nearby", search_nearest_pins_path, class:"mobile-link" %>
+          <%= link_to "Popular", pins_path, class:"mobile-link" %>
         </div>
         <div class="col-xs-4">
-          <%= link_to "Popular", pins_path , class:"mobile-link last-item" %>
+          <%= link_to "Nearby", search_nearest_pins_path , class:"mobile-link last-item" %>
         </div>
       </div>
     </div>
