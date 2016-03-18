@@ -6,9 +6,7 @@
       	<h1><%= @user.name %></h1>
         <%= link_to image_tag(@user.photo_url + '&width=160&height=160'), @user %>
          </div>
-         </div>
-      <div class="panel panel-default loginpanel">
-        <div class="panel-body loginnote">
+     
 		  <% if not @welcomed %>
   			  <%# This is shown the very first login %>
         	<p>Yeah, you are now connected with <b><%= current_user.follows.count %> of your Facebook friends.</b> Do you want to know their favorite FoodSpots in town?</p>
@@ -18,12 +16,21 @@
 		  <% end %>
           <%= link_to "Check out your friends", my_friends_path(@user), class: 'btn btn-CTA btn-sm' %>
         </div>
-    </div>
-    <div class="panel panel-default loginpanel">
+    
+        <div class="panel panel-default loginpanel">
         <div class="panel-body loginnote">
-        <p>Looking for a nice place to eat tonight? View <b>the most popular FoodSpots of your friends!</b></p>
+        <p>Looking for a nice place to eat tonight? View the most <b>popular</b> or <b>nearby</b> FoodSpots!</p>
         <%= link_to "View popular FoodSpots", pins_path(@pin), class: 'btn btn-CTA btn-sm' %>
+        <%= link_to "View nearby FoodSpots", search_nearest_pins_path(@pin), class: 'btn btn-CTA btn-sm' %>
         </div>
-    </div>
+        </div>
+
+        <div class="panel panel-default loginpanel">
+        <div class="panel-body loginnote">
+        <p><%= link_to "Download our app", "https://itunes.apple.com/nl/app/foodspots.me/id1035358443?l=en&mt=8" %>
+         to track your recently visited restaurants.</p>
+        </div>
+        </div>
+
   </div>
 </div>
