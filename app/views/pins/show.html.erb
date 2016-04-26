@@ -2,21 +2,14 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <h3><%= @pin.name %></h3>
-<% if current_user.liked? @pin %>
-<p><b>You have liked this FoodSpot.</b></p>Don't like it anymore? <%= link_to "Remove FoodSpot", unlike_pin_path(@pin), method: :put %>
-     <% else %>
-       <p>Do you like this FoodSpot?<p>
-       <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-icon btn-like" do %>
-       Like FoodSpot
-       <% end %>                             
-     <% end %>
-     <br></br>
-    <p><b>Liked by:</p></b>
+<p><strong>Kitchen:</strong>
+<%= @pin.kitchen %></p>
+<p><b>Liked by:</p></b>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
       <% end %>
-    <% end %>
+    <% end %>	
     </div>
     </div>
 
@@ -29,13 +22,17 @@
 
   <div class="panel panel-default">
 	  <div class="panel-body">
-      <h3>Contact:</h3>
-      <p><strong>Call now:</strong>
+      <h3>Details:</h3>
+      <p><strong>Telephone number:</strong>
         <u><%= phone_number_link("#{0}#{@pin.telephone_number}")%></u>
 		<p><strong>Address:</strong>
 		  <%= @pin.address %></p>
+		  <p><strong>Neighbourhood:</strong>
+		  <%= @pin.neighbourhood %></p>
 		<p><strong>Place: </strong>
 		  <%= @pin.place %></p>
+	 	<p><strong>Website:</strong>
+	     <%=  link_to @pin.website, "#{@pin.website}" %></p>
 		<%= image_tag "https://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
 		   <br></br>
 		<% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
@@ -59,3 +56,14 @@
 		</div>
 	</div>
 </div>
+
+<% if current_user.liked? @pin %>
+<p><b>You have liked this FoodSpot.</b></p>Don't like it anymore? <%= link_to "Remove FoodSpot", unlike_pin_path(@pin), method: :put %>
+     <% else %>
+       <p>Do you like this FoodSpot?<p>
+       <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-icon btn-like" do %>
+       Like FoodSpot
+       <% end %>                             
+     <% end %>
+     <br></br>
+    
