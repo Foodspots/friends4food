@@ -1,1 +1,10 @@
 This is the application FoodSpots.me from Olivier van Hees
+
+
+## Development requirements
+
+Before install project requirements some dependencies should be installed:
+
+```
+sudo apt-get install libcurl4-openssl-dev
+```
