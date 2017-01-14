@@ -6,12 +6,9 @@
 <% if current_user.liked? @pin %>
 	<h4>You <span class="glyphicon glyphicon-heart"></span> this Foodspot!</h4>
 <% else %>
-	<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-CTA" do %> Like FoodSpot
+	<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-CTA btn-xs" do %> Like FoodSpot
 	<% end %>
 <% end %>
-
-
-
 <p><%= @pin.name %> is also loved by:</p>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
@@ -29,36 +26,32 @@
 		<p><span class="glyphicon glyphicon-link"></span> <%= link_to @pin.website, "#{@pin.website}" %></p>
 	</div>
     </div>
-
-
   <div class="panel panel-default">
   <div class="panel-body">
 <h3>Restaurant details</h3>
 <p><span class="glyphicon glyphicon-cutlery"></span> <%= @pin.kitchen %></p>
-<p><span class="glyphicon glyphicon-pushpin"></span> <%= @pin.address %>, <%= @pin.place %></p>
-<%= image_tag @pin.external_image_url, :width => "250", class: "img-responsive" %>
+<p><span class="glyphicon glyphicon-euro"></span> <%= @pin.price %></p>
+<p><span class="glyphicon glyphicon-time"></span> <%= @pin.openinghours %></p>
+<%= image_tag @pin.external_image_url, :width => "350", class: "img-responsive" %>
 </div>
 </div>
   <div class="panel panel-default">
 	  <div class="panel-body">
       <h3>Navigation</h3>
+      <p><span class="glyphicon glyphicon-map-marker"></span> <%= @pin.address %>, <%= @pin.place %></p>
 		<%= image_tag "https://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
-		<br></br>
 		<% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
-		<div class="col-xs-12">
+		<div class="col-xs-14">
 		  <form action="http://maps.google.com/maps" method="get" target="_blank" class="route_form">
 			<%= hidden_field_tag "saddr", "#{source_location}" %>
 			<%= hidden_field_tag "daddr", "#{destination_location}" %>
-			<%= button_tag(type: 'submit', class: "btn btn-default") do %>
-			  <span class="glyphicon glyphicon-map-marker"></span>See route
+			<%= button_tag(type: 'submit', class: "btn btn-CTA btn-xs") do %>
+			  <span class="glyphicon glyphicon-map-marker"></span>Navigate to here
 			<% end %>
 		  </form>
 		</div>
 	  </div>
   </div>
-
-
-
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="fb-comments" data-width="100%" data-numposts="3" data-href="<%= request.original_url %>"></div>
