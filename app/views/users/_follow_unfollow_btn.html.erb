@@ -1,8 +1,9 @@
 <% if current_user && current_user != user %>
   	 <% if current_user.following?(user) %>
-   	 		   <b><%= link_to user.name, user_path(user)%> is your friend. <b>       
+   	 		   <p><%= link_to user.name, user_path(user)%> is your friend. <p>       
     	<% else %>
-          <%= link_to "Add Friend", user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :class => "btn btn-icon btn-follow", :remote => true %>
+    	Add <%= link_to user.name, user_follow_path(user), :method => :post, data: { disable_with: "Please wait..." }, :remote => true %>
   	<% end %>
 <% end %>
+
 

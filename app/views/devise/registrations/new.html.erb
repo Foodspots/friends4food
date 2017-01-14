@@ -1,20 +1,33 @@
-<% content_for(:bodyclass, 'login')%>
-<div class="row">
-  <div class="col-md-10 col-md-push-1">
-    <div class="panel panel-default loginpanel">
-      <div class="panel-body loginnote">
-        <ol>
-        <li>View your friends' hotspots</li>
-        <li>Like your favorite restaurants</li>
-        <li>And let them discover your favorite flavor!</li>
-        </ol>
-        <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-social btn-facebook" do %>
-        <span class="glyphicon glyphicon-play"></span>
-        Connect with Facebook
-        <% end %>
-        <br/><br/>
-        <b>Note:</b> FoodSpots.me will <u>never</u> post messages on your Facebook wall.
-        </div>
-    </div>
-  </div>
-</div>
+<div class="panel-body">    
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+   
+          <h1>Create account</h1>
+            <div class="form-group">
+            <%= f.label :name, "Name" %>
+            <%= f.text_field :name, class: "form-control", :autofocus => true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email, "Emailaddress" %>
+            <%= f.email_field :email, class: "form-control", :autofocus => true %>
+          </div>
+
+          <div class="form-group">
+          <%= f.label :image,  "Profile picture" %>
+          <%= f.file_field :image, class: "form-control", :autofocus => true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, "Password" %> 
+            <%= f.password_field :password, class: "form-control", :autocomplete => "off" %>
+          </div>
+
+        <div class="form-group">   
+        <%= f.submit "Save", class: "btn btn-info" %>    
+        </div>  
+        
+          <u>Do you already have an account?</u>
+        <%= link_to "Login", new_user_session_path %>
+
+    <% end %>    
+ </div>

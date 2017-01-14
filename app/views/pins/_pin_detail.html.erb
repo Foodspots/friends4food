@@ -14,7 +14,7 @@
 				<% end %>
 			<% end %>
 			<% if liking_friends.count > 3 %>
-				<%= link_to "...", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
+				<%= link_to "More", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
 			<% end %>
 		</p>
 		<div class="actions">
@@ -25,6 +25,7 @@
 					Like FoodSpot
 				<% end %>
 			<% end %>
+			
 		</div>
 	</div>
 </div>
