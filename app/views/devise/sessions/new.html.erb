@@ -3,23 +3,21 @@
 	<div class="col-md-10 col-md-push-1">
 		<div class="panel panel-default loginpanel">
 			<div class="panel-body loginnote">
-			<h1>Share your favorite restaurants with your friends</h1>
+			<h1>Share your most favorite restaurants</h1>
 			<p>And discover the most popular spots of your friends. </p>
-		
-			<h1>How does it work? </h1>
+
 			  <ol>
-				<li>Create an account</li>
 				<li>Select your favorite restaurants</li>
+				<li>Connect with your friends</li>
 				<li>Discover popular spots of your friends</li>
 			  </ol>
-			  <h1>Discover now:</h1>
+		
 			  <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" do %>
 			  <span class="glyphicon glyphicon-play"></span>
 			  Connect with Facebook
 			  <% end %>
 			  <br/><br/>
 			  <u></u>
-			  <%= link_to "Or login with your emailaddress", new_user_registration_path %>
 			  </div>
 		</div>
 	</div>

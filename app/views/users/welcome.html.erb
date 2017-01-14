@@ -7,25 +7,22 @@
 
 		  <% if not @welcomed %>
   			  <%# This is shown the very first login %>
-        	<p>You have succesfully connected with <b><%= current_user.follows.count %></b> of your Friends:</p>
-
-          <% @current_user.followings.each do |user| %>
-          <li> <%=user.name %> </li>
-          <% end %>  
-
+        	<p>Welcome to Foodspots. You now have your own account to share you favorite restaurants with your friends. </p>
+          <p>You are now connected with <b><%= current_user.follows.count %></b> of your Facebook friends on FoodSpots.me</p>
           <br/><br/>
-          <h1>Almost there...</h1>
-          <p>You are only one step away from discovering the hottest FoodSpots. Click the button below!</p>
+          <h1>Discover restaurants nearby</h1>
+          <p>Click the button below to share your location with us.</p>
           <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
           <span class="glyphicon glyphicon-play"></span>
           Share your location
           <% end %>       
 		  <% else %>
          <%# This is shown every second login when no location has been shared yet%>
-  			 <p>Thank you for using Foodspots. Oops, you haven't shared your location yet.</p> 
+  			 <p>Thank you for using Foodspots again.</p>
+         <p>You are connected with <b><%= current_user.follows.count %></b> of your Facebook friends on FoodSpots.me</p>
          <br/><br/>
-         <h1>Complete your registration</h1>
-         <p>Click the button below and discover the nearest FoodSpots.</p>
+         <h1>Discover restaurants nearby</h1>
+         <p>Click the button below to share your location with us.</p>
          <%= link_to root_path, class: "btn btn-lg btn-default ask_location" do %>
          <span class="glyphicon glyphicon-play"></span>
          Share your location
