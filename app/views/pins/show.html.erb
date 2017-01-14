@@ -2,9 +2,17 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <h3><%= @pin.name %></h3>
-<p><strong>Kitchen:</strong>
-<%= @pin.kitchen %></p>
-<p><b>Liked by:</p></b>
+
+<% if current_user.liked? @pin %>
+	<h4>You <span class="glyphicon glyphicon-heart"></span> this Foodspot!</h4>
+<% else %>
+	<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-CTA" do %> Like FoodSpot
+	<% end %>
+<% end %>
+
+
+
+<p><%= @pin.name %> is also loved by:</p>
     <% friends_who_liked_pin(@pin).each do |p| %>
       <% if p.present? %>
         <%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
@@ -13,34 +21,35 @@
     </div>
     </div>
 
+   <div class="panel panel-default">
+	  <div class="panel-body">
+      <h3>Contact details</h3>
+      	<p><span class="glyphicon glyphicon-earphone"></span> <%= phone_number_link("#{0}#{@pin.telephone_number}")%></p>
+		<p><span class="glyphicon glyphicon-envelope"></span>  <%= mail_to @pin.emailadress, "#{@pin.emailadress}" %></p>
+		<p><span class="glyphicon glyphicon-link"></span> <%= link_to @pin.website, "#{@pin.website}" %></p>
+	</div>
+    </div>
+
 
   <div class="panel panel-default">
   <div class="panel-body">
-<%= image_tag @pin.external_image_url, :width => "400", class: "img-responsive" %>
+<h3>Restaurant details</h3>
+<p><span class="glyphicon glyphicon-cutlery"></span> <%= @pin.kitchen %></p>
+<p><span class="glyphicon glyphicon-pushpin"></span> <%= @pin.address %>, <%= @pin.place %></p>
+<%= image_tag @pin.external_image_url, :width => "250", class: "img-responsive" %>
 </div>
 </div>
-
   <div class="panel panel-default">
 	  <div class="panel-body">
-      <h3>Details:</h3>
-      <p><strong>Telephone number:</strong>
-        <u><%= phone_number_link("#{0}#{@pin.telephone_number}")%></u>
-		<p><strong>Address:</strong>
-		  <%= @pin.address %></p>
-		  <p><strong>Neighbourhood:</strong>
-		  <%= @pin.neighbourhood %></p>
-		<p><strong>Place: </strong>
-		  <%= @pin.place %></p>
-	 	<p><strong>Website:</strong>
-	     <%=  link_to @pin.website, "#{@pin.website}" %></p>
+      <h3>Navigation</h3>
 		<%= image_tag "https://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
-		   <br></br>
+		<br></br>
 		<% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
 		<div class="col-xs-12">
 		  <form action="http://maps.google.com/maps" method="get" target="_blank" class="route_form">
 			<%= hidden_field_tag "saddr", "#{source_location}" %>
 			<%= hidden_field_tag "daddr", "#{destination_location}" %>
-			<%= button_tag(type: 'submit', class: "btn btn-default pull-left") do %>
+			<%= button_tag(type: 'submit', class: "btn btn-default") do %>
 			  <span class="glyphicon glyphicon-map-marker"></span>See route
 			<% end %>
 		  </form>
@@ -55,15 +64,4 @@
 			<div class="fb-comments" data-width="100%" data-numposts="3" data-href="<%= request.original_url %>"></div>
 		</div>
 	</div>
-</div>
-
-<% if current_user.liked? @pin %>
-<p><b>You have liked this FoodSpot.</b></p>Don't like it anymore? <%= link_to "Remove FoodSpot", unlike_pin_path(@pin), method: :put %>
-     <% else %>
-       <p>Do you like this FoodSpot?<p>
-       <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-icon btn-like" do %>
-       Like FoodSpot
-       <% end %>                             
-     <% end %>
-     <br></br>
-    
+</div>    
