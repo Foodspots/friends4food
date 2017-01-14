@@ -41,12 +41,13 @@
       <p><span class="glyphicon glyphicon-map-marker"></span> <%= @pin.address %>, <%= @pin.place %></p>
 		<%= image_tag "https://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@pin.latitude}%2C#{@pin.longitude}", class: "img-responsive" %>
 		<% destination_location = @pin.location.present? ? "#{@pin.name}, #{@pin.location}" : '' %>
+		<br></br>
 		<div class="col-xs-14">
 		  <form action="http://maps.google.com/maps" method="get" target="_blank" class="route_form">
 			<%= hidden_field_tag "saddr", "#{source_location}" %>
 			<%= hidden_field_tag "daddr", "#{destination_location}" %>
 			<%= button_tag(type: 'submit', class: "btn btn-CTA btn-xs") do %>
-			  <span class="glyphicon glyphicon-map-marker"></span>Navigate to here
+			  <span class="glyphicon glyphicon-map-marker"></span>Navigate to <%= @pin.name %>
 			<% end %>
 		  </form>
 		</div>
