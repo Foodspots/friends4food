@@ -23,14 +23,20 @@ body {
       margin-top: 0px;
     }
 
+    h5, h5 a, h5 a:hover {
+      font-size: 18px;
+      color: #E97028;
+      margin-top: 0px;
+    }
+
   .pin-search-form {
-    padding-left: 10;
+    padding-left: 10px;
     margin-top: -10px;
 
     input {
       border-radius: 5px;
-      width: 150px;
-      text-align: center;
+      width: 250px;
+      text-align: left;
     }
   }
 
@@ -96,7 +102,7 @@ body {
       }
 
       .btn {
-        border-radius: 2px;
+        border-radius: 5px;
         width: 125px;
         background-color: #E97028;
         border-color: #E97028;

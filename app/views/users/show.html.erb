@@ -1,22 +1,18 @@
 <div class="col-xs-14">
-
 <div class="panel panel-default">
 	<div class="panel-body">
 
 <h3><%= @user.name %>'s favorites</h3>
-<%= link_to image_tag(@user.photo_url + '&width=50&height=50'), @user %>
 <h4><span class="glyphicon glyphicon-heart"></span>  <%= @user.find_liked_items.size %> FoodSpots</h4>
-	<% if current_user.following?(@user) %>
-		<p><%= @user.name %> is your friend.</p>
+
+<% if current_user.following?(@user) %>
+		<p><%= @user.name %> is your friend</p>
 	<% else %>
-		<%= link_to "Add Friend", user_follow_path(@user), :method => :post, data: { disable_with: "Please wait..." }, :remote => true %>
+		<%= Add link_to user.name, user_follow_path(@user), :method => :post, data: { disable_with: "Please wait..." }, :remote => true %>
 	<% end %>
+<%= link_to image_tag(@user.photo_url + '&width=80&height=80'), @user %>
  	</div>
 </div>
-
-
-
-
 
 <div class="panel panel-default">		
 </div>

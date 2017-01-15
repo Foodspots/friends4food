@@ -45,7 +45,7 @@
 		  <form action="http://maps.google.com/maps" method="get" target="_blank" class="route_form">
 			<%= hidden_field_tag "saddr", "#{source_location}" %>
 			<%= hidden_field_tag "daddr", "#{destination_location}" %>
-			<%= button_tag(type: 'submit', class: "btn btn-CTA btn-xs") do %>
+			<%= button_tag(type: 'submit', class: "btn btn-CTA btn-sm") do %>
 			  <span class="glyphicon glyphicon-map-marker"></span>Navigate to <%= @pin.name %>
 			<% end %>
 		  </form>
