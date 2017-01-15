@@ -39,14 +39,12 @@ gem 'shareable'
 gem 'socialization'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'mailchimp', '~> 0.0.9'
-gem 'mailchimp-api', '~> 2.0', '>= 2.0.6'
 gem 'koala', '~> 1.11.1'
 gem 'font-awesome-rails'
 gem 'bootstrap-social-rails'
 gem 'simple_form'
 gem 'bootstrap_form'
 gem 'geocoder'
-gem 'elasticsearch-transport', git: 'git://github.com/elasticsearch/elasticsearch-ruby.git'
 gem "searchkick"
 gem 'rails_bootstrap_navbar'
 gem 'kaminari'
@@ -58,8 +56,6 @@ gem 'delayed_job_active_record'
 gem 'curb-fu'
 gem 'config'
 gem 'api-pagination'
-gem 'gibbon', '~> 3.0', '>= 3.0.1'
-gem 'dotenv-rails', :groups => [:development]
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
