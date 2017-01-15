@@ -2,11 +2,10 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <h3><%= @pin.name %></h3>
-
 <% if current_user.liked? @pin %>
 	<h4>You <span class="glyphicon glyphicon-heart"></span> this Foodspot!</h4>
 <% else %>
-	<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-CTA btn-xs" do %> Like FoodSpot
+	<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-CTA btn-xs" do %> Love this Foodspot
 	<% end %>
 <% end %>
 <p><%= @pin.name %> is also loved by:</p>

@@ -29,21 +29,22 @@
 }
 
 .panel-default-box-width {
-  width: 280px;
-   height: 500px;
+  width: 250px;
+   height: 420px;
 }
 
 .panel-default-box-user {
   width: 280px;
-   height: 300px;
+   height: 310px;
 }
 
 .more_link_color {
-  color: #1b4252;
+  color: #E97028;
 }
 
 .panel.pin h3 {
-  min-height: 60px;
+  min-height: 10px;
+  font-size: 18px;
 }
 
 .panel.pin .friends {
@@ -52,13 +53,12 @@
 }
 
 .pin-img {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   background-size: cover;
   background-position: center center;
 }
 
 .panel-default.pin {
- 
   border-radius: 5px;
 }
