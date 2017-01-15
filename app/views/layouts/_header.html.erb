@@ -38,7 +38,15 @@
               </ul>
             </div>
           </div>
+          <script>
 
+
+            var name = "<%= @current_user.name %>";
+            //var name = "Gebruiker";
+
+            var first_name = name.split(" ")[0]
+            $(".caret").before(first_name);
+          </script>
           <div class="col-xs-offset-7 .col-xs-2 mobile-dropdown hidden-md hidden-lg">
             <a href="#" class="dropdown-toggle navbar-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
