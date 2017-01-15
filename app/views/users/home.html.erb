@@ -10,7 +10,7 @@
 
     <div class="panel panel-default">
     <div class="panel-body">
-    <h5>You <span class="glyphicon glyphicon-heart"></span> <%= @current_user.pins.count %> restaurants</h5>
+    <h5>You <span class="glyphicon glyphicon-heart"></span> <%= @current_user.find_liked_items.size %> restaurants</h5>
     <p>Add some more, so you friends know where to go!</p>
         <h1>Search restaurants</h1>
           <div class="search">
