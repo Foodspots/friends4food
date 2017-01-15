@@ -2,16 +2,18 @@
   <div class="panel panel-default">
     <div class="panel-body">
         <h1>Hi, <%= @user.name %></h1>
-        <h4>You are connected with <b><%= current_user.follows.count %> of your Facebook friends.</h4>
-        <p>Discover the popular spots of your friends.</p>
+        <%= link_to image_tag(@user.photo_url + '&width=80&height=80'), @user %>
+        <p>Discover the popular spots of your <%= current_user.follows.count %> friend(s).</p>
              <%= link_to "Discover now!", pins_path(@pin), class: 'btn btn-CTA btn-sm' %>
     </div>
     </div>
 
     <div class="panel panel-default">
     <div class="panel-body">
-    <h5>You have liked <b><%= @current_user.pins.count %> spots</b> on Foodspots.</h5>
+    <h5>You <span class="glyphicon glyphicon-heart"></span> <%= @current_user.pins.count %> restaurants</h5>
     <p>Add some more, so you friends know where to go!</p>
+     <div class="panel panel-default">
+        <div class="panel-body">
         <h1>Search restaurants</h1>
           <div class="search">
           <!--<input type="text" class="form-control input-sm" maxlength="64" placeholder="">
@@ -19,23 +21,29 @@
           <%= form_tag(search_path, method: :get, class: "navbar-form pin-search-form") do %>
               <div class="form-group">
                 <%= text_field_tag 'search', params[:search], class: "form-control input-sm", placeholder: "", autofocus: true %>
-                <%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+                <%= submit_tag "Search", class: "btn btn-CTA btn-sm" %>
               </div>
           <% end %>
           </div>
     </div>
     </div>
+    </div>
+    </div>
     
     <div class="panel panel-default">
       <div class="panel-body">
-      <h1>Do you want to know more about your friends?</h1>
+      <h5>You have <b><%= current_user.follows.count %> friend(s)</b> on Foodspots</h5>
+      <p>Do you want to know more about your friends?</p>
       <p class="friends">
         <% current_user.followings.each do |user| %>
-        <p><%= user.name %></p>
+        <div class="panel panel-default">
+        <div class="panel-body">
+        <p><b><%= user.name %></b></p>
         <%= link_to image_tag(user.photo_url + '&width=80&height=80'), user %>
-        <h4><span class="glyphicon glyphicon-heart"></span>  <%= @user.find_liked_items.size %> FoodSpots</h4>
         <% end %>
-         <%= link_to "Check out your friends", my_friends_path(@user), class: 'btn btn-CTA btn-sm' %>
+      </div>
+       </div>
+         <%= link_to "Check out all your friends", my_friends_path(@user), class: 'btn btn-CTA btn-sm' %>
       </div>
   </div>
 </div>
