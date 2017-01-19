@@ -65,22 +65,7 @@
       <% end %>
     </div>
   </div>
-  <% if user_signed_in? %>
   
-  <div class="mobile-search hidden-md hidden-lg">
-    <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <%= form_tag(search_path, method: :get, class: "navbar-form pin-search-form") do %>
-                <div class="form-group">
-                  <%= text_field_tag 'search', params[:search], class: "form-control input-sm", placeholder: "Search FoodSpot", autofocus: true %>
-                 </div>
-            <% end %>
-          </div>
-        </div>
-    </div>
-  </div>
-  <% end %>
 </nav>
 </div>
 
