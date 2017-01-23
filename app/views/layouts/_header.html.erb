@@ -1,86 +1,61 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
-    <div class="row">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="col-md-1 col-xs-1 pull-left logocontainer">
-        <%= link_to '/' do %><img id="logo" src="<%= asset_url('Logo transparant.png') %>" class="img-responsive"><% end %>
-      </div>
+    <div class="navbar-header mobile-dropdown">
+      <a href="#" class="dropdown-toggle navbar-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <ul class="dropdown-menu">
+          <li><%= link_to "Popular by my friends", pins_path %></li>
+          <li><%= link_to "Nearby restaurants", search_nearest_pins_path, class: 'location_before' %></li>
+          <li><%= link_to "My FoodSpots", my_profile_path %></li>
+          <li><%= link_to "My Friends", my_friends_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <p class="navbar--brand">
+        <img src="/assets/applogowhite.png" />
+      </p>
+      <li class="dropdown">
+        <p class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Amsterdam <span class="caret"></span></p>
+        <ul class="dropdown-menu">
+          <li><a href="#">City 2</a></li>
+          <li><a href="#">City 3</a></li>
+        </ul>
+      </li>
+    </div>
+
+    <div class="collapse navbar-collapse">
       <% if user_signed_in? %>
-          <div class="col-md-5 hidden-sm hidden-xs">
-            <div class="search">
-              <!--<input type="text" class="form-control input-sm" maxlength="64" placeholder="">
-              <button type="submit" class="btn btn-primary btn-sm">Search</button>-->
-              <%= form_tag(search_path, method: :get, class: "navbar-form pin-search-form") do %>
-                  <div class="form-group">
-                    <%= text_field_tag 'search', params[:search], class: "form-control input-sm", placeholder: "", autofocus: true %>
-                    <%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
-                  </div>
-              <% end %>
-
-            </div>
-          </div>
-          <div class="col-md-4 hidden-sm hidden-xsno-padding">
-            <div class="collapse navbar-collapse no-padding-left" id="menu">
-              <ul class="nav navbar-nav bold">
-           
-              </ul>
-            </div>
-          </div>
-          <div class="hidden-sm hidden-xs col-md-2">
-            <div class="user dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Popular by my friends", pins_path %></li>
-                <li><%= link_to "Nearby restaurants", search_nearest_pins_path, class: 'location_before' %></li>
-                <li><%= link_to "My FoodSpots", my_profile_path %></li>
-                <li><%= link_to "My Friends", my_friends_path %></li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </div>
-          </div>
-          <script>
-
-
-            var name = "<%= @current_user.name %>";
-            //var name = "Gebruiker";
-
-            var first_name = name.split(" ")[0]
-            $(".caret").before(first_name);
-          </script>
-          <div class="col-xs-offset-7 .col-xs-2 mobile-dropdown hidden-md hidden-lg">
-            <a href="#" class="dropdown-toggle navbar-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><%= link_to "Popular by my friends", pins_path %></li>
-                <li><%= link_to "Nearby restaurants", search_nearest_pins_path, class: 'location_before' %></li>
-                <li><%= link_to "My FoodSpots", my_profile_path %></li>
-                <li><%= link_to "My Friends", my_friends_path %></li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to '/' do %>
+            Home <span>|</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(search_nearest_pins_path) do%>
+            Popular FoodSpots <span>|</span>
+          <% end %>
+        </li>
+        <li class="dropdown-link">
+          <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= @current_user.name.split(" ")[0] %>
+          </a>
+          <ul class="dropdown-menu profile-dropdown">
+              <li><%= link_to "Popular by my friends", pins_path %></li>
+              <li><%= link_to "Nearby restaurants", search_nearest_pins_path, class: 'location_before' %></li>
+              <li><%= link_to "My FoodSpots", my_profile_path %></li>
+              <li><%= link_to "My Friends", my_friends_path %></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <li class="navbar--avatar">
+          <div class="navbar--avatar-image" style="background: url(<%= @current_user.photo_url %>); background-size: cover; background-position: center;"></div>
+        </li>
+      </ul>
       <% end %>
     </div>
   </div>
-  <% if user_signed_in? %>
-  
-  <div class="mobile-search hidden-md hidden-lg">
-    <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <%= form_tag(search_path, method: :get, class: "navbar-form pin-search-form") do %>
-                <div class="form-group">
-                  <%= text_field_tag 'search', params[:search], class: "form-control input-sm", placeholder: "Search FoodSpot", autofocus: true %>
-                 </div>
-            <% end %>
-          </div>
-        </div>
-    </div>
-  </div>
-  <% end %>
 </nav>
-</div>
-

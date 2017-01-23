@@ -1,26 +1,110 @@
-<% content_for(:bodyclass, 'login')%>
-<div class="row">
-	<div class="col-md-10 col-md-push-1">
-		<div class="panel panel-default loginpanel">
-			<div class="panel-body loginnote">
-			<h1>Share your most favorite restaurants</h1>
-			<p>And discover the most popular spots of your friends. </p>
+<div class="infoboard">
+    <div class="infoboard__container">
+      <div class="infoboard__cover">
+        <p class="infoboard__title">Find a nice food spot</p>
+        <p class="infoboard__title-question">Where do your friends like to go to?</p>
+				<%= link_to user_omniauth_authorize_path(:facebook) do %>
+          <button type="submit" class="btn btn-default infoboard__button"><i class="ion-chevron-right"></i>Discover now!</button>
+        <% end %>
+        <div class="col-md-10 margin-auto infoboard__points">
+          <div class="infoboard__points-column col-md-4">
+            <div class="infoboard__points-number margin-auto">1</div>
+            <p class="infoboard__points-title">Connect<br/> with Facebook</p>
+            <p class="infoboard__points-description">Don't freak out:<br/> FoodSpots will never post something on your wall</p>
+          </div>
+          <div class="infoboard__points-column col-md-4">
+            <div class="infoboard__points-number margin-auto">2</div>
+            <p class="infoboard__points-title">View where your friends like to go to</p>
+            <p class="infoboard__points-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="infoboard__points-column col-md-4">
+            <div class="infoboard__points-number margin-auto">3</div>
+            <p class="infoboard__points-title">Discover new food spots nearby</p>
+            <p class="infoboard__points-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-			  <ol>
-				<li>Select your favorite restaurants</li>
-				<li>Connect with your friends</li>
-				<li>Discover popular spots of your friends</li>
-			  </ol>
-		
-			  <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" do %>
-			  <span class="glyphicon glyphicon-play"></span>
-			  Connect with Facebook
-			  <% end %>
-			  <br/><br/>
-			  <u></u>
-			  </div>
-		</div>
-	</div>
-</div>
+   <div class="clearfix"></div>
 
- 
+    <div class="tiles">
+      <p class="tiles__title">Most popular foodspots this week</p>
+      <div class="col-md-10 tiles__container margin-auto">
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://media-cdn.tripadvisor.com/media/photo-s/07/d4/24/2a/barra.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Barra</p>
+              <p class="tiles__spotTile-location">Amsterdam, Centrum</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://u.tfstatic.com/restaurant_photos/535/244535/169/612/radijs-restaurant-3087e.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Radijs</p>
+              <p class="tiles__spotTile-location">Amsterdam, De Pijp</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://s-media-cache-ak0.pinimg.com/originals/b8/46/7c/b8467c5b987baeae691bd802f406d9b1.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Bar Spek</p>
+              <p class="tiles__spotTile-location">Amsterdam, Centrum</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('http://cafeterbrugge.nl/wp-content/uploads/2015/10/slide1.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Ter Brugge</p>
+              <p class="tiles__spotTile-location">Amsterdam, West</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('http://www.leukeadresjesvanyvette.nl/wp-content/uploads/2012/07/huiskamer-lerestaurant.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">La Restaurant</p>
+              <p class="tiles__spotTile-location">Amsterdam, Centrum</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('http://www.freeonlinemarketing.nl/rhoon/img/e6b027c06deabe6034fce2b455f1045a.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Vitaria-Eeterij Family</p>
+              <p class="tiles__spotTile-location">Amsterdam, Centrum</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <%= link_to(search_nearest_pins_path) do%>
+          <button type="submit" class="btn btn-default button--spots">View popular spots</button>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="footer">
+      <div class="footer__download">
+        <span>Download</span>
+        <img id="footerAppLogo" src="/assets/applogowhite.png" />
+        <span>app:</span>
+        <img id="footerAppleLogo" src="/assets/apple.png" />
+      </div>
+      <ul class="list-inline footer__list">
+        <li>Copyright © FoodSpots 2017  <span>|</span></li>
+        <li>Disclaimer  <span>|</span></li>
+        <li>Add your restaurant (for free)  <span>|</span></li>
+        <li>Contact</li>
+      </ul>
+    </div>
