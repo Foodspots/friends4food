@@ -55,6 +55,19 @@
           <div class="navbar--avatar-image" style="background: url(<%= @current_user.photo_url %>); background-size: cover; background-position: center;"></div>
         </li>
       </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to(pins_path) do%>
+              All Food Spots <span>|</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to user_omniauth_authorize_path(:facebook) do %>
+              log-in
+            <% end %>
+          </li>
+        </ul>
       <% end %>
     </div>
   </div>
