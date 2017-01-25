@@ -1,26 +1,108 @@
-<% content_for(:bodyclass, 'login')%>
-<div class="row">
-	<div class="col-md-10 col-md-push-1">
-		<div class="panel panel-default loginpanel">
-			<div class="panel-body loginnote">
-			<h1>Share your most favorite restaurants</h1>
-			<p>And discover the most popular spots of your friends. </p>
+<div class="infoboard">
+    <div class="infoboard__container">
+      <div class="infoboard__cover">
+        <p class="infoboard__title">Share your favorite FoodSpot</p>
+        <p class="infoboard__title-question">And the popular places of your friends</p>
+				<%= link_to user_omniauth_authorize_path(:facebook) do %>
+          <button type="submit" class="btn btn-default infoboard__button"><i class="glyphicon glyphicon-chevron-right"></i>Discover now!</button>
+        <% end %>
+        <div class="col-md-10 margin-auto infoboard__points">
+          <div class="infoboard__points-column col-md-4">
+            <div class="infoboard__points-number margin-auto">1</div>
+            <p class="infoboard__points-title">Select your favorite restaurants</p>
+          </div>
+          <div class="infoboard__points-column col-md-4">
+            <div class="infoboard__points-number margin-auto">2</div>
+            <p class="infoboard__points-title">Connect with your friends</p>
+          </div>
+          <div class="infoboard__points-column col-md-4">
+            <div class="infoboard__points-number margin-auto">3</div>
+            <p class="infoboard__points-title">Discover popular spots of your friends</p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-			  <ol>
-				<li>Select your favorite restaurants</li>
-				<li>Connect with your friends</li>
-				<li>Discover popular spots of your friends</li>
-			  </ol>
-		
-			  <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-social btn-facebook" do %>
-			  <span class="glyphicon glyphicon-play"></span>
-			  Connect with Facebook
-			  <% end %>
-			  <br/><br/>
-			  <u></u>
-			  </div>
-		</div>
-	</div>
-</div>
+   <div class="clearfix"></div>
 
- 
+    <div class="tiles">
+      <p class="tiles__title">Most popular foodspots</p>
+      <div class="col-md-10 tiles__container margin-auto">
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://s3.amazonaws.com/foodspots/images/Cafe Panache_Amsterdam.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Panache</p>
+              <p class="tiles__spotTile-location">Amsterdam</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://s3.amazonaws.com/foodspots/images/Faam_Amsterdam.png')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Faam</p>
+              <p class="tiles__spotTile-location">Amsterdam</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://s-media-cache-ak0.pinimg.com/originals/b8/46/7c/b8467c5b987baeae691bd802f406d9b1.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Bar Spek</p>
+              <p class="tiles__spotTile-location">Amsterdam</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://s3.amazonaws.com/foodspots/images/Waterkant.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">Waterkant</p>
+              <p class="tiles__spotTile-location">Amsterdam</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('http://www.leukeadresjesvanyvette.nl/wp-content/uploads/2012/07/huiskamer-lerestaurant.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">La Restaurant</p>
+              <p class="tiles__spotTile-location">Amsterdam</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 tiles__spotTile">
+          <div class="tiles__spotTile-background" style="background: url('https://s3.amazonaws.com/foodspots/images/Hallen_Amsterdam.jpg')">
+            <div class="tiles__spotTile-cover">
+              <p class="tiles__spotTile-name">De Hallen</p>
+              <p class="tiles__spotTile-location">Amsterdam</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <%= link_to user_omniauth_authorize_path(:facebook) do %>
+          <button type="submit" class="btn btn-default infoboard__button"><i class="glyphicon glyphicon-chevron-right"></i>View popular spots</button>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="footer">
+      <div class="footer__download">
+        <span>Download</span>
+        <img id="footerAppLogo" src="/assets/applogowhite.png" />
+        <span>app:</span>
+        <img id="footerAppleLogo" src="/assets/apple.png" />
+         <%= link_to "Go to Itunes", "https://itunes.apple.com/nl/app/foodspots.me/id1035358443" %>
+      </div>
+      <ul class="list-inline footer__list">
+        <li>Copyright © FoodSpots 2017  <span>|</span></li>
+        <li>Disclaimer  <span>|</span></li>
+        <li>Add your restaurant (for free)  <span>|</span></li>
+        <li>Contact</li>
+      </ul>
+    </div>
