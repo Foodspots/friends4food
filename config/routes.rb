@@ -17,10 +17,9 @@
 
   resources :users 
 
-  root "users#home"
+  root "pins#index"
   get "my_profile" => "users#my_profile"
   get "my_pins" => "pins#my_pins"
-  get "search" => "pins#search"
   get "popular" => "pins#index"
   get "upload" => "pins#upload"
   get "download" => "pins#download"
@@ -30,6 +29,7 @@
   get "search_pins" => "pins#index"
   get 'search_nearest_pins' => 'pins#sorted_by_distance'
   get 'welcome' => 'users#welcome'
+  get 'search' => 'users#home'
   get '/feeds' => 'users#feeds', :as => :feeds
 
   get '/app' => redirect('https://itunes.apple.com/nl/app/friends4food-tracker/id1035358443')

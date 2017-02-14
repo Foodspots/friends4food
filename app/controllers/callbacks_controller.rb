@@ -6,7 +6,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
 			redirect_to '/welcome'
 		else
 			session["devise.facebook_data"] = request.env["omniauth.auth"]
-			redirect_to '/welcome'
+			redirect_to '/home'
 		end
 	end
 end

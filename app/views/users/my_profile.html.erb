@@ -1,6 +1,11 @@
  <div class="col-xs-14">
- <div class="center">
- <p>Find below the list of <b>your</b> FoodSpots. <u><%= link_to "Add more", pins_path %></u></p></p>
+ 	 <div class="panel panel-default">
+        <div class="panel-body">
+        <h5><%=@current_user.name%></h5>
+      	<h5>You <span class="glyphicon glyphicon-heart"></span> <%= @current_user.find_liked_items.size %> restaurants</h5>
+        </div>    
+    	</div>  
+	<div class="center">
 	 <%= render partial: 'pins/show_pin_details' %>
  </div>
  </div>

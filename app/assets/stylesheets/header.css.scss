@@ -1,0 +1,134 @@
+nav.navbar-default {
+    background: rgba(0, 0, 1, 1);
+    border:none;
+    border-radius:0px;
+    height:60px;
+    color: #ffffff;
+    
+    @media (max-width: 992px) {
+      height: auto;
+    }
+
+    .navbar-nav > li > a {
+      color: #ffffff;
+    }
+
+    li:first a{
+      padding-left:0px;
+    }
+
+    .col-md-2  {
+      width: 15.666667%;
+    }
+
+    .dropdown-toggle {
+      border: none;
+
+      .icon-bar {
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  .nav navbar-nav navbar-right bold{
+  color: #ffffff;
+  }
+
+  .navbar-default {
+  height: 70px !important;
+  body { padding-top: 70px; }
+  @media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+}
+
+.navbar--brand{
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 80px;
+  float: left;
+  padding-right: 150px
+}
+.navbar--brand img {
+  height: 40px;
+}
+
+
+.dropdown{
+  list-style: none;
+  float: left
+}
+
+.dropdown-toggle{
+  color: rgba(255,255,255,0.8);
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 85px;
+  top: 1.5rem;
+}
+
+.dropdown-toggle i{
+  font-size: 1.5rem;
+  padding-left: 10px
+}
+
+.dropdown-menu{
+  background: #FF8400;
+  top: 70px;
+  border-radius: 5px;
+  border: none;
+  min-width: 140px;
+  padding: 15px 0;
+  left: auto;
+  right: 0;
+}
+
+.dropdown-menu li a{
+  color: rgba(255,255,255,0.8)
+}
+
+.dropdown-menu li:hover a{
+  background: black;
+  color: rgba(255, 133, 0, 0.7)
+}
+
+.profile-dropdown {
+  padding: 1rem;
+  top: 30px;
+}
+.dropdown-link.open > a {
+  background-color: transparent !important;
+  color: rgba(255, 133, 0, 0.7) !important
+}
+
+.navbar-right{
+  padding-top: 25px
+}
+
+.navbar-right li:hover a span{
+  color: rgba(255,255,255,0.8)
+}
+
+.navbar-right li a:hover {
+  color: rgba(255, 133, 0, 0.7) !important
+}
+
+.navbar-right li a span{
+  padding: 0 8px;
+}
+
+.navbar-right li a{
+  padding: 10px 0;
+  color: rgba(255,255,255,0.8) !important
+}
+
+.navbar--avatar{
+  padding-left: 10px
+}
+
+  .navbar-toggle {
+    @media (max-width: 998px) {
+      display: block;
+    }
+  }  

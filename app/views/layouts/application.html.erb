@@ -32,28 +32,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <%= render 'layouts/header' %>
-<div class="">
-
-
 
 <%= yield %>
 
-</div>
-
-<div class="footer">
-      <div class="footer__download">
-        <span>Download our app:</span>
-        <br></br>
-         <p><img id="footerAppleLogo" src="/assets/apple.png" /> <%= link_to "Go to iTunes", "https://itunes.apple.com/nl/app/foodspots.me/id1035358443" %></p>
-      </div>
-      <ul class="list-inline footer__list">
-        <li>Copyright © FoodSpots 2017  <span>|</span></li>
-        <li>Disclaimer  <span>|</span></li>
-        <li>Add your restaurant (for free)  <span>|</span></li>
-        <li>Contact</li>
-      </ul>
-    </div>
+<%= render 'layouts/footer' %>
 
 </body>
+
+</div>
 
 </html>

@@ -1,0 +1,58 @@
+.footer {
+  background: black;
+  height: 10px;
+}
+
+.footer__list {
+  font-family: $font-ultra-light;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  font-weight: 100
+}
+.footer__list li span {
+  padding-left: 5px
+}
+
+.footer__list li:hover {
+  cursor: pointer;
+  font-weight: bold;
+  color: rgba(255, 133, 0, 1)
+}
+
+.footer__list li:hover span {
+  color: white
+}
+
+.footer__download {
+  font-family: $font-normal;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+.footer__download i {
+  font-size: 4rem;
+  color: white;
+  padding-left: 10px
+}
+.footer__download i:hover {
+  cursor: pointer;
+}
+.footer__download span {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: white
+}
+
+#footerAppLogo {
+  height: 28px;
+  margin-top: -5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+#footerAppleLogo {
+  height: 28px;
+  margin-top: -10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
