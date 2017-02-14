@@ -15,9 +15,6 @@
 					<%= link_to image_tag(p.photo_url, class: 'pin_liked_image'), p %>
 				<% end %>
 			<% end %>
-			<% if liking_friends.count > 3 %>
-				<%= link_to liking_friends.count, pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
-			<% end %>
 		</p>
       		<div class="actions">
 			<% if current_user.liked? pin %>
