@@ -8,7 +8,7 @@
             	<p class="infoboard__points-title"><%= link_to pin.name, pin_path(pin) %></p>
               <p class="tiles__spotTile-location"><%= pin.place  %></p>	
               </div>
-              <p class="likedby">Loved by: (<%= liking_friends.count %>)</p>
+              <p class="likedby">Loved by <%= liking_friends.count %> friends</p>
 		<p class="friends">
 			<% liking_friends.take(3).each do |p| %>
 				<% if p.present? %>
@@ -16,7 +16,7 @@
 				<% end %>
 			<% end %>
 			<% if liking_friends.count > 3 %>
-				<%= link_to "More", pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
+				<%= link_to liking_friends.count, pin_path(pin, anchor: 'liked_by'), class: 'more_link_color' %>
 			<% end %>
 		</p>
       		<div class="actions">
