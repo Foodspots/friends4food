@@ -10,7 +10,6 @@
         <p></p>
         <h4><span class="glyphicon glyphicon-heart"></span>  <%= user.find_liked_items.size %> FoodSpots</h4>
       </div>
-
       <div class="btn-group">
           <%= render :partial => 'users/follow_unfollow_btn', :locals => {:user => user} %>
       </div>

@@ -4,9 +4,8 @@
             <h5><%=@current_user.name%>, you have <%= current_user.follows.count%>
                 friend(s) <span class="glyphicon glyphicon-heart"></span> </h5> 
              <u><%= link_to "Add more", users_path %></u></p>
-    </div>  
-
-<div class="panel panel-default">
+        </div>  
+     </div>  
 <% if @followings.present? && @followings.size > 0 %>
 <div class="center">
     <div id="pins" class="transitions-enabled friends">
@@ -26,7 +25,7 @@
          <p>Or invite your Facebook friends to join FoodSpots.me. <%= share_snippet %> </p>
 <% end %> 
 </div>
-</div>
+
 
 
 
