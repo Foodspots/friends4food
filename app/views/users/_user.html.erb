@@ -1,14 +1,13 @@
 <% user = local_assigns.has_key?(:user) ? user : nil %>
 <% if user %>
-  <div class="panel-body panel-default-box-user pin">
-    <div class="actions">
-      <h1><%= user.name %></h1>
+  <div class="box panel panel-default panel-default-box-width pin">
+    <div class="tiles">
+      <p class="infoboard__points-title"><%= link_to user.name, user_path(user) %></p>
       <div class="avatar">
         <%= link_to image_tag(user.photo_url + '&width=160&height=160'), user %>
       </div>
       <div>
-        <p></p>
-        <h4><span class="glyphicon glyphicon-heart"></span>  <%= user.find_liked_items.size %> FoodSpots</h4>
+           <p class="likedby">Loves <span class="glyphicon glyphicon-heart"></span> <%= user.find_liked_items.size %> Foodpots </p>
       </div>
       <div class="btn-group">
           <%= render :partial => 'users/follow_unfollow_btn', :locals => {:user => user} %>
