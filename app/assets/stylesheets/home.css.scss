@@ -141,3 +141,57 @@ $font-black: 'MontserratBlack';
   position: relative;
   font-size: 1.5rem
 }
+
+.btn.button--spots {
+  font-family: $font-light;
+  background: #FF8400;
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding: 10px 24px
+}
+.btn.button--spots:hover{
+  background: #FF8400;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+.btn.button--spots:focus{
+  background: #FF8400 !important;
+  color: white !important;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.infoboard__button{
+  font-family: $font-normal;
+  background: #FF8400;
+  color: white;
+  border-radius: 2px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border: 2px solid white;
+  margin-bottom: 90px
+}
+
+.btn.infoboard__button i{
+  padding-right: 15px
+}
+
+.btn.infoboard__button:hover{
+  background: #FF8400;
+  color: white;
+  border: 2px solid white
+}
+
+.btn.infoboard__button:focus{
+  background: #FF8400 !important;
+  color: white !important;
+  border: 2px solid white !important
+}

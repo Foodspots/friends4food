@@ -6,11 +6,12 @@
              <u><%= link_to "Add more", users_path %></u></p>
         </div>  
      </div>  
+    </div>  
 <% if @followings.present? && @followings.size > 0 %>
 <div class="center">
-    <div id="pins" class="transitions-enabled friends">
+    <div id="pins" class="transitions-enabled">
             <% current_user.followings.each do |user| %>
-                <div class="box panel panel-default" id = "user_<%= user.id %>">
+                <div class="box panel panel-default">
                 <%= render :partial => 'users/user', :locals => {:user => user} %>
                 </div>
             <% end %>
